@@ -1,0 +1,264 @@
+\documentclass[11pt,aspectratio=169]{beamer}
+
+\title{End-to-End Visual Anomaly Detection on the MAX78000}
+\date[Project Presentation]{Project Presentation\\June 19th, 2026}
+\author{Tom Haidinger}
+\institute[ETH Z\"urich]{ETH Z\"urich\\Department of Information Technology and Electrical Engineering}
+
+\usetheme{eth}
+\colorlet{titlefgcolor}{ETHblue}
+\colorlet{accentcolor}{ETHred}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+
+\definecolor{mapblue}{HTML}{1F77B4}
+\definecolor{classorange}{HTML}{E87722}
+\definecolor{softgray}{HTML}{F2F4F6}
+
+% Compile-friendly image placeholder. Adding the named file replaces the box automatically.
+\newcommand{\assetbox}[3][0.45\textheight]{%
+  \IfFileExists{assets/#2}{%
+    \includegraphics[width=#3,height=#1,keepaspectratio]{assets/#2}%
+  }{%
+    \begin{tikzpicture}
+      \node[draw=ETHgray,fill=softgray,minimum width=#3,minimum height=#1,
+            align=center,text width=\dimexpr#3-8mm\relax,font=\scriptsize]
+            {\detokenize{#2}\\[1mm]\textit{Add image to assets/}};
+    \end{tikzpicture}%
+  }%
+}
+
+\newcommand{\metric}[2]{%
+  \begin{tcolorbox}[colback=ETHblue!7,colframe=ETHblue,boxrule=0.6pt,arc=1mm,
+    left=2mm,right=2mm,top=1mm,bottom=1mm]
+    \centering\Large\bfseries #1\\[-1mm]
+    \normalsize\mdseries #2
+  \end{tcolorbox}%
+}
+
+\begin{document}
+
+% Slide 1
+\def\titlefigure{elements/title-page-image}
+\titleframe
+
+% Slide 2
+\begin{frame}{Problem: Manufacturing Flaws}
+  \begin{center}
+    \begin{minipage}{0.94\textwidth}
+      \begin{columns}[c,onlytextwidth]
+        \column{0.54\textwidth}
+        \assetbox[0.82\textheight]{problem-good-bad-mms.png}{\linewidth}
+        \column{0.60\textwidth}
+        \Large
+        \begin{itemize}
+          \item Good or damaged?
+          \item Limited defective samples
+          \item Real-time embedded inspection
+        \end{itemize}
+      \end{columns}
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% Slide 3
+\begin{frame}{More Than Classification}
+  \begin{center}
+    \begin{minipage}{0.94\textwidth}
+      \begin{center}
+        \assetbox[0.53\textheight]{masked_collection.png}{0.95\textwidth}\\[-1mm]
+      \end{center}
+
+      \vspace{1mm}
+      \begin{columns}[c,onlytextwidth]
+        \column{0.47\textwidth}
+        \metric{Output 1}{32 x 32 anomaly map: \emph{where is the damage?}}
+        \column{0.47\textwidth}
+        \metric{Output 2}{Image decision: \emph{good or damaged?}}
+      \end{columns}
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% Slide 4
+\begin{frame}{Baseline: TinyGLASS}
+\begin{columns}[T,onlytextwidth]
+  \column{0.63\textwidth}
+  \assetbox[0.54\textheight]{tinyglass-paper-figure1.png}{\linewidth}
+  \column{0.33\textwidth}
+  \begin{itemize}
+    \item End-to-end anomaly detection
+    \item 3,129,280 param. ()
+    \item $\approx$3.13 MB at INT8
+  \end{itemize}
+\end{columns}
+\vfill
+{\tiny Related: MCUNet – Image classification – 10 FPS; TinyissimoYOLO – object detection – 18 FPS.}
+\vspace{1mm}
+
+
+{\tiny [1] Bonazzi, Pietro, et al. TinyGLASS: Real-Time Self-Supervised In-Sensor Anomaly Detection. arXiv, 17 Mar. 2026, arXiv:2603.16451}
+\end{frame}
+
+% Slide 5
+\begin{frame}{TinyGLASS MMS Dataset}
+  \begin{center}
+    \begin{minipage}{0.94\textwidth}
+      \begin{columns}[T,onlytextwidth]
+        \column{0.55\textwidth}
+          \begin{minipage}[c][0.64\textheight][c]{\linewidth}
+            \centering
+            \scriptsize
+            \begin{tabular}{lrrrr}
+              \toprule
+              & \multicolumn{2}{c}{Microscope} & \multicolumn{2}{c}{IMX500} \\
+              Category & Train & Test+Val & Train & Test+Val \\
+              \midrule
+              Normal / good & 166 & 42 & 184 & 55 \\
+              Crack-hole & 0 & 18 & 0 & 28 \\
+              Scratch & 0 & 39 & 0 & 42 \\
+              Half & 0 & 14 & 0 & 14 \\
+              \textbf{Defective total} & \textbf{0} & \textbf{71} & \textbf{0} & \textbf{84} \\
+              \bottomrule
+            \end{tabular}
+          \end{minipage}
+        \column{0.40\textwidth}
+          \begin{minipage}[c][0.64\textheight][c]{\linewidth}
+            \centering
+            \assetbox[0.70\textheight]{paper_ref.png}{0.9\linewidth}
+          \end{minipage}
+      \end{columns}
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% Slide 6
+\begin{frame}{A Small MAX78000 Camera Test Set}
+  \begin{center}
+    \begin{minipage}{0.94\textwidth}
+      \begin{columns}[c,onlytextwidth]
+        \column{0.48\textwidth}
+        \assetbox[0.7\textheight]{camera-test-contact-sheet.png}{\linewidth}
+        \column{0.46\textwidth}
+        \centering
+        \begin{tabular}{lcc}
+          \toprule
+          Category & Train & Test \\
+          \midrule
+          Normal / good & 10 & 2 \\
+          Crack-hole & 0 & 2 \\
+          Scratch & 0 & 2 \\
+          Half & 0 & 2 \\
+          \midrule
+          Total & 10 & 8 \\
+          \bottomrule
+        \end{tabular}
+      \end{columns}
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% Slide 7
+\begin{frame}{Synthetic Defects and Augmentation}
+\begin{columns}[T,onlytextwidth]
+  \column{0.69\textwidth}
+  \assetbox[0.65\textheight]{augmentation-mask-grid.png}{\linewidth}
+  \column{0.27\textwidth}
+  \begin{itemize}
+    \item Blobs
+    \item Scratches
+    \item Scratch clusters
+    \item Object-contained masks
+    \item Mask area $\leq25\%$
+    \item Centered zoom
+    \item Background recoloring
+  \end{itemize}
+\end{columns}
+\end{frame}
+
+% Slide 8
+\begin{frame}[plain]
+\begin{columns}[c,onlytextwidth]
+  \column{0.74\textwidth}
+    \begin{center}
+      \assetbox[0.5\textheight]{tinyglass_arch.png}{0.98\linewidth}\\[-5mm]
+      \assetbox[0.5\textheight]{my_arch.png}{0.98\linewidth}
+    \end{center}
+  \column{0.27\textwidth}
+    \begin{center}
+      \large
+      $\mathcal{L}=\mathcal{L}_{\mathrm{CE,map}}
+      +\lambda_f\mathcal{L}_{\mathrm{focal,map}}
+      +\lambda_i\mathcal{L}_{\mathrm{CE,image}}$
+    \end{center}
+\end{columns}
+\end{frame}
+
+% Slide 9
+\begin{frame}{Model Size Comparison}
+\assetbox[0.73\textheight]{image-acc-all-layers.png}{\textwidth}
+\end{frame}
+
+% Slide 10
+\begin{frame}[c]{Qualitative Map Comparison}
+  \begin{center}
+    \assetbox[0.85\textheight]{camera-test-model-comparison.png}{\textwidth}
+  \end{center}
+\end{frame}
+
+% Slide 11
+\begin{frame}[c]{Qualitative Map Comparison}
+  \begin{center}
+    \assetbox[0.85\textheight]{model-comparison-distilled.png}{\textwidth}
+  \end{center}
+\end{frame}
+
+
+% Slide 12
+\begin{frame}{Two Models, Multiple Quantizations}
+\begin{center}
+  \assetbox[0.45\textheight]{image-acc-l25-quant.png}{0.94\textwidth}\\[-5mm]
+  \vspace{1mm}
+  \assetbox[0.45\textheight]{image-acc-l10-quant.png}{0.94\textwidth}\\[-2mm]
+\end{center}
+\end{frame}
+
+% Slide 13
+\begin{frame}{Three Deployment Candidates}
+\small
+\begin{table}
+\centering
+\begin{tabular}{lrrrrr}
+  \toprule
+  Candidate & Parameters & Weight format & Weight size & Inference & Possible FPS\\ 
+  \midrule
+  L10-Q8 & 51,170 & INT8 & 49.97 KiB & \textit{6.2 ms} & 160 Hz\\
+  L25-Q4 & 181,810 & INT4 & 88.78 KiB & \textit{16.5 ms} & 60 Hz\\
+  L25-Q8 & 181,810 & INT8 & 177.55 KiB & \textit{16.5 ms} & 60 Hz\\
+
+  \bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{4mm}
+\begin{columns}[c,onlytextwidth]
+  \column{0.46\textwidth}
+  \metric{81.65\% AUROC}{verses 88.90\% for TinyGLASS}
+  \column{0.46\textwidth}
+  \metric{$\sim$25$\times$ smaller}{L25-Q8 weights versus TinyGLASS INT8 weights}
+\end{columns}
+\end{frame}
+
+% Slide 14
+\begin{frame}[plain]
+\begin{center}
+\vspace{1.5cm}
+{\fontsize{44}{52}\selectfont\bfseries DEMO}
+\end{center}
+\end{frame}
+
+\end{document}

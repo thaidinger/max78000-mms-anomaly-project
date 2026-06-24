@@ -1,0 +1,1004 @@
+2026-06-18 23:13:24,166 - Log file for this run: /Users/tomhaidinger/Documents/max78000/ai8x-training/logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5.log
+2026-06-18 23:13:24,166 - Configuring device: MAX78000, simulate=False.
+2026-06-18 23:13:24,237 - 
+2026-06-18 23:13:24,237 - --------------------------------------------------------
+2026-06-18 23:13:24,237 - Logging to TensorBoard - remember to execute the server:
+2026-06-18 23:13:24,237 - > tensorboard --logdir='./logs'
+2026-06-18 23:13:24,237 - 
+2026-06-18 23:13:25,046 - => loading checkpoint logs/2026.06.18-181852___ai85mmsanomalynet25aux___MMS_128_V5/checkpoint.pth.tar
+2026-06-18 23:13:25,051 - => Checkpoint contents:
++----------------------+-------------+------------------------+
+| Key                  | Type        | Value                  |
+|----------------------+-------------+------------------------|
+| arch                 | str         | ai85mmsanomalynet25aux |
+| compression_sched    | dict        |                        |
+| epoch                | int         | 113                    |
+| extras               | dict        |                        |
+| optimizer_state_dict | dict        |                        |
+| optimizer_type       | type        | Adam                   |
+| state_dict           | OrderedDict |                        |
++----------------------+-------------+------------------------+
+
+2026-06-18 23:13:25,051 - => Checkpoint['extras'] contents:
++--------------+--------+----------+
+| Key          | Type   |    Value |
+|--------------+--------+----------|
+| best_epoch   | int    | 112      |
+| best_mAP     | int    |   0      |
+| best_top1    | float  |  97.9818 |
+| current_mAP  | int    |   0      |
+| current_top1 | float  |  97.9255 |
++--------------+--------+----------+
+
+2026-06-18 23:13:25,052 - Loaded compression schedule from checkpoint (epoch 113)
+2026-06-18 23:13:25,126 - Optimizer of type <class 'torch.optim.adam.Adam'> was loaded from checkpoint
+2026-06-18 23:13:25,126 - Optimizer Args: {'lr': 0.00025, 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.0, 'amsgrad': False, 'maximize': False, 'foreach': None, 'capturable': False, 'differentiable': False, 'fused': None, 'initial_lr': 0.001}
+2026-06-18 23:13:25,126 - => loaded checkpoint 'logs/2026.06.18-181852___ai85mmsanomalynet25aux___MMS_128_V5/checkpoint.pth.tar' (epoch 113)
+2026-06-18 23:13:25,243 - Train+validation dataset length: 2770
+2026-06-18 23:13:25,243 - Validation samples: 210
+2026-06-18 23:13:25,243 - 
+2026-06-18 23:13:25,244 - Test dataset length: 252
+2026-06-18 23:13:25,244 - 
+2026-06-18 23:13:25,255 - Camera test dataset size: 10
+2026-06-18 23:13:25,255 - Reading compression schedule from: policies/schedule-mms-deep-25.yaml
+2026-06-18 23:13:25,256 - torch.compile() not available, using "eager" mode
+2026-06-18 23:13:25,256 - Dataset sizes:
+	training=2560
+	validation=210
+	test=252
+2026-06-18 23:13:25,256 - 
+
+2026-06-18 23:13:25,256 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:13:27,333 - Epoch: [114][   25/  107]    Overall Loss 0.331907    Objective Loss 0.331907    MMS Map Loss 0.279426    MMS Focal Loss 0.048592    MMS Image Loss 0.019445                                        LR 0.000250    Time 0.083034    
+2026-06-18 23:13:28,902 - Epoch: [114][   50/  107]    Overall Loss 0.330374    Objective Loss 0.330374    MMS Map Loss 0.278179    MMS Focal Loss 0.048239    MMS Image Loss 0.019781                                        LR 0.000250    Time 0.072884    
+2026-06-18 23:13:30,472 - Epoch: [114][   75/  107]    Overall Loss 0.329871    Objective Loss 0.329871    MMS Map Loss 0.277457    MMS Focal Loss 0.048025    MMS Image Loss 0.021946                                        LR 0.000250    Time 0.069523    
+2026-06-18 23:13:32,028 - Epoch: [114][  100/  107]    Overall Loss 0.331040    Objective Loss 0.331040    MMS Map Loss 0.278699    MMS Focal Loss 0.048118    MMS Image Loss 0.021117                                        LR 0.000250    Time 0.067693    
+2026-06-18 23:13:32,663 - Epoch: [114][  107/  107]    Overall Loss 0.331476    Objective Loss 0.331476    MMS Map Loss 0.279169    MMS Focal Loss 0.048231    MMS Image Loss 0.020381    Top1 98.149414    LR 0.000250    Time 0.069202    
+2026-06-18 23:13:32,664 - --- validate (epoch=114)-----------
+2026-06-18 23:13:32,664 - 210 samples (24 per mini-batch)
+2026-06-18 23:13:33,225 - Epoch: [114][    9/    9]    Loss 0.410886    Top1 97.781808    ImageAcc 92.380953    ImageF1 94.285715    ImageBalancedAcc 91.428572    ImagePrecision 94.285715    ImageRecall 94.285715    ImageThresh 0.380000    ImageAccOneCell 66.666669    MMS Map Loss 0.347353    MMS Focal Loss 0.063532    
+2026-06-18 23:13:33,225 - ==> Top1: 97.782    Loss: 0.411
+
+2026-06-18 23:13:33,229 - ==> ImageAcc: 92.381    ImageF1: 94.286    ImageBalancedAcc: 91.429    ImageThresh: 0.380
+
+2026-06-18 23:13:33,229 - ==> Confusion:
+[[200663   4464]
+ [   306   9607]]
+
+2026-06-18 23:13:33,271 - --- test (epoch=114) -------------
+2026-06-18 23:13:33,272 - 252 samples (24 per mini-batch)
+2026-06-18 23:13:34,136 - Epoch: [114][   11/   11]    Loss 0.968289    Top1 93.875558    ImageAcc 76.587301    ImageF1 79.442513    ImageBalancedAcc 76.049936    ImagePrecision 78.620690    ImageRecall 80.281693    ImageThresh 0.370000    ImageAccOneCell 56.349206    MMS Map Loss 0.708517    MMS Focal Loss 0.259773    
+2026-06-18 23:13:34,136 - ==> Top1: 93.876    Loss: 0.968
+
+2026-06-18 23:13:34,140 - ==> ImageAcc: 76.587    ImageF1: 79.443    ImageBalancedAcc: 76.050    ImageThresh: 0.370
+
+2026-06-18 23:13:34,140 - ==> Confusion:
+[[242244  15662]
+ [   142      0]]
+
+2026-06-18 23:13:34,140 - --- camera test image metrics (epoch=114) -------------
+2026-06-18 23:13:34,241 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.360
+
+2026-06-18 23:13:34,308 - ==> Best [Top1: 97.782   Params: 181176 on epoch: 114]
+2026-06-18 23:13:34,308 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/checkpoint.pth.tar
+2026-06-18 23:13:34,381 - Initiating quantization aware training (QAT)...
+2026-06-18 23:13:34,441 - Collecting statistics for quantization aware training (QAT)...
+2026-06-18 23:13:49,057 - 
+
+2026-06-18 23:13:49,057 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:13:51,539 - Epoch: [115][   25/  107]    Overall Loss 1.165975    Objective Loss 1.165975    MMS Map Loss 0.693381    MMS Focal Loss 0.203327    MMS Image Loss 1.346334                                        LR 0.000250    Time 0.099251    
+2026-06-18 23:13:53,724 - Epoch: [115][   50/  107]    Overall Loss 1.083045    Objective Loss 1.083045    MMS Map Loss 0.693740    MMS Focal Loss 0.196454    MMS Image Loss 0.964253                                        LR 0.000250    Time 0.093304    
+2026-06-18 23:13:55,970 - Epoch: [115][   75/  107]    Overall Loss 0.994619    Objective Loss 0.994619    MMS Map Loss 0.664467    MMS Focal Loss 0.175046    MMS Image Loss 0.775529                                        LR 0.000250    Time 0.092153    
+2026-06-18 23:13:58,230 - Epoch: [115][  100/  107]    Overall Loss 0.903098    Objective Loss 0.903098    MMS Map Loss 0.616030    MMS Focal Loss 0.152520    MMS Image Loss 0.672741                                        LR 0.000250    Time 0.091708    
+2026-06-18 23:13:58,956 - Epoch: [115][  107/  107]    Overall Loss 0.880880    Objective Loss 0.880880    MMS Map Loss 0.603632    MMS Focal Loss 0.148262    MMS Image Loss 0.644929    Top1 94.670410    LR 0.000250    Time 0.092489    
+2026-06-18 23:13:58,957 - --- validate (epoch=115)-----------
+2026-06-18 23:13:58,957 - 210 samples (24 per mini-batch)
+2026-06-18 23:13:59,587 - Epoch: [115][    9/    9]    Loss 0.490313    Top1 95.544550    ImageAcc 88.095236    ImageF1 90.566039    ImageBalancedAcc 89.285713    ImagePrecision 95.999998    ImageRecall 85.714287    ImageThresh 0.330000    ImageAccOneCell 66.666669    MMS Map Loss 0.419325    MMS Focal Loss 0.070988    
+2026-06-18 23:13:59,587 - ==> Top1: 95.545    Loss: 0.490
+
+2026-06-18 23:13:59,591 - ==> ImageAcc: 88.095    ImageF1: 90.566    ImageBalancedAcc: 89.286    ImageThresh: 0.330
+
+2026-06-18 23:13:59,591 - ==> Confusion:
+[[197223   7904]
+ [  1677   8236]]
+
+2026-06-18 23:13:59,634 - --- test (epoch=115) -------------
+2026-06-18 23:13:59,634 - 252 samples (24 per mini-batch)
+2026-06-18 23:14:00,579 - Epoch: [115][   11/   11]    Loss 0.778176    Top1 94.862971    ImageAcc 69.841272    ImageF1 70.312506    ImageBalancedAcc 70.781052    ImagePrecision 78.947371    ImageRecall 63.380283    ImageThresh 0.330000    ImageAccOneCell 56.349206    MMS Map Loss 0.602128    MMS Focal Loss 0.176048    
+2026-06-18 23:14:00,580 - ==> Top1: 94.863    Loss: 0.778
+
+2026-06-18 23:14:00,583 - ==> ImageAcc: 69.841    ImageF1: 70.313    ImageBalancedAcc: 70.781    ImageThresh: 0.330
+
+2026-06-18 23:14:00,584 - ==> Confusion:
+[[244792  13114]
+ [   142      0]]
+
+2026-06-18 23:14:00,584 - --- camera test image metrics (epoch=115) -------------
+2026-06-18 23:14:00,686 - ==> Camera ImageAcc: 70.000    ImageRecall: 50.000    ImagePrecision: 100.000    ImageThresh: 0.370
+
+2026-06-18 23:14:00,695 - ==> Best [Top1: 95.545   Params: 181176 on epoch: 115]
+2026-06-18 23:14:00,695 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:14:00,754 - 
+
+2026-06-18 23:14:00,754 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:14:02,907 - Epoch: [116][   25/  107]    Overall Loss 0.514787    Objective Loss 0.514787    MMS Map Loss 0.373237    MMS Focal Loss 0.078014    MMS Image Loss 0.317681                                        LR 0.000250    Time 0.086092    
+2026-06-18 23:14:05,084 - Epoch: [116][   50/  107]    Overall Loss 0.481412    Objective Loss 0.481412    MMS Map Loss 0.342831    MMS Focal Loss 0.078433    MMS Image Loss 0.300740                                        LR 0.000250    Time 0.086561    
+2026-06-18 23:14:07,281 - Epoch: [116][   75/  107]    Overall Loss 0.460990    Objective Loss 0.460990    MMS Map Loss 0.323664    MMS Focal Loss 0.079265    MMS Image Loss 0.290304                                        LR 0.000250    Time 0.086991    
+2026-06-18 23:14:09,367 - Epoch: [116][  100/  107]    Overall Loss 0.441916    Objective Loss 0.441916    MMS Map Loss 0.308675    MMS Focal Loss 0.078644    MMS Image Loss 0.272986                                        LR 0.000250    Time 0.086099    
+2026-06-18 23:14:09,949 - Epoch: [116][  107/  107]    Overall Loss 0.436056    Objective Loss 0.436056    MMS Map Loss 0.304726    MMS Focal Loss 0.077918    MMS Image Loss 0.267063    Top1 95.336914    LR 0.000250    Time 0.085906    
+2026-06-18 23:14:09,950 - --- validate (epoch=116)-----------
+2026-06-18 23:14:09,950 - 210 samples (24 per mini-batch)
+2026-06-18 23:14:10,469 - Epoch: [116][    9/    9]    Loss 0.320733    Top1 93.949963    ImageAcc 85.714287    ImageF1 88.372093    ImageBalancedAcc 87.857139    ImagePrecision 96.610171    ImageRecall 81.428570    ImageThresh 0.220000    ImageAccOneCell 66.666669    MMS Map Loss 0.249887    MMS Focal Loss 0.070846    
+2026-06-18 23:14:10,469 - ==> Top1: 93.950    Loss: 0.321
+
+2026-06-18 23:14:10,474 - ==> ImageAcc: 85.714    ImageF1: 88.372    ImageBalancedAcc: 87.857    ImageThresh: 0.220
+
+2026-06-18 23:14:10,474 - ==> Confusion:
+[[192456  12671]
+ [   339   9574]]
+
+2026-06-18 23:14:10,503 - --- test (epoch=116) -------------
+2026-06-18 23:14:10,503 - 252 samples (24 per mini-batch)
+2026-06-18 23:14:11,142 - Epoch: [116][   11/   11]    Loss 0.948918    Top1 89.759657    ImageAcc 79.365081    ImageF1 80.882359    ImageBalancedAcc 79.641485    ImagePrecision 84.615386    ImageRecall 77.464789    ImageThresh 0.230000    ImageAccOneCell 56.349206    MMS Map Loss 0.637037    MMS Focal Loss 0.311881    
+2026-06-18 23:14:11,143 - ==> Top1: 89.760    Loss: 0.949
+
+2026-06-18 23:14:11,146 - ==> ImageAcc: 79.365    ImageF1: 80.882    ImageBalancedAcc: 79.641    ImageThresh: 0.230
+
+2026-06-18 23:14:11,146 - ==> Confusion:
+[[231623  26283]
+ [   142      0]]
+
+2026-06-18 23:14:11,146 - --- camera test image metrics (epoch=116) -------------
+2026-06-18 23:14:11,193 - ==> Camera ImageAcc: 80.000    ImageRecall: 66.667    ImagePrecision: 100.000    ImageThresh: 0.320
+
+2026-06-18 23:14:11,202 - ==> Best [Top1: 95.545   Params: 181176 on epoch: 115]
+2026-06-18 23:14:11,202 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:14:11,261 - 
+
+2026-06-18 23:14:11,261 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:14:13,323 - Epoch: [117][   25/  107]    Overall Loss 0.382968    Objective Loss 0.382968    MMS Map Loss 0.259043    MMS Focal Loss 0.077010    MMS Image Loss 0.234578                                        LR 0.000250    Time 0.082439    
+2026-06-18 23:14:15,400 - Epoch: [117][   50/  107]    Overall Loss 0.367194    Objective Loss 0.367194    MMS Map Loss 0.248601    MMS Focal Loss 0.071096    MMS Image Loss 0.237490                                        LR 0.000250    Time 0.082751    
+2026-06-18 23:14:17,573 - Epoch: [117][   75/  107]    Overall Loss 0.358018    Objective Loss 0.358018    MMS Map Loss 0.239151    MMS Focal Loss 0.070351    MMS Image Loss 0.242580                                        LR 0.000250    Time 0.084139    
+2026-06-18 23:14:19,645 - Epoch: [117][  100/  107]    Overall Loss 0.351645    Objective Loss 0.351645    MMS Map Loss 0.232313    MMS Focal Loss 0.070733    MMS Image Loss 0.242997                                        LR 0.000250    Time 0.083818    
+2026-06-18 23:14:20,206 - Epoch: [117][  107/  107]    Overall Loss 0.349118    Objective Loss 0.349118    MMS Map Loss 0.230261    MMS Focal Loss 0.070695    MMS Image Loss 0.240808    Top1 95.683594    LR 0.000250    Time 0.083573    
+2026-06-18 23:14:20,206 - --- validate (epoch=117)-----------
+2026-06-18 23:14:20,207 - 210 samples (24 per mini-batch)
+2026-06-18 23:14:20,715 - Epoch: [117][    9/    9]    Loss 0.259081    Top1 95.334356    ImageAcc 92.857140    ImageF1 94.809687    ImageBalancedAcc 90.357143    ImagePrecision 91.946310    ImageRecall 97.857141    ImageThresh 0.120000    ImageAccOneCell 66.666669    MMS Map Loss 0.190974    MMS Focal Loss 0.068107    
+2026-06-18 23:14:20,715 - ==> Top1: 95.334    Loss: 0.259
+
+2026-06-18 23:14:20,719 - ==> ImageAcc: 92.857    ImageF1: 94.810    ImageBalancedAcc: 90.357    ImageThresh: 0.120
+
+2026-06-18 23:14:20,719 - ==> Confusion:
+[[195510   9617]
+ [   416   9497]]
+
+2026-06-18 23:14:20,748 - --- test (epoch=117) -------------
+2026-06-18 23:14:20,748 - 252 samples (24 per mini-batch)
+2026-06-18 23:14:21,386 - Epoch: [117][   11/   11]    Loss 0.922168    Top1 92.189825    ImageAcc 76.587301    ImageF1 78.228784    ImageBalancedAcc 76.869398    ImagePrecision 82.170540    ImageRecall 74.647886    ImageThresh 0.140000    ImageAccOneCell 56.349206    MMS Map Loss 0.592221    MMS Focal Loss 0.329948    
+2026-06-18 23:14:21,386 - ==> Top1: 92.190    Loss: 0.922
+
+2026-06-18 23:14:21,390 - ==> ImageAcc: 76.587    ImageF1: 78.229    ImageBalancedAcc: 76.869    ImageThresh: 0.140
+
+2026-06-18 23:14:21,390 - ==> Confusion:
+[[237894  20012]
+ [   142      0]]
+
+2026-06-18 23:14:21,390 - --- camera test image metrics (epoch=117) -------------
+2026-06-18 23:14:21,438 - ==> Camera ImageAcc: 80.000    ImageRecall: 66.667    ImagePrecision: 100.000    ImageThresh: 0.240
+
+2026-06-18 23:14:21,447 - ==> Best [Top1: 95.545   Params: 181176 on epoch: 115]
+2026-06-18 23:14:21,447 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:14:21,505 - 
+
+2026-06-18 23:14:21,505 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:14:23,557 - Epoch: [118][   25/  107]    Overall Loss 0.318365    Objective Loss 0.318365    MMS Map Loss 0.199323    MMS Focal Loss 0.075581    MMS Image Loss 0.217305                                        LR 0.000250    Time 0.082057    
+2026-06-18 23:14:25,607 - Epoch: [118][   50/  107]    Overall Loss 0.329752    Objective Loss 0.329752    MMS Map Loss 0.205789    MMS Focal Loss 0.080781    MMS Image Loss 0.215911                                        LR 0.000250    Time 0.082014    
+2026-06-18 23:14:27,675 - Epoch: [118][   75/  107]    Overall Loss 0.335349    Objective Loss 0.335349    MMS Map Loss 0.209383    MMS Focal Loss 0.081679    MMS Image Loss 0.221432                                        LR 0.000250    Time 0.082249    
+2026-06-18 23:14:29,734 - Epoch: [118][  100/  107]    Overall Loss 0.330498    Objective Loss 0.330498    MMS Map Loss 0.207623    MMS Focal Loss 0.078069    MMS Image Loss 0.224025                                        LR 0.000250    Time 0.082270    
+2026-06-18 23:14:30,303 - Epoch: [118][  107/  107]    Overall Loss 0.327884    Objective Loss 0.327884    MMS Map Loss 0.206001    MMS Focal Loss 0.077408    MMS Image Loss 0.222373    Top1 93.896484    LR 0.000250    Time 0.082207    
+2026-06-18 23:14:30,304 - --- validate (epoch=118)-----------
+2026-06-18 23:14:30,304 - 210 samples (24 per mini-batch)
+2026-06-18 23:14:30,829 - Epoch: [118][    9/    9]    Loss 0.283536    Top1 92.945033    ImageAcc 87.619048    ImageF1 90.647483    ImageBalancedAcc 86.428571    ImagePrecision 91.304350    ImageRecall 89.999998    ImageThresh 0.150000    ImageAccOneCell 66.666669    MMS Map Loss 0.203971    MMS Focal Loss 0.079564    
+2026-06-18 23:14:30,829 - ==> Top1: 92.945    Loss: 0.284
+
+2026-06-18 23:14:30,833 - ==> ImageAcc: 87.619    ImageF1: 90.647    ImageBalancedAcc: 86.429    ImageThresh: 0.150
+
+2026-06-18 23:14:30,833 - ==> Confusion:
+[[190169  14958]
+ [   213   9700]]
+
+2026-06-18 23:14:30,863 - --- test (epoch=118) -------------
+2026-06-18 23:14:30,863 - 252 samples (24 per mini-batch)
+2026-06-18 23:14:31,506 - Epoch: [118][   11/   11]    Loss 1.203996    Top1 86.930339    ImageAcc 80.555558    ImageF1 82.807016    ImageBalancedAcc 80.185658    ImagePrecision 82.517481    ImageRecall 83.098590    ImageThresh 0.180000    ImageAccOneCell 56.349206    MMS Map Loss 0.737513    MMS Focal Loss 0.466483    
+2026-06-18 23:14:31,506 - ==> Top1: 86.930    Loss: 1.204
+
+2026-06-18 23:14:31,510 - ==> ImageAcc: 80.556    ImageF1: 82.807    ImageBalancedAcc: 80.186    ImageThresh: 0.180
+
+2026-06-18 23:14:31,510 - ==> Confusion:
+[[224322  33584]
+ [   142      0]]
+
+2026-06-18 23:14:31,510 - --- camera test image metrics (epoch=118) -------------
+2026-06-18 23:14:31,557 - ==> Camera ImageAcc: 80.000    ImageRecall: 83.333    ImagePrecision: 83.333    ImageThresh: 0.260
+
+2026-06-18 23:14:31,566 - ==> Best [Top1: 95.545   Params: 181176 on epoch: 115]
+2026-06-18 23:14:31,566 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:14:31,625 - 
+
+2026-06-18 23:14:31,625 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:14:33,692 - Epoch: [119][   25/  107]    Overall Loss 0.286801    Objective Loss 0.286801    MMS Map Loss 0.177067    MMS Focal Loss 0.062486    MMS Image Loss 0.236237                                        LR 0.000250    Time 0.082653    
+2026-06-18 23:14:35,755 - Epoch: [119][   50/  107]    Overall Loss 0.283054    Objective Loss 0.283054    MMS Map Loss 0.175154    MMS Focal Loss 0.063884    MMS Image Loss 0.220082                                        LR 0.000250    Time 0.082568    
+2026-06-18 23:14:37,816 - Epoch: [119][   75/  107]    Overall Loss 0.277861    Objective Loss 0.277861    MMS Map Loss 0.172472    MMS Focal Loss 0.062967    MMS Image Loss 0.212109                                        LR 0.000250    Time 0.082519    
+2026-06-18 23:14:39,873 - Epoch: [119][  100/  107]    Overall Loss 0.276243    Objective Loss 0.276243    MMS Map Loss 0.171745    MMS Focal Loss 0.063851    MMS Image Loss 0.203231                                        LR 0.000250    Time 0.082453    
+2026-06-18 23:14:40,445 - Epoch: [119][  107/  107]    Overall Loss 0.277361    Objective Loss 0.277361    MMS Map Loss 0.172097    MMS Focal Loss 0.064157    MMS Image Loss 0.205534    Top1 97.451172    LR 0.000250    Time 0.082409    
+2026-06-18 23:14:40,446 - --- validate (epoch=119)-----------
+2026-06-18 23:14:40,446 - 210 samples (24 per mini-batch)
+2026-06-18 23:14:40,958 - Epoch: [119][    9/    9]    Loss 0.235952    Top1 96.865699    ImageAcc 91.428572    ImageF1 93.525177    ImageBalancedAcc 90.714288    ImagePrecision 94.202900    ImageRecall 92.857140    ImageThresh 0.100000    ImageAccOneCell 66.666669    MMS Map Loss 0.169416    MMS Focal Loss 0.066537    
+2026-06-18 23:14:40,959 - ==> Top1: 96.866    Loss: 0.236
+
+2026-06-18 23:14:40,962 - ==> ImageAcc: 91.429    ImageF1: 93.525    ImageBalancedAcc: 90.714    ImageThresh: 0.100
+
+2026-06-18 23:14:40,962 - ==> Confusion:
+[[199003   6124]
+ [   616   9297]]
+
+2026-06-18 23:14:40,991 - --- test (epoch=119) -------------
+2026-06-18 23:14:40,991 - 252 samples (24 per mini-batch)
+2026-06-18 23:14:41,634 - Epoch: [119][   11/   11]    Loss 1.008612    Top1 94.643632    ImageAcc 73.015875    ImageF1 74.242419    ImageBalancedAcc 73.597956    ImagePrecision 80.327868    ImageRecall 69.014084    ImageThresh 0.110000    ImageAccOneCell 56.349206    MMS Map Loss 0.620161    MMS Focal Loss 0.388451    
+2026-06-18 23:14:41,634 - ==> Top1: 94.644    Loss: 1.009
+
+2026-06-18 23:14:41,638 - ==> ImageAcc: 73.016    ImageF1: 74.242    ImageBalancedAcc: 73.598    ImageThresh: 0.110
+
+2026-06-18 23:14:41,638 - ==> Confusion:
+[[244226  13680]
+ [   142      0]]
+
+2026-06-18 23:14:41,638 - --- camera test image metrics (epoch=119) -------------
+2026-06-18 23:14:41,687 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.100
+
+2026-06-18 23:14:41,697 - ==> Best [Top1: 96.866   Params: 181176 on epoch: 119]
+2026-06-18 23:14:41,697 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:14:41,756 - 
+
+2026-06-18 23:14:41,756 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:14:43,815 - Epoch: [120][   25/  107]    Overall Loss 0.268533    Objective Loss 0.268533    MMS Map Loss 0.165686    MMS Focal Loss 0.063723    MMS Image Loss 0.195619                                        LR 0.000063    Time 0.082331    
+2026-06-18 23:14:45,946 - Epoch: [120][   50/  107]    Overall Loss 0.249694    Objective Loss 0.249694    MMS Map Loss 0.155836    MMS Focal Loss 0.058537    MMS Image Loss 0.176600                                        LR 0.000063    Time 0.083777    
+2026-06-18 23:14:48,245 - Epoch: [120][   75/  107]    Overall Loss 0.253284    Objective Loss 0.253284    MMS Map Loss 0.157905    MMS Focal Loss 0.059844    MMS Image Loss 0.177678                                        LR 0.000063    Time 0.086493    
+2026-06-18 23:14:50,433 - Epoch: [120][  100/  107]    Overall Loss 0.245862    Objective Loss 0.245862    MMS Map Loss 0.153982    MMS Focal Loss 0.057151    MMS Image Loss 0.173646                                        LR 0.000063    Time 0.086753    
+2026-06-18 23:14:51,040 - Epoch: [120][  107/  107]    Overall Loss 0.244973    Objective Loss 0.244973    MMS Map Loss 0.153563    MMS Focal Loss 0.056879    MMS Image Loss 0.172656    Top1 97.395020    LR 0.000063    Time 0.086749    
+2026-06-18 23:14:51,041 - --- validate (epoch=120)-----------
+2026-06-18 23:14:51,041 - 210 samples (24 per mini-batch)
+2026-06-18 23:14:51,564 - Epoch: [120][    9/    9]    Loss 0.227514    Top1 96.553664    ImageAcc 92.857140    ImageF1 94.809687    ImageBalancedAcc 90.357143    ImagePrecision 91.946310    ImageRecall 97.857141    ImageThresh 0.090000    ImageAccOneCell 66.666669    MMS Map Loss 0.160815    MMS Focal Loss 0.066699    
+2026-06-18 23:14:51,564 - ==> Top1: 96.554    Loss: 0.228
+
+2026-06-18 23:14:51,568 - ==> ImageAcc: 92.857    ImageF1: 94.810    ImageBalancedAcc: 90.357    ImageThresh: 0.090
+
+2026-06-18 23:14:51,568 - ==> Confusion:
+[[198061   7066]
+ [   345   9568]]
+
+2026-06-18 23:14:51,597 - --- test (epoch=120) -------------
+2026-06-18 23:14:51,597 - 252 samples (24 per mini-batch)
+2026-06-18 23:14:52,244 - Epoch: [120][   11/   11]    Loss 1.063979    Top1 92.462643    ImageAcc 78.174603    ImageF1 79.087448    ImageBalancedAcc 78.892446    ImagePrecision 85.950410    ImageRecall 73.239434    ImageThresh 0.120000    ImageAccOneCell 56.349206    MMS Map Loss 0.646725    MMS Focal Loss 0.417254    
+2026-06-18 23:14:52,244 - ==> Top1: 92.463    Loss: 1.064
+
+2026-06-18 23:14:52,248 - ==> ImageAcc: 78.175    ImageF1: 79.087    ImageBalancedAcc: 78.892    ImageThresh: 0.120
+
+2026-06-18 23:14:52,248 - ==> Confusion:
+[[238598  19308]
+ [   142      0]]
+
+2026-06-18 23:14:52,455 - --- camera test image metrics (epoch=120) -------------
+2026-06-18 23:14:52,502 - ==> Camera ImageAcc: 90.000    ImageRecall: 100.000    ImagePrecision: 85.714    ImageThresh: 0.110
+
+2026-06-18 23:14:52,599 - ==> Best [Top1: 96.866   Params: 181176 on epoch: 119]
+2026-06-18 23:14:52,599 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:14:52,656 - 
+
+2026-06-18 23:14:52,656 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:14:54,766 - Epoch: [121][   25/  107]    Overall Loss 0.252489    Objective Loss 0.252489    MMS Map Loss 0.158208    MMS Focal Loss 0.061563    MMS Image Loss 0.163590                                        LR 0.000063    Time 0.084344    
+2026-06-18 23:14:56,852 - Epoch: [121][   50/  107]    Overall Loss 0.236249    Objective Loss 0.236249    MMS Map Loss 0.149210    MMS Focal Loss 0.054956    MMS Image Loss 0.160414                                        LR 0.000063    Time 0.083882    
+2026-06-18 23:14:58,958 - Epoch: [121][   75/  107]    Overall Loss 0.233697    Objective Loss 0.233697    MMS Map Loss 0.146895    MMS Focal Loss 0.053664    MMS Image Loss 0.165692                                        LR 0.000063    Time 0.084006    
+2026-06-18 23:15:01,122 - Epoch: [121][  100/  107]    Overall Loss 0.236573    Objective Loss 0.236573    MMS Map Loss 0.148547    MMS Focal Loss 0.054743    MMS Image Loss 0.166413                                        LR 0.000063    Time 0.084642    
+2026-06-18 23:15:01,731 - Epoch: [121][  107/  107]    Overall Loss 0.233146    Objective Loss 0.233146    MMS Map Loss 0.147002    MMS Focal Loss 0.053408    MMS Image Loss 0.163676    Top1 96.413574    LR 0.000063    Time 0.084784    
+2026-06-18 23:15:01,731 - --- validate (epoch=121)-----------
+2026-06-18 23:15:01,731 - 210 samples (24 per mini-batch)
+2026-06-18 23:15:02,264 - Epoch: [121][    9/    9]    Loss 0.215657    Top1 97.345610    ImageAcc 90.952379    ImageF1 93.090904    ImageBalancedAcc 90.714288    ImagePrecision 94.814813    ImageRecall 91.428572    ImageThresh 0.090000    ImageAccOneCell 66.666669    MMS Map Loss 0.155499    MMS Focal Loss 0.060158    
+2026-06-18 23:15:02,264 - ==> Top1: 97.346    Loss: 0.216
+
+2026-06-18 23:15:02,268 - ==> ImageAcc: 90.952    ImageF1: 93.091    ImageBalancedAcc: 90.714    ImageThresh: 0.090
+
+2026-06-18 23:15:02,268 - ==> Confusion:
+[[199954   5173]
+ [   535   9378]]
+
+2026-06-18 23:15:02,299 - --- test (epoch=121) -------------
+2026-06-18 23:15:02,299 - 252 samples (24 per mini-batch)
+2026-06-18 23:15:02,961 - Epoch: [121][   11/   11]    Loss 1.034519    Top1 94.457233    ImageAcc 77.777779    ImageF1 79.104471    ImageBalancedAcc 78.233033    ImagePrecision 84.126985    ImageRecall 74.647886    ImageThresh 0.100000    ImageAccOneCell 56.349206    MMS Map Loss 0.628669    MMS Focal Loss 0.405850    
+2026-06-18 23:15:02,961 - ==> Top1: 94.457    Loss: 1.035
+
+2026-06-18 23:15:02,965 - ==> ImageAcc: 77.778    ImageF1: 79.104    ImageBalancedAcc: 78.233    ImageThresh: 0.100
+
+2026-06-18 23:15:02,965 - ==> Confusion:
+[[243745  14161]
+ [   142      0]]
+
+2026-06-18 23:15:02,966 - --- camera test image metrics (epoch=121) -------------
+2026-06-18 23:15:03,015 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.120
+
+2026-06-18 23:15:03,025 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:15:03,025 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:15:03,085 - 
+
+2026-06-18 23:15:03,085 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:15:05,247 - Epoch: [122][   25/  107]    Overall Loss 0.224346    Objective Loss 0.224346    MMS Map Loss 0.141612    MMS Focal Loss 0.052351    MMS Image Loss 0.151915                                        LR 0.000063    Time 0.086447    
+2026-06-18 23:15:07,392 - Epoch: [122][   50/  107]    Overall Loss 0.228549    Objective Loss 0.228549    MMS Map Loss 0.143170    MMS Focal Loss 0.054042    MMS Image Loss 0.156684                                        LR 0.000063    Time 0.086122    
+2026-06-18 23:15:09,544 - Epoch: [122][   75/  107]    Overall Loss 0.224730    Objective Loss 0.224730    MMS Map Loss 0.141599    MMS Focal Loss 0.051918    MMS Image Loss 0.156061                                        LR 0.000063    Time 0.086099    
+2026-06-18 23:15:11,659 - Epoch: [122][  100/  107]    Overall Loss 0.226532    Objective Loss 0.226532    MMS Map Loss 0.142245    MMS Focal Loss 0.052756    MMS Image Loss 0.157655                                        LR 0.000063    Time 0.085719    
+2026-06-18 23:15:12,241 - Epoch: [122][  107/  107]    Overall Loss 0.226751    Objective Loss 0.226751    MMS Map Loss 0.142342    MMS Focal Loss 0.052944    MMS Image Loss 0.157326    Top1 96.704102    LR 0.000063    Time 0.085547    
+2026-06-18 23:15:12,242 - --- validate (epoch=122)-----------
+2026-06-18 23:15:12,242 - 210 samples (24 per mini-batch)
+2026-06-18 23:15:12,768 - Epoch: [122][    9/    9]    Loss 0.214415    Top1 97.299572    ImageAcc 92.857140    ImageF1 94.699639    ImageBalancedAcc 91.428566    ImagePrecision 93.706292    ImageRecall 95.714283    ImageThresh 0.080000    ImageAccOneCell 66.666669    MMS Map Loss 0.151901    MMS Focal Loss 0.062514    
+2026-06-18 23:15:12,768 - ==> Top1: 97.300    Loss: 0.214
+
+2026-06-18 23:15:12,772 - ==> ImageAcc: 92.857    ImageF1: 94.700    ImageBalancedAcc: 91.429    ImageThresh: 0.080
+
+2026-06-18 23:15:12,772 - ==> Confusion:
+[[199787   5340]
+ [   467   9446]]
+
+2026-06-18 23:15:12,801 - --- test (epoch=122) -------------
+2026-06-18 23:15:12,801 - 252 samples (24 per mini-batch)
+2026-06-18 23:15:13,431 - Epoch: [122][   11/   11]    Loss 1.080311    Top1 94.504511    ImageAcc 77.777779    ImageF1 78.787875    ImageBalancedAcc 78.437901    ImagePrecision 85.245901    ImageRecall 73.239434    ImageThresh 0.090000    ImageAccOneCell 56.349206    MMS Map Loss 0.645219    MMS Focal Loss 0.435092    
+2026-06-18 23:15:13,431 - ==> Top1: 94.505    Loss: 1.080
+
+2026-06-18 23:15:13,435 - ==> ImageAcc: 77.778    ImageF1: 78.788    ImageBalancedAcc: 78.438    ImageThresh: 0.090
+
+2026-06-18 23:15:13,435 - ==> Confusion:
+[[243867  14039]
+ [   142      0]]
+
+2026-06-18 23:15:13,435 - --- camera test image metrics (epoch=122) -------------
+2026-06-18 23:15:13,484 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.080
+
+2026-06-18 23:15:13,492 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:15:13,492 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:15:13,551 - 
+
+2026-06-18 23:15:13,551 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:15:15,710 - Epoch: [123][   25/  107]    Overall Loss 0.213340    Objective Loss 0.213340    MMS Map Loss 0.135144    MMS Focal Loss 0.047604    MMS Image Loss 0.152956                                        LR 0.000063    Time 0.086336    
+2026-06-18 23:15:18,021 - Epoch: [123][   50/  107]    Overall Loss 0.210575    Objective Loss 0.210575    MMS Map Loss 0.131727    MMS Focal Loss 0.047971    MMS Image Loss 0.154383                                        LR 0.000063    Time 0.089368    
+2026-06-18 23:15:20,164 - Epoch: [123][   75/  107]    Overall Loss 0.211693    Objective Loss 0.211693    MMS Map Loss 0.132355    MMS Focal Loss 0.048545    MMS Image Loss 0.153967                                        LR 0.000063    Time 0.088155    
+2026-06-18 23:15:22,382 - Epoch: [123][  100/  107]    Overall Loss 0.219626    Objective Loss 0.219626    MMS Map Loss 0.137090    MMS Focal Loss 0.051878    MMS Image Loss 0.153292                                        LR 0.000063    Time 0.088286    
+2026-06-18 23:15:22,977 - Epoch: [123][  107/  107]    Overall Loss 0.222609    Objective Loss 0.222609    MMS Map Loss 0.139104    MMS Focal Loss 0.052243    MMS Image Loss 0.156314    Top1 97.248535    LR 0.000063    Time 0.088065    
+2026-06-18 23:15:22,977 - --- validate (epoch=123)-----------
+2026-06-18 23:15:22,977 - 210 samples (24 per mini-batch)
+2026-06-18 23:15:23,503 - Epoch: [123][    9/    9]    Loss 0.212046    Top1 97.128906    ImageAcc 94.285715    ImageF1 95.804197    ImageBalancedAcc 92.499995    ImagePrecision 93.835616    ImageRecall 97.857141    ImageThresh 0.090000    ImageAccOneCell 66.666669    MMS Map Loss 0.153117    MMS Focal Loss 0.058929    
+2026-06-18 23:15:23,503 - ==> Top1: 97.129    Loss: 0.212
+
+2026-06-18 23:15:23,507 - ==> ImageAcc: 94.286    ImageF1: 95.804    ImageBalancedAcc: 92.500    ImageThresh: 0.090
+
+2026-06-18 23:15:23,507 - ==> Confusion:
+[[199389   5738]
+ [   436   9477]]
+
+2026-06-18 23:15:23,536 - --- test (epoch=123) -------------
+2026-06-18 23:15:23,536 - 252 samples (24 per mini-batch)
+2026-06-18 23:15:24,207 - Epoch: [123][   11/   11]    Loss 1.100017    Top1 94.563027    ImageAcc 79.365081    ImageF1 80.303025    ImageBalancedAcc 80.051219    ImagePrecision 86.885244    ImageRecall 74.647886    ImageThresh 0.100000    ImageAccOneCell 56.349206    MMS Map Loss 0.659820    MMS Focal Loss 0.440197    
+2026-06-18 23:15:24,208 - ==> Top1: 94.563    Loss: 1.100
+
+2026-06-18 23:15:24,211 - ==> ImageAcc: 79.365    ImageF1: 80.303    ImageBalancedAcc: 80.051    ImageThresh: 0.100
+
+2026-06-18 23:15:24,212 - ==> Confusion:
+[[244018  13888]
+ [   142      0]]
+
+2026-06-18 23:15:24,212 - --- camera test image metrics (epoch=123) -------------
+2026-06-18 23:15:24,266 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.090
+
+2026-06-18 23:15:24,275 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:15:24,275 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:15:24,334 - 
+
+2026-06-18 23:15:24,334 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:15:26,486 - Epoch: [124][   25/  107]    Overall Loss 0.207866    Objective Loss 0.207866    MMS Map Loss 0.132145    MMS Focal Loss 0.046969    MMS Image Loss 0.143762                                        LR 0.000063    Time 0.086027    
+2026-06-18 23:15:28,711 - Epoch: [124][   50/  107]    Overall Loss 0.211650    Objective Loss 0.211650    MMS Map Loss 0.134806    MMS Focal Loss 0.047695    MMS Image Loss 0.145742                                        LR 0.000063    Time 0.087506    
+2026-06-18 23:15:30,951 - Epoch: [124][   75/  107]    Overall Loss 0.216560    Objective Loss 0.216560    MMS Map Loss 0.136733    MMS Focal Loss 0.049650    MMS Image Loss 0.150881                                        LR 0.000063    Time 0.088202    
+2026-06-18 23:15:33,166 - Epoch: [124][  100/  107]    Overall Loss 0.214138    Objective Loss 0.214138    MMS Map Loss 0.135322    MMS Focal Loss 0.048957    MMS Image Loss 0.149296                                        LR 0.000063    Time 0.088290    
+2026-06-18 23:15:33,780 - Epoch: [124][  107/  107]    Overall Loss 0.215356    Objective Loss 0.215356    MMS Map Loss 0.135863    MMS Focal Loss 0.049862    MMS Image Loss 0.148153    Top1 97.956543    LR 0.000063    Time 0.088256    
+2026-06-18 23:15:33,781 - --- validate (epoch=124)-----------
+2026-06-18 23:15:33,781 - 210 samples (24 per mini-batch)
+2026-06-18 23:15:34,301 - Epoch: [124][    9/    9]    Loss 0.222728    Top1 96.992188    ImageAcc 91.428572    ImageF1 93.661976    ImageBalancedAcc 89.642859    ImagePrecision 92.361110    ImageRecall 94.999999    ImageThresh 0.080000    ImageAccOneCell 66.666669    MMS Map Loss 0.151327    MMS Focal Loss 0.071401    
+2026-06-18 23:15:34,301 - ==> Top1: 96.992    Loss: 0.223
+
+2026-06-18 23:15:34,305 - ==> ImageAcc: 91.429    ImageF1: 93.662    ImageBalancedAcc: 89.643    ImageThresh: 0.080
+
+2026-06-18 23:15:34,305 - ==> Confusion:
+[[199066   6061]
+ [   407   9506]]
+
+2026-06-18 23:15:34,335 - --- test (epoch=124) -------------
+2026-06-18 23:15:34,335 - 252 samples (24 per mini-batch)
+2026-06-18 23:15:35,023 - Epoch: [124][   11/   11]    Loss 1.172439    Top1 93.860832    ImageAcc 77.380955    ImageF1 77.470356    ImageBalancedAcc 78.597951    ImagePrecision 88.288289    ImageRecall 69.014084    ImageThresh 0.100000    ImageAccOneCell 56.349206    MMS Map Loss 0.686831    MMS Focal Loss 0.485608    
+2026-06-18 23:15:35,023 - ==> Top1: 93.861    Loss: 1.172
+
+2026-06-18 23:15:35,028 - ==> ImageAcc: 77.381    ImageF1: 77.470    ImageBalancedAcc: 78.598    ImageThresh: 0.100
+
+2026-06-18 23:15:35,028 - ==> Confusion:
+[[242206  15700]
+ [   142      0]]
+
+2026-06-18 23:15:35,028 - --- camera test image metrics (epoch=124) -------------
+2026-06-18 23:15:35,080 - ==> Camera ImageAcc: 90.000    ImageRecall: 83.333    ImagePrecision: 100.000    ImageThresh: 0.090
+
+2026-06-18 23:15:35,090 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:15:35,090 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:15:35,148 - 
+
+2026-06-18 23:15:35,148 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:15:37,284 - Epoch: [125][   25/  107]    Overall Loss 0.223363    Objective Loss 0.223363    MMS Map Loss 0.140222    MMS Focal Loss 0.052836    MMS Image Loss 0.151526                                        LR 0.000063    Time 0.085410    
+2026-06-18 23:15:39,402 - Epoch: [125][   50/  107]    Overall Loss 0.202480    Objective Loss 0.202480    MMS Map Loss 0.129198    MMS Focal Loss 0.045491    MMS Image Loss 0.138961                                        LR 0.000063    Time 0.085047    
+2026-06-18 23:15:41,566 - Epoch: [125][   75/  107]    Overall Loss 0.210340    Objective Loss 0.210340    MMS Map Loss 0.132148    MMS Focal Loss 0.048930    MMS Image Loss 0.146310                                        LR 0.000063    Time 0.085548    
+2026-06-18 23:15:43,666 - Epoch: [125][  100/  107]    Overall Loss 0.210512    Objective Loss 0.210512    MMS Map Loss 0.131940    MMS Focal Loss 0.049107    MMS Image Loss 0.147326                                        LR 0.000063    Time 0.085156    
+2026-06-18 23:15:44,262 - Epoch: [125][  107/  107]    Overall Loss 0.211097    Objective Loss 0.211097    MMS Map Loss 0.132197    MMS Focal Loss 0.049356    MMS Image Loss 0.147721    Top1 97.458496    LR 0.000063    Time 0.085151    
+2026-06-18 23:15:44,262 - --- validate (epoch=125)-----------
+2026-06-18 23:15:44,262 - 210 samples (24 per mini-batch)
+2026-06-18 23:15:44,797 - Epoch: [125][    9/    9]    Loss 0.212177    Top1 96.700614    ImageAcc 93.809521    ImageF1 95.470387    ImageBalancedAcc 91.785717    ImagePrecision 93.197280    ImageRecall 97.857141    ImageThresh 0.080000    ImageAccOneCell 66.666669    MMS Map Loss 0.148659    MMS Focal Loss 0.063518    
+2026-06-18 23:15:44,797 - ==> Top1: 96.701    Loss: 0.212
+
+2026-06-18 23:15:44,800 - ==> ImageAcc: 93.810    ImageF1: 95.470    ImageBalancedAcc: 91.786    ImageThresh: 0.080
+
+2026-06-18 23:15:44,801 - ==> Confusion:
+[[198403   6724]
+ [   371   9542]]
+
+2026-06-18 23:15:44,833 - --- test (epoch=125) -------------
+2026-06-18 23:15:44,833 - 252 samples (24 per mini-batch)
+2026-06-18 23:15:45,476 - Epoch: [125][   11/   11]    Loss 1.153957    Top1 94.084821    ImageAcc 71.428573    ImageF1 72.307694    ImageBalancedAcc 72.189498    ImagePrecision 79.661018    ImageRecall 66.197181    ImageThresh 0.100000    ImageAccOneCell 56.349206    MMS Map Loss 0.681276    MMS Focal Loss 0.472681    
+2026-06-18 23:15:45,477 - ==> Top1: 94.085    Loss: 1.154
+
+2026-06-18 23:15:45,480 - ==> ImageAcc: 71.429    ImageF1: 72.308    ImageBalancedAcc: 72.189    ImageThresh: 0.100
+
+2026-06-18 23:15:45,481 - ==> Confusion:
+[[242784  15122]
+ [   142      0]]
+
+2026-06-18 23:15:45,481 - --- camera test image metrics (epoch=125) -------------
+2026-06-18 23:15:45,528 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.090
+
+2026-06-18 23:15:45,537 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:15:45,537 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:15:45,596 - 
+
+2026-06-18 23:15:45,596 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:15:47,810 - Epoch: [126][   25/  107]    Overall Loss 0.221738    Objective Loss 0.221738    MMS Map Loss 0.136718    MMS Focal Loss 0.055626    MMS Image Loss 0.146972                                        LR 0.000063    Time 0.088510    
+2026-06-18 23:15:49,989 - Epoch: [126][   50/  107]    Overall Loss 0.213092    Objective Loss 0.213092    MMS Map Loss 0.133973    MMS Focal Loss 0.051104    MMS Image Loss 0.140077                                        LR 0.000063    Time 0.087832    
+2026-06-18 23:15:52,105 - Epoch: [126][   75/  107]    Overall Loss 0.210897    Objective Loss 0.210897    MMS Map Loss 0.131765    MMS Focal Loss 0.050637    MMS Image Loss 0.142475                                        LR 0.000063    Time 0.086758    
+2026-06-18 23:15:54,203 - Epoch: [126][  100/  107]    Overall Loss 0.210491    Objective Loss 0.210491    MMS Map Loss 0.132070    MMS Focal Loss 0.050064    MMS Image Loss 0.141790                                        LR 0.000063    Time 0.086051    
+2026-06-18 23:15:54,781 - Epoch: [126][  107/  107]    Overall Loss 0.208300    Objective Loss 0.208300    MMS Map Loss 0.130894    MMS Focal Loss 0.049313    MMS Image Loss 0.140465    Top1 96.823730    LR 0.000063    Time 0.085818    
+2026-06-18 23:15:54,782 - --- validate (epoch=126)-----------
+2026-06-18 23:15:54,782 - 210 samples (24 per mini-batch)
+2026-06-18 23:15:55,298 - Epoch: [126][    9/    9]    Loss 0.211555    Top1 97.196801    ImageAcc 91.428572    ImageF1 93.571430    ImageBalancedAcc 90.357143    ImagePrecision 93.571430    ImageRecall 93.571430    ImageThresh 0.080000    ImageAccOneCell 66.666669    MMS Map Loss 0.146534    MMS Focal Loss 0.065021    
+2026-06-18 23:15:55,298 - ==> Top1: 97.197    Loss: 0.212
+
+2026-06-18 23:15:55,302 - ==> ImageAcc: 91.429    ImageF1: 93.571    ImageBalancedAcc: 90.357    ImageThresh: 0.080
+
+2026-06-18 23:15:55,302 - ==> Confusion:
+[[199516   5611]
+ [   417   9496]]
+
+2026-06-18 23:15:55,330 - --- test (epoch=126) -------------
+2026-06-18 23:15:55,330 - 252 samples (24 per mini-batch)
+2026-06-18 23:15:55,981 - Epoch: [126][   11/   11]    Loss 1.223357    Top1 93.820142    ImageAcc 79.761904    ImageF1 80.308872    ImageBalancedAcc 80.710626    ImagePrecision 88.888890    ImageRecall 73.239434    ImageThresh 0.100000    ImageAccOneCell 56.349206    MMS Map Loss 0.710092    MMS Focal Loss 0.513265    
+2026-06-18 23:15:55,981 - ==> Top1: 93.820    Loss: 1.223
+
+2026-06-18 23:15:55,985 - ==> ImageAcc: 79.762    ImageF1: 80.309    ImageBalancedAcc: 80.711    ImageThresh: 0.100
+
+2026-06-18 23:15:55,985 - ==> Confusion:
+[[242101  15805]
+ [   142      0]]
+
+2026-06-18 23:15:55,985 - --- camera test image metrics (epoch=126) -------------
+2026-06-18 23:15:56,033 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.090
+
+2026-06-18 23:15:56,042 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:15:56,042 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:15:56,101 - 
+
+2026-06-18 23:15:56,101 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:15:58,289 - Epoch: [127][   25/  107]    Overall Loss 0.201213    Objective Loss 0.201213    MMS Map Loss 0.127302    MMS Focal Loss 0.048228    MMS Image Loss 0.128415                                        LR 0.000063    Time 0.087519    
+2026-06-18 23:16:00,485 - Epoch: [127][   50/  107]    Overall Loss 0.195752    Objective Loss 0.195752    MMS Map Loss 0.123874    MMS Focal Loss 0.045750    MMS Image Loss 0.130640                                        LR 0.000063    Time 0.087651    
+2026-06-18 23:16:02,639 - Epoch: [127][   75/  107]    Overall Loss 0.196523    Objective Loss 0.196523    MMS Map Loss 0.123610    MMS Focal Loss 0.045616    MMS Image Loss 0.136489                                        LR 0.000063    Time 0.087155    
+2026-06-18 23:16:04,821 - Epoch: [127][  100/  107]    Overall Loss 0.199238    Objective Loss 0.199238    MMS Map Loss 0.125162    MMS Focal Loss 0.046354    MMS Image Loss 0.138609                                        LR 0.000063    Time 0.087180    
+2026-06-18 23:16:05,449 - Epoch: [127][  107/  107]    Overall Loss 0.202048    Objective Loss 0.202048    MMS Map Loss 0.126888    MMS Focal Loss 0.047983    MMS Image Loss 0.135885    Top1 94.145508    LR 0.000063    Time 0.087341    
+2026-06-18 23:16:05,450 - --- validate (epoch=127)-----------
+2026-06-18 23:16:05,450 - 210 samples (24 per mini-batch)
+2026-06-18 23:16:05,972 - Epoch: [127][    9/    9]    Loss 0.212334    Top1 96.345331    ImageAcc 89.523810    ImageF1 92.142856    ImageBalancedAcc 88.214284    ImagePrecision 92.142856    ImageRecall 92.142856    ImageThresh 0.090000    ImageAccOneCell 66.666669    MMS Map Loss 0.147406    MMS Focal Loss 0.064928    
+2026-06-18 23:16:05,972 - ==> Top1: 96.345    Loss: 0.212
+
+2026-06-18 23:16:05,976 - ==> ImageAcc: 89.524    ImageF1: 92.143    ImageBalancedAcc: 88.214    ImageThresh: 0.090
+
+2026-06-18 23:16:05,976 - ==> Confusion:
+[[197561   7566]
+ [   293   9620]]
+
+2026-06-18 23:16:06,006 - --- test (epoch=127) -------------
+2026-06-18 23:16:06,006 - 252 samples (24 per mini-batch)
+2026-06-18 23:16:06,654 - Epoch: [127][   11/   11]    Loss 1.280027    Top1 92.515346    ImageAcc 74.206346    ImageF1 73.895586    ImageBalancedAcc 75.576186    ImagePrecision 85.981309    ImageRecall 64.788735    ImageThresh 0.130000    ImageAccOneCell 56.349206    MMS Map Loss 0.742189    MMS Focal Loss 0.537838    
+2026-06-18 23:16:06,654 - ==> Top1: 92.515    Loss: 1.280
+
+2026-06-18 23:16:06,658 - ==> ImageAcc: 74.206    ImageF1: 73.896    ImageBalancedAcc: 75.576    ImageThresh: 0.130
+
+2026-06-18 23:16:06,658 - ==> Confusion:
+[[238734  19172]
+ [   142      0]]
+
+2026-06-18 23:16:06,658 - --- camera test image metrics (epoch=127) -------------
+2026-06-18 23:16:06,710 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.100
+
+2026-06-18 23:16:06,719 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:16:06,719 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:16:06,778 - 
+
+2026-06-18 23:16:06,778 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:16:09,095 - Epoch: [128][   25/  107]    Overall Loss 0.181183    Objective Loss 0.181183    MMS Map Loss 0.116720    MMS Focal Loss 0.039167    MMS Image Loss 0.126483                                        LR 0.000063    Time 0.092647    
+2026-06-18 23:16:11,373 - Epoch: [128][   50/  107]    Overall Loss 0.184755    Objective Loss 0.184755    MMS Map Loss 0.117356    MMS Focal Loss 0.041558    MMS Image Loss 0.129206                                        LR 0.000063    Time 0.091878    
+2026-06-18 23:16:13,624 - Epoch: [128][   75/  107]    Overall Loss 0.195804    Objective Loss 0.195804    MMS Map Loss 0.122977    MMS Focal Loss 0.046260    MMS Image Loss 0.132834                                        LR 0.000063    Time 0.091261    
+2026-06-18 23:16:15,863 - Epoch: [128][  100/  107]    Overall Loss 0.199461    Objective Loss 0.199461    MMS Map Loss 0.124906    MMS Focal Loss 0.047089    MMS Image Loss 0.137333                                        LR 0.000063    Time 0.090827    
+2026-06-18 23:16:16,503 - Epoch: [128][  107/  107]    Overall Loss 0.199482    Objective Loss 0.199482    MMS Map Loss 0.125113    MMS Focal Loss 0.047051    MMS Image Loss 0.136589    Top1 97.492676    LR 0.000063    Time 0.090868    
+2026-06-18 23:16:16,504 - --- validate (epoch=128)-----------
+2026-06-18 23:16:16,504 - 210 samples (24 per mini-batch)
+2026-06-18 23:16:17,128 - Epoch: [128][    9/    9]    Loss 0.208631    Top1 97.132161    ImageAcc 90.952379    ImageF1 93.286216    ImageBalancedAcc 89.285713    ImagePrecision 92.307693    ImageRecall 94.285715    ImageThresh 0.080000    ImageAccOneCell 66.666669    MMS Map Loss 0.144907    MMS Focal Loss 0.063724    
+2026-06-18 23:16:17,128 - ==> Top1: 97.132    Loss: 0.209
+
+2026-06-18 23:16:17,132 - ==> ImageAcc: 90.952    ImageF1: 93.286    ImageBalancedAcc: 89.286    ImageThresh: 0.080
+
+2026-06-18 23:16:17,132 - ==> Confusion:
+[[199414   5713]
+ [   454   9459]]
+
+2026-06-18 23:16:17,164 - --- test (epoch=128) -------------
+2026-06-18 23:16:17,164 - 252 samples (24 per mini-batch)
+2026-06-18 23:16:17,907 - Epoch: [128][   11/   11]    Loss 1.290988    Top1 94.255720    ImageAcc 76.190478    ImageF1 76.562500    ImageBalancedAcc 77.234316    ImagePrecision 85.964912    ImageRecall 69.014084    ImageThresh 0.100000    ImageAccOneCell 56.349206    MMS Map Loss 0.743398    MMS Focal Loss 0.547590    
+2026-06-18 23:16:17,908 - ==> Top1: 94.256    Loss: 1.291
+
+2026-06-18 23:16:17,912 - ==> ImageAcc: 76.190    ImageF1: 76.562    ImageBalancedAcc: 77.234    ImageThresh: 0.100
+
+2026-06-18 23:16:17,912 - ==> Confusion:
+[[243225  14681]
+ [   142      0]]
+
+2026-06-18 23:16:17,913 - --- camera test image metrics (epoch=128) -------------
+2026-06-18 23:16:17,969 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.100
+
+2026-06-18 23:16:17,978 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:16:17,979 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:16:18,038 - 
+
+2026-06-18 23:16:18,039 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:16:20,420 - Epoch: [129][   25/  107]    Overall Loss 0.188550    Objective Loss 0.188550    MMS Map Loss 0.119973    MMS Focal Loss 0.045849    MMS Image Loss 0.113640                                        LR 0.000063    Time 0.095227    
+2026-06-18 23:16:22,749 - Epoch: [129][   50/  107]    Overall Loss 0.186963    Objective Loss 0.186963    MMS Map Loss 0.118275    MMS Focal Loss 0.044437    MMS Image Loss 0.121256                                        LR 0.000063    Time 0.094188    
+2026-06-18 23:16:25,242 - Epoch: [129][   75/  107]    Overall Loss 0.183803    Objective Loss 0.183803    MMS Map Loss 0.115884    MMS Focal Loss 0.043380    MMS Image Loss 0.122696                                        LR 0.000063    Time 0.096022    
+2026-06-18 23:16:27,749 - Epoch: [129][  100/  107]    Overall Loss 0.191000    Objective Loss 0.191000    MMS Map Loss 0.119603    MMS Focal Loss 0.046110    MMS Image Loss 0.126438                                        LR 0.000063    Time 0.097080    
+2026-06-18 23:16:28,422 - Epoch: [129][  107/  107]    Overall Loss 0.191305    Objective Loss 0.191305    MMS Map Loss 0.120004    MMS Focal Loss 0.046095    MMS Image Loss 0.126026    Top1 97.290039    LR 0.000063    Time 0.097020    
+2026-06-18 23:16:28,423 - --- validate (epoch=129)-----------
+2026-06-18 23:16:28,423 - 210 samples (24 per mini-batch)
+2026-06-18 23:16:29,039 - Epoch: [129][    9/    9]    Loss 0.215368    Top1 96.942429    ImageAcc 91.904759    ImageF1 94.035089    ImageBalancedAcc 89.999998    ImagePrecision 92.413795    ImageRecall 95.714283    ImageThresh 0.080000    ImageAccOneCell 66.666669    MMS Map Loss 0.149606    MMS Focal Loss 0.065763    
+2026-06-18 23:16:29,039 - ==> Top1: 96.942    Loss: 0.215
+
+2026-06-18 23:16:29,044 - ==> ImageAcc: 91.905    ImageF1: 94.035    ImageBalancedAcc: 90.000    ImageThresh: 0.080
+
+2026-06-18 23:16:29,044 - ==> Confusion:
+[[199011   6116]
+ [   459   9454]]
+
+2026-06-18 23:16:29,077 - --- test (epoch=129) -------------
+2026-06-18 23:16:29,077 - 252 samples (24 per mini-batch)
+2026-06-18 23:16:29,844 - Epoch: [129][   11/   11]    Loss 1.281965    Top1 93.761238    ImageAcc 77.777779    ImageF1 78.461534    ImageBalancedAcc 78.642768    ImagePrecision 86.440676    ImageRecall 71.830988    ImageThresh 0.100000    ImageAccOneCell 56.349206    MMS Map Loss 0.740556    MMS Focal Loss 0.541408    
+2026-06-18 23:16:29,845 - ==> Top1: 93.761    Loss: 1.282
+
+2026-06-18 23:16:29,849 - ==> ImageAcc: 77.778    ImageF1: 78.462    ImageBalancedAcc: 78.643    ImageThresh: 0.100
+
+2026-06-18 23:16:29,849 - ==> Confusion:
+[[241949  15957]
+ [   142      0]]
+
+2026-06-18 23:16:29,850 - --- camera test image metrics (epoch=129) -------------
+2026-06-18 23:16:29,907 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.100
+
+2026-06-18 23:16:29,917 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:16:29,917 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:16:29,979 - 
+
+2026-06-18 23:16:29,979 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:16:32,336 - Epoch: [130][   25/  107]    Overall Loss 0.192454    Objective Loss 0.192454    MMS Map Loss 0.122804    MMS Focal Loss 0.045977    MMS Image Loss 0.118367                                        LR 0.000063    Time 0.094245    
+2026-06-18 23:16:34,760 - Epoch: [130][   50/  107]    Overall Loss 0.191760    Objective Loss 0.191760    MMS Map Loss 0.121845    MMS Focal Loss 0.046038    MMS Image Loss 0.119386                                        LR 0.000063    Time 0.095594    
+2026-06-18 23:16:37,372 - Epoch: [130][   75/  107]    Overall Loss 0.191940    Objective Loss 0.191940    MMS Map Loss 0.121210    MMS Focal Loss 0.046143    MMS Image Loss 0.122934                                        LR 0.000063    Time 0.098543    
+2026-06-18 23:16:39,986 - Epoch: [130][  100/  107]    Overall Loss 0.187919    Objective Loss 0.187919    MMS Map Loss 0.118101    MMS Focal Loss 0.045415    MMS Image Loss 0.122014                                        LR 0.000063    Time 0.100046    
+2026-06-18 23:16:40,666 - Epoch: [130][  107/  107]    Overall Loss 0.188920    Objective Loss 0.188920    MMS Map Loss 0.118461    MMS Focal Loss 0.045695    MMS Image Loss 0.123824    Top1 97.399902    LR 0.000063    Time 0.099852    
+2026-06-18 23:16:40,667 - --- validate (epoch=130)-----------
+2026-06-18 23:16:40,667 - 210 samples (24 per mini-batch)
+2026-06-18 23:16:41,349 - Epoch: [130][    9/    9]    Loss 0.206272    Top1 97.238188    ImageAcc 90.952379    ImageF1 93.238437    ImageBalancedAcc 89.642859    ImagePrecision 92.907804    ImageRecall 93.571430    ImageThresh 0.070000    ImageAccOneCell 66.666669    MMS Map Loss 0.141939    MMS Focal Loss 0.064333    
+2026-06-18 23:16:41,349 - ==> Top1: 97.238    Loss: 0.206
+
+2026-06-18 23:16:41,354 - ==> ImageAcc: 90.952    ImageF1: 93.238    ImageBalancedAcc: 89.643    ImageThresh: 0.070
+
+2026-06-18 23:16:41,354 - ==> Confusion:
+[[199659   5468]
+ [   471   9442]]
+
+2026-06-18 23:16:41,391 - --- test (epoch=130) -------------
+2026-06-18 23:16:41,391 - 252 samples (24 per mini-batch)
+2026-06-18 23:16:42,205 - Epoch: [130][   11/   11]    Loss 1.333466    Top1 93.848819    ImageAcc 75.396824    ImageF1 76.691735    ImageBalancedAcc 75.915492    ImagePrecision 82.258064    ImageRecall 71.830988    ImageThresh 0.090000    ImageAccOneCell 56.349206    MMS Map Loss 0.757269    MMS Focal Loss 0.576196    
+2026-06-18 23:16:42,205 - ==> Top1: 93.849    Loss: 1.333
+
+2026-06-18 23:16:42,211 - ==> ImageAcc: 75.397    ImageF1: 76.692    ImageBalancedAcc: 75.915    ImageThresh: 0.090
+
+2026-06-18 23:16:42,211 - ==> Confusion:
+[[242175  15731]
+ [   142      0]]
+
+2026-06-18 23:16:42,339 - --- camera test image metrics (epoch=130) -------------
+2026-06-18 23:16:42,403 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.060
+
+2026-06-18 23:16:42,526 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:16:42,526 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:16:42,591 - 
+
+2026-06-18 23:16:42,591 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:16:45,362 - Epoch: [131][   25/  107]    Overall Loss 0.176025    Objective Loss 0.176025    MMS Map Loss 0.112172    MMS Focal Loss 0.042378    MMS Image Loss 0.107380                                        LR 0.000063    Time 0.110781    
+2026-06-18 23:16:48,230 - Epoch: [131][   50/  107]    Overall Loss 0.175921    Objective Loss 0.175921    MMS Map Loss 0.111083    MMS Focal Loss 0.041782    MMS Image Loss 0.115276                                        LR 0.000063    Time 0.112749    
+2026-06-18 23:16:50,742 - Epoch: [131][   75/  107]    Overall Loss 0.183659    Objective Loss 0.183659    MMS Map Loss 0.115113    MMS Focal Loss 0.045044    MMS Image Loss 0.117507                                        LR 0.000063    Time 0.108655    
+2026-06-18 23:16:53,228 - Epoch: [131][  100/  107]    Overall Loss 0.183270    Objective Loss 0.183270    MMS Map Loss 0.114065    MMS Focal Loss 0.044899    MMS Image Loss 0.121529                                        LR 0.000063    Time 0.106337    
+2026-06-18 23:16:53,896 - Epoch: [131][  107/  107]    Overall Loss 0.183988    Objective Loss 0.183988    MMS Map Loss 0.114798    MMS Focal Loss 0.045148    MMS Image Loss 0.120211    Top1 96.435547    LR 0.000063    Time 0.105627    
+2026-06-18 23:16:53,897 - --- validate (epoch=131)-----------
+2026-06-18 23:16:53,897 - 210 samples (24 per mini-batch)
+2026-06-18 23:16:54,495 - Epoch: [131][    9/    9]    Loss 0.211970    Top1 95.160435    ImageAcc 84.761906    ImageF1 88.571429    ImageBalancedAcc 82.857144    ImagePrecision 88.571429    ImageRecall 88.571429    ImageThresh 0.100000    ImageAccOneCell 66.666669    MMS Map Loss 0.150335    MMS Focal Loss 0.061636    
+2026-06-18 23:16:54,495 - ==> Top1: 95.160    Loss: 0.212
+
+2026-06-18 23:16:54,499 - ==> ImageAcc: 84.762    ImageF1: 88.571    ImageBalancedAcc: 82.857    ImageThresh: 0.100
+
+2026-06-18 23:16:54,499 - ==> Confusion:
+[[195007  10120]
+ [   287   9626]]
+
+2026-06-18 23:16:54,535 - --- test (epoch=131) -------------
+2026-06-18 23:16:54,535 - 252 samples (24 per mini-batch)
+2026-06-18 23:16:55,283 - Epoch: [131][   11/   11]    Loss 1.479087    Top1 88.922604    ImageAcc 73.412699    ImageF1 72.427982    ImageBalancedAcc 75.076824    ImagePrecision 87.128711    ImageRecall 61.971831    ImageThresh 0.170000    ImageAccOneCell 56.349206    MMS Map Loss 0.844128    MMS Focal Loss 0.634959    
+2026-06-18 23:16:55,283 - ==> Top1: 88.923    Loss: 1.479
+
+2026-06-18 23:16:55,287 - ==> ImageAcc: 73.413    ImageF1: 72.428    ImageBalancedAcc: 75.077    ImageThresh: 0.170
+
+2026-06-18 23:16:55,288 - ==> Confusion:
+[[229463  28443]
+ [   142      0]]
+
+2026-06-18 23:16:55,288 - --- camera test image metrics (epoch=131) -------------
+2026-06-18 23:16:55,343 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.090
+
+2026-06-18 23:16:55,353 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:16:55,353 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:16:55,415 - 
+
+2026-06-18 23:16:55,415 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:16:57,823 - Epoch: [132][   25/  107]    Overall Loss 0.186108    Objective Loss 0.186108    MMS Map Loss 0.115870    MMS Focal Loss 0.046934    MMS Image Loss 0.116520                                        LR 0.000063    Time 0.096258    
+2026-06-18 23:17:00,232 - Epoch: [132][   50/  107]    Overall Loss 0.178061    Objective Loss 0.178061    MMS Map Loss 0.111401    MMS Focal Loss 0.043013    MMS Image Loss 0.118238                                        LR 0.000063    Time 0.096307    
+2026-06-18 23:17:02,650 - Epoch: [132][   75/  107]    Overall Loss 0.182555    Objective Loss 0.182555    MMS Map Loss 0.113524    MMS Focal Loss 0.044698    MMS Image Loss 0.121665                                        LR 0.000063    Time 0.096434    
+2026-06-18 23:17:05,096 - Epoch: [132][  100/  107]    Overall Loss 0.183839    Objective Loss 0.183839    MMS Map Loss 0.114697    MMS Focal Loss 0.044955    MMS Image Loss 0.120932                                        LR 0.000063    Time 0.096782    
+2026-06-18 23:17:05,761 - Epoch: [132][  107/  107]    Overall Loss 0.184769    Objective Loss 0.184769    MMS Map Loss 0.115163    MMS Focal Loss 0.045197    MMS Image Loss 0.122050    Top1 96.638184    LR 0.000063    Time 0.096667    
+2026-06-18 23:17:05,762 - --- validate (epoch=132)-----------
+2026-06-18 23:17:05,762 - 210 samples (24 per mini-batch)
+2026-06-18 23:17:06,386 - Epoch: [132][    9/    9]    Loss 0.255041    Top1 93.369141    ImageAcc 78.095239    ImageF1 82.706767    ImageBalancedAcc 77.857143    ImagePrecision 87.301588    ImageRecall 78.571427    ImageThresh 0.150000    ImageAccOneCell 66.666669    MMS Map Loss 0.181452    MMS Focal Loss 0.073588    
+2026-06-18 23:17:06,386 - ==> Top1: 93.369    Loss: 0.255
+
+2026-06-18 23:17:06,391 - ==> ImageAcc: 78.095    ImageF1: 82.707    ImageBalancedAcc: 77.857    ImageThresh: 0.150
+
+2026-06-18 23:17:06,391 - ==> Confusion:
+[[191073  14054]
+ [   205   9708]]
+
+2026-06-18 23:17:06,424 - --- test (epoch=132) -------------
+2026-06-18 23:17:06,424 - 252 samples (24 per mini-batch)
+2026-06-18 23:17:07,165 - Epoch: [132][   11/   11]    Loss 1.589242    Top1 84.934198    ImageAcc 76.984125    ImageF1 76.422763    ImageBalancedAcc 78.553140    ImagePrecision 90.384614    ImageRecall 66.197181    ImageThresh 0.220000    ImageAccOneCell 56.349206    MMS Map Loss 0.913076    MMS Focal Loss 0.676165    
+2026-06-18 23:17:07,165 - ==> Top1: 84.934    Loss: 1.589
+
+2026-06-18 23:17:07,170 - ==> ImageAcc: 76.984    ImageF1: 76.423    ImageBalancedAcc: 78.553    ImageThresh: 0.220
+
+2026-06-18 23:17:07,170 - ==> Confusion:
+[[219171  38735]
+ [   142      0]]
+
+2026-06-18 23:17:07,170 - --- camera test image metrics (epoch=132) -------------
+2026-06-18 23:17:07,224 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.150
+
+2026-06-18 23:17:07,233 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:17:07,233 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:17:07,296 - 
+
+2026-06-18 23:17:07,297 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:17:09,647 - Epoch: [133][   25/  107]    Overall Loss 0.191979    Objective Loss 0.191979    MMS Map Loss 0.119592    MMS Focal Loss 0.048996    MMS Image Loss 0.116950                                        LR 0.000063    Time 0.093996    
+2026-06-18 23:17:11,995 - Epoch: [133][   50/  107]    Overall Loss 0.177802    Objective Loss 0.177802    MMS Map Loss 0.112971    MMS Focal Loss 0.043996    MMS Image Loss 0.104170                                        LR 0.000063    Time 0.093937    
+2026-06-18 23:17:14,360 - Epoch: [133][   75/  107]    Overall Loss 0.178369    Objective Loss 0.178369    MMS Map Loss 0.112249    MMS Focal Loss 0.043966    MMS Image Loss 0.110773                                        LR 0.000063    Time 0.094157    
+2026-06-18 23:17:16,760 - Epoch: [133][  100/  107]    Overall Loss 0.180587    Objective Loss 0.180587    MMS Map Loss 0.113438    MMS Focal Loss 0.044431    MMS Image Loss 0.113585                                        LR 0.000063    Time 0.094617    
+2026-06-18 23:17:17,489 - Epoch: [133][  107/  107]    Overall Loss 0.180067    Objective Loss 0.180067    MMS Map Loss 0.112946    MMS Focal Loss 0.044237    MMS Image Loss 0.114420    Top1 96.867676    LR 0.000063    Time 0.095234    
+2026-06-18 23:17:17,490 - --- validate (epoch=133)-----------
+2026-06-18 23:17:17,490 - 210 samples (24 per mini-batch)
+2026-06-18 23:17:18,084 - Epoch: [133][    9/    9]    Loss 0.210860    Top1 96.776414    ImageAcc 90.476191    ImageF1 92.907798    ImageBalancedAcc 88.928568    ImagePrecision 92.253524    ImageRecall 93.571430    ImageThresh 0.070000    ImageAccOneCell 66.666669    MMS Map Loss 0.141450    MMS Focal Loss 0.069410    
+2026-06-18 23:17:18,084 - ==> Top1: 96.776    Loss: 0.211
+
+2026-06-18 23:17:18,089 - ==> ImageAcc: 90.476    ImageF1: 92.908    ImageBalancedAcc: 88.929    ImageThresh: 0.070
+
+2026-06-18 23:17:18,089 - ==> Confusion:
+[[198616   6511]
+ [   421   9492]]
+
+2026-06-18 23:17:18,122 - --- test (epoch=133) -------------
+2026-06-18 23:17:18,122 - 252 samples (24 per mini-batch)
+2026-06-18 23:17:18,858 - Epoch: [133][   11/   11]    Loss 1.405163    Top1 93.203590    ImageAcc 76.984125    ImageF1 77.165353    ImageBalancedAcc 78.143406    ImagePrecision 87.500000    ImageRecall 69.014084    ImageThresh 0.100000    ImageAccOneCell 56.349206    MMS Map Loss 0.791659    MMS Focal Loss 0.613503    
+2026-06-18 23:17:18,858 - ==> Top1: 93.204    Loss: 1.405
+
+2026-06-18 23:17:18,863 - ==> ImageAcc: 76.984    ImageF1: 77.165    ImageBalancedAcc: 78.143    ImageThresh: 0.100
+
+2026-06-18 23:17:18,863 - ==> Confusion:
+[[240510  17396]
+ [   142      0]]
+
+2026-06-18 23:17:18,863 - --- camera test image metrics (epoch=133) -------------
+2026-06-18 23:17:18,917 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.060
+
+2026-06-18 23:17:18,927 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:17:18,927 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:17:18,989 - 
+
+2026-06-18 23:17:18,989 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:17:21,283 - Epoch: [134][   25/  107]    Overall Loss 0.158577    Objective Loss 0.158577    MMS Map Loss 0.101964    MMS Focal Loss 0.032953    MMS Image Loss 0.118305                                        LR 0.000063    Time 0.091723    
+2026-06-18 23:17:23,591 - Epoch: [134][   50/  107]    Overall Loss 0.163749    Objective Loss 0.163749    MMS Map Loss 0.105074    MMS Focal Loss 0.036829    MMS Image Loss 0.109229                                        LR 0.000063    Time 0.092009    
+2026-06-18 23:17:25,952 - Epoch: [134][   75/  107]    Overall Loss 0.166341    Objective Loss 0.166341    MMS Map Loss 0.105014    MMS Focal Loss 0.038732    MMS Image Loss 0.112977                                        LR 0.000063    Time 0.092815    
+2026-06-18 23:17:28,261 - Epoch: [134][  100/  107]    Overall Loss 0.171252    Objective Loss 0.171252    MMS Map Loss 0.108597    MMS Focal Loss 0.040151    MMS Image Loss 0.112519                                        LR 0.000063    Time 0.092695    
+2026-06-18 23:17:28,883 - Epoch: [134][  107/  107]    Overall Loss 0.174162    Objective Loss 0.174162    MMS Map Loss 0.109655    MMS Focal Loss 0.041813    MMS Image Loss 0.113470    Top1 97.412109    LR 0.000063    Time 0.092447    
+2026-06-18 23:17:28,884 - --- validate (epoch=134)-----------
+2026-06-18 23:17:28,884 - 210 samples (24 per mini-batch)
+2026-06-18 23:17:29,451 - Epoch: [134][    9/    9]    Loss 0.199146    Top1 96.506231    ImageAcc 91.428572    ImageF1 93.525177    ImageBalancedAcc 90.714288    ImagePrecision 94.202900    ImageRecall 92.857140    ImageThresh 0.080000    ImageAccOneCell 66.666669    MMS Map Loss 0.135405    MMS Focal Loss 0.063741    
+2026-06-18 23:17:29,451 - ==> Top1: 96.506    Loss: 0.199
+
+2026-06-18 23:17:29,455 - ==> ImageAcc: 91.429    ImageF1: 93.525    ImageBalancedAcc: 90.714    ImageThresh: 0.080
+
+2026-06-18 23:17:29,455 - ==> Confusion:
+[[197944   7183]
+ [   330   9583]]
+
+2026-06-18 23:17:29,487 - --- test (epoch=134) -------------
+2026-06-18 23:17:29,487 - 252 samples (24 per mini-batch)
+2026-06-18 23:17:30,182 - Epoch: [134][   11/   11]    Loss 1.510203    Top1 92.883882    ImageAcc 73.015875    ImageF1 77.333337    ImageBalancedAcc 71.754158    ImagePrecision 73.417723    ImageRecall 81.690139    ImageThresh 0.070000    ImageAccOneCell 56.349206    MMS Map Loss 0.841385    MMS Focal Loss 0.668818    
+2026-06-18 23:17:30,182 - ==> Top1: 92.884    Loss: 1.510
+
+2026-06-18 23:17:30,187 - ==> ImageAcc: 73.016    ImageF1: 77.333    ImageBalancedAcc: 71.754    ImageThresh: 0.070
+
+2026-06-18 23:17:30,187 - ==> Confusion:
+[[239685  18221]
+ [   142      0]]
+
+2026-06-18 23:17:30,187 - --- camera test image metrics (epoch=134) -------------
+2026-06-18 23:17:30,239 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.050
+
+2026-06-18 23:17:30,248 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:17:30,248 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:17:30,309 - 
+
+2026-06-18 23:17:30,309 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:17:32,533 - Epoch: [135][   25/  107]    Overall Loss 0.169273    Objective Loss 0.169273    MMS Map Loss 0.106978    MMS Focal Loss 0.041600    MMS Image Loss 0.103473                                        LR 0.000063    Time 0.088940    
+2026-06-18 23:17:34,773 - Epoch: [135][   50/  107]    Overall Loss 0.174195    Objective Loss 0.174195    MMS Map Loss 0.110460    MMS Focal Loss 0.042708    MMS Image Loss 0.105138                                        LR 0.000063    Time 0.089245    
+2026-06-18 23:17:37,035 - Epoch: [135][   75/  107]    Overall Loss 0.177225    Objective Loss 0.177225    MMS Map Loss 0.111704    MMS Focal Loss 0.043584    MMS Image Loss 0.109688                                        LR 0.000063    Time 0.089657    
+2026-06-18 23:17:39,291 - Epoch: [135][  100/  107]    Overall Loss 0.175041    Objective Loss 0.175041    MMS Map Loss 0.110226    MMS Focal Loss 0.042482    MMS Image Loss 0.111663                                        LR 0.000063    Time 0.089794    
+2026-06-18 23:17:39,917 - Epoch: [135][  107/  107]    Overall Loss 0.174046    Objective Loss 0.174046    MMS Map Loss 0.109424    MMS Focal Loss 0.042190    MMS Image Loss 0.112158    Top1 97.045898    LR 0.000063    Time 0.089770    
+2026-06-18 23:17:39,917 - --- validate (epoch=135)-----------
+2026-06-18 23:17:39,918 - 210 samples (24 per mini-batch)
+2026-06-18 23:17:40,479 - Epoch: [135][    9/    9]    Loss 0.196043    Top1 96.580636    ImageAcc 90.952379    ImageF1 93.379796    ImageBalancedAcc 88.571429    ImagePrecision 91.156465    ImageRecall 95.714283    ImageThresh 0.060000    ImageAccOneCell 66.666669    MMS Map Loss 0.131616    MMS Focal Loss 0.064427    
+2026-06-18 23:17:40,480 - ==> Top1: 96.581    Loss: 0.196
+
+2026-06-18 23:17:40,484 - ==> ImageAcc: 90.952    ImageF1: 93.380    ImageBalancedAcc: 88.571    ImageThresh: 0.060
+
+2026-06-18 23:17:40,484 - ==> Confusion:
+[[198073   7054]
+ [   299   9614]]
+
+2026-06-18 23:17:40,516 - --- test (epoch=135) -------------
+2026-06-18 23:17:40,516 - 252 samples (24 per mini-batch)
+2026-06-18 23:17:41,202 - Epoch: [135][   11/   11]    Loss 1.478610    Top1 92.417690    ImageAcc 74.206346    ImageF1 75.836426    ImageBalancedAcc 74.551857    ImagePrecision 80.314958    ImageRecall 71.830988    ImageThresh 0.090000    ImageAccOneCell 56.349206    MMS Map Loss 0.825124    MMS Focal Loss 0.653486    
+2026-06-18 23:17:41,202 - ==> Top1: 92.418    Loss: 1.479
+
+2026-06-18 23:17:41,207 - ==> ImageAcc: 74.206    ImageF1: 75.836    ImageBalancedAcc: 74.552    ImageThresh: 0.090
+
+2026-06-18 23:17:41,207 - ==> Confusion:
+[[238482  19424]
+ [   142      0]]
+
+2026-06-18 23:17:41,207 - --- camera test image metrics (epoch=135) -------------
+2026-06-18 23:17:41,256 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.040
+
+2026-06-18 23:17:41,265 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:17:41,265 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:17:41,325 - 
+
+2026-06-18 23:17:41,325 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:17:43,560 - Epoch: [136][   25/  107]    Overall Loss 0.181506    Objective Loss 0.181506    MMS Map Loss 0.114597    MMS Focal Loss 0.043363    MMS Image Loss 0.117731                                        LR 0.000063    Time 0.089364    
+2026-06-18 23:17:45,960 - Epoch: [136][   50/  107]    Overall Loss 0.178197    Objective Loss 0.178197    MMS Map Loss 0.110431    MMS Focal Loss 0.044075    MMS Image Loss 0.118458                                        LR 0.000063    Time 0.092659    
+2026-06-18 23:17:48,772 - Epoch: [136][   75/  107]    Overall Loss 0.173144    Objective Loss 0.173144    MMS Map Loss 0.108666    MMS Focal Loss 0.041771    MMS Image Loss 0.113534                                        LR 0.000063    Time 0.099268    
+2026-06-18 23:17:51,354 - Epoch: [136][  100/  107]    Overall Loss 0.172402    Objective Loss 0.172402    MMS Map Loss 0.107813    MMS Focal Loss 0.041877    MMS Image Loss 0.113561                                        LR 0.000063    Time 0.100264    
+2026-06-18 23:17:52,043 - Epoch: [136][  107/  107]    Overall Loss 0.172354    Objective Loss 0.172354    MMS Map Loss 0.108301    MMS Focal Loss 0.041506    MMS Image Loss 0.112730    Top1 97.272949    LR 0.000063    Time 0.100141    
+2026-06-18 23:17:52,044 - --- validate (epoch=136)-----------
+2026-06-18 23:17:52,044 - 210 samples (24 per mini-batch)
+2026-06-18 23:17:52,668 - Epoch: [136][    9/    9]    Loss 0.209843    Top1 96.963821    ImageAcc 90.476191    ImageF1 92.957747    ImageBalancedAcc 88.571429    ImagePrecision 91.666669    ImageRecall 94.285715    ImageThresh 0.060000    ImageAccOneCell 66.666669    MMS Map Loss 0.137578    MMS Focal Loss 0.072265    
+2026-06-18 23:17:52,669 - ==> Top1: 96.964    Loss: 0.210
+
+2026-06-18 23:17:52,673 - ==> ImageAcc: 90.476    ImageF1: 92.958    ImageBalancedAcc: 88.571    ImageThresh: 0.060
+
+2026-06-18 23:17:52,673 - ==> Confusion:
+[[198978   6149]
+ [   380   9533]]
+
+2026-06-18 23:17:52,703 - --- test (epoch=136) -------------
+2026-06-18 23:17:52,703 - 252 samples (24 per mini-batch)
+2026-06-18 23:17:53,472 - Epoch: [136][   11/   11]    Loss 1.507500    Top1 93.034629    ImageAcc 75.793654    ImageF1 76.981133    ImageBalancedAcc 76.370037    ImagePrecision 82.926828    ImageRecall 71.830988    ImageThresh 0.090000    ImageAccOneCell 56.349206    MMS Map Loss 0.835431    MMS Focal Loss 0.672069    
+2026-06-18 23:17:53,473 - ==> Top1: 93.035    Loss: 1.507
+
+2026-06-18 23:17:53,477 - ==> ImageAcc: 75.794    ImageF1: 76.981    ImageBalancedAcc: 76.370    ImageThresh: 0.090
+
+2026-06-18 23:17:53,477 - ==> Confusion:
+[[240074  17832]
+ [   142      0]]
+
+2026-06-18 23:17:53,477 - --- camera test image metrics (epoch=136) -------------
+2026-06-18 23:17:53,529 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.040
+
+2026-06-18 23:17:53,539 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:17:53,539 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:17:53,599 - 
+
+2026-06-18 23:17:53,599 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:17:55,987 - Epoch: [137][   25/  107]    Overall Loss 0.173355    Objective Loss 0.173355    MMS Map Loss 0.109885    MMS Focal Loss 0.044346    MMS Image Loss 0.095618                                        LR 0.000063    Time 0.095465    
+2026-06-18 23:17:58,518 - Epoch: [137][   50/  107]    Overall Loss 0.164673    Objective Loss 0.164673    MMS Map Loss 0.104050    MMS Focal Loss 0.040349    MMS Image Loss 0.101370                                        LR 0.000063    Time 0.098341    
+2026-06-18 23:18:00,959 - Epoch: [137][   75/  107]    Overall Loss 0.163581    Objective Loss 0.163581    MMS Map Loss 0.103299    MMS Focal Loss 0.039623    MMS Image Loss 0.103293                                        LR 0.000063    Time 0.098100    
+2026-06-18 23:18:03,258 - Epoch: [137][  100/  107]    Overall Loss 0.165210    Objective Loss 0.165210    MMS Map Loss 0.104268    MMS Focal Loss 0.039968    MMS Image Loss 0.104868                                        LR 0.000063    Time 0.096567    
+2026-06-18 23:18:03,890 - Epoch: [137][  107/  107]    Overall Loss 0.165544    Objective Loss 0.165544    MMS Map Loss 0.104264    MMS Focal Loss 0.040243    MMS Image Loss 0.105184    Top1 97.609863    LR 0.000063    Time 0.096148    
+2026-06-18 23:18:03,890 - --- validate (epoch=137)-----------
+2026-06-18 23:18:03,890 - 210 samples (24 per mini-batch)
+2026-06-18 23:18:04,459 - Epoch: [137][    9/    9]    Loss 0.225570    Top1 96.103981    ImageAcc 85.238093    ImageF1 88.808662    ImageBalancedAcc 83.928573    ImagePrecision 89.781022    ImageRecall 87.857145    ImageThresh 0.080000    ImageAccOneCell 66.666669    MMS Map Loss 0.147064    MMS Focal Loss 0.078506    
+2026-06-18 23:18:04,459 - ==> Top1: 96.104    Loss: 0.226
+
+2026-06-18 23:18:04,463 - ==> ImageAcc: 85.238    ImageF1: 88.809    ImageBalancedAcc: 83.929    ImageThresh: 0.080
+
+2026-06-18 23:18:04,463 - ==> Confusion:
+[[197050   8077]
+ [   301   9612]]
+
+2026-06-18 23:18:04,495 - --- test (epoch=137) -------------
+2026-06-18 23:18:04,495 - 252 samples (24 per mini-batch)
+2026-06-18 23:18:05,191 - Epoch: [137][   11/   11]    Loss 1.585740    Top1 89.874364    ImageAcc 78.174603    ImageF1 79.087448    ImageBalancedAcc 78.892446    ImagePrecision 85.950410    ImageRecall 73.239434    ImageThresh 0.130000    ImageAccOneCell 56.349206    MMS Map Loss 0.881932    MMS Focal Loss 0.703809    
+2026-06-18 23:18:05,192 - ==> Top1: 89.874    Loss: 1.586
+
+2026-06-18 23:18:05,196 - ==> ImageAcc: 78.175    ImageF1: 79.087    ImageBalancedAcc: 78.892    ImageThresh: 0.130
+
+2026-06-18 23:18:05,196 - ==> Confusion:
+[[231919  25987]
+ [   142      0]]
+
+2026-06-18 23:18:05,196 - --- camera test image metrics (epoch=137) -------------
+2026-06-18 23:18:05,248 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.100
+
+2026-06-18 23:18:05,257 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:18:05,257 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:18:05,316 - 
+
+2026-06-18 23:18:05,316 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:18:07,525 - Epoch: [138][   25/  107]    Overall Loss 0.170093    Objective Loss 0.170093    MMS Map Loss 0.107551    MMS Focal Loss 0.040615    MMS Image Loss 0.109634                                        LR 0.000063    Time 0.088349    
+2026-06-18 23:18:09,858 - Epoch: [138][   50/  107]    Overall Loss 0.167905    Objective Loss 0.167905    MMS Map Loss 0.106811    MMS Focal Loss 0.040486    MMS Image Loss 0.103041                                        LR 0.000063    Time 0.090824    
+2026-06-18 23:18:12,435 - Epoch: [138][   75/  107]    Overall Loss 0.167177    Objective Loss 0.167177    MMS Map Loss 0.105291    MMS Focal Loss 0.040093    MMS Image Loss 0.108965                                        LR 0.000063    Time 0.094895    
+2026-06-18 23:18:14,979 - Epoch: [138][  100/  107]    Overall Loss 0.167767    Objective Loss 0.167767    MMS Map Loss 0.106023    MMS Focal Loss 0.040317    MMS Image Loss 0.107134                                        LR 0.000063    Time 0.096606    
+2026-06-18 23:18:15,672 - Epoch: [138][  107/  107]    Overall Loss 0.168026    Objective Loss 0.168026    MMS Map Loss 0.106350    MMS Focal Loss 0.040495    MMS Image Loss 0.105902    Top1 96.408691    LR 0.000063    Time 0.096761    
+2026-06-18 23:18:15,673 - --- validate (epoch=138)-----------
+2026-06-18 23:18:15,673 - 210 samples (24 per mini-batch)
+2026-06-18 23:18:16,223 - Epoch: [138][    9/    9]    Loss 0.227720    Top1 95.482236    ImageAcc 82.380950    ImageF1 86.832738    ImageBalancedAcc 79.999995    ImagePrecision 86.524820    ImageRecall 87.142855    ImageThresh 0.080000    ImageAccOneCell 66.666669    MMS Map Loss 0.148445    MMS Focal Loss 0.079275    
+2026-06-18 23:18:16,223 - ==> Top1: 95.482    Loss: 0.228
+
+2026-06-18 23:18:16,227 - ==> ImageAcc: 82.381    ImageF1: 86.833    ImageBalancedAcc: 80.000    ImageThresh: 0.080
+
+2026-06-18 23:18:16,227 - ==> Confusion:
+[[195667   9460]
+ [   255   9658]]
+
+2026-06-18 23:18:16,260 - --- test (epoch=138) -------------
+2026-06-18 23:18:16,260 - 252 samples (24 per mini-batch)
+2026-06-18 23:18:17,044 - Epoch: [138][   11/   11]    Loss 1.669819    Top1 89.596509    ImageAcc 75.793654    ImageF1 77.323419    ImageBalancedAcc 76.165175    ImagePrecision 81.889766    ImageRecall 73.239434    ImageThresh 0.120000    ImageAccOneCell 56.349206    MMS Map Loss 0.917915    MMS Focal Loss 0.751904    
+2026-06-18 23:18:17,044 - ==> Top1: 89.597    Loss: 1.670
+
+2026-06-18 23:18:17,049 - ==> ImageAcc: 75.794    ImageF1: 77.323    ImageBalancedAcc: 76.165    ImageThresh: 0.120
+
+2026-06-18 23:18:17,049 - ==> Confusion:
+[[231202  26704]
+ [   142      0]]
+
+2026-06-18 23:18:17,049 - --- camera test image metrics (epoch=138) -------------
+2026-06-18 23:18:17,105 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.070
+
+2026-06-18 23:18:17,115 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:18:17,115 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:18:17,176 - 
+
+2026-06-18 23:18:17,176 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:18:19,587 - Epoch: [139][   25/  107]    Overall Loss 0.169203    Objective Loss 0.169203    MMS Map Loss 0.106252    MMS Focal Loss 0.042444    MMS Image Loss 0.102533                                        LR 0.000063    Time 0.096403    
+2026-06-18 23:18:21,906 - Epoch: [139][   50/  107]    Overall Loss 0.165088    Objective Loss 0.165088    MMS Map Loss 0.104315    MMS Focal Loss 0.040707    MMS Image Loss 0.100332                                        LR 0.000063    Time 0.094563    
+2026-06-18 23:18:24,187 - Epoch: [139][   75/  107]    Overall Loss 0.162608    Objective Loss 0.162608    MMS Map Loss 0.102825    MMS Focal Loss 0.039326    MMS Image Loss 0.102284                                        LR 0.000063    Time 0.093454    
+2026-06-18 23:18:26,375 - Epoch: [139][  100/  107]    Overall Loss 0.160746    Objective Loss 0.160746    MMS Map Loss 0.101833    MMS Focal Loss 0.038681    MMS Image Loss 0.101161                                        LR 0.000063    Time 0.091968    
+2026-06-18 23:18:26,992 - Epoch: [139][  107/  107]    Overall Loss 0.162331    Objective Loss 0.162331    MMS Map Loss 0.102534    MMS Focal Loss 0.039669    MMS Image Loss 0.100640    Top1 97.309570    LR 0.000063    Time 0.091715    
+2026-06-18 23:18:26,993 - --- validate (epoch=139)-----------
+2026-06-18 23:18:26,993 - 210 samples (24 per mini-batch)
+2026-06-18 23:18:27,542 - Epoch: [139][    9/    9]    Loss 0.196655    Top1 96.936849    ImageAcc 89.047617    ImageF1 91.872793    ImageBalancedAcc 87.142855    ImagePrecision 90.909094    ImageRecall 92.857140    ImageThresh 0.060000    ImageAccOneCell 66.666669    MMS Map Loss 0.128947    MMS Focal Loss 0.067708    
+2026-06-18 23:18:27,542 - ==> Top1: 96.937    Loss: 0.197
+
+2026-06-18 23:18:27,546 - ==> ImageAcc: 89.048    ImageF1: 91.873    ImageBalancedAcc: 87.143    ImageThresh: 0.060
+
+2026-06-18 23:18:27,546 - ==> Confusion:
+[[198906   6221]
+ [   366   9547]]
+
+2026-06-18 23:18:27,577 - --- test (epoch=139) -------------
+2026-06-18 23:18:27,577 - 252 samples (24 per mini-batch)
+2026-06-18 23:18:28,251 - Epoch: [139][   11/   11]    Loss 1.607614    Top1 92.801727    ImageAcc 74.206346    ImageF1 75.836426    ImageBalancedAcc 74.551857    ImagePrecision 80.314958    ImageRecall 71.830988    ImageThresh 0.090000    ImageAccOneCell 56.349206    MMS Map Loss 0.878296    MMS Focal Loss 0.729318    
+2026-06-18 23:18:28,251 - ==> Top1: 92.802    Loss: 1.608
+
+2026-06-18 23:18:28,255 - ==> ImageAcc: 74.206    ImageF1: 75.836    ImageBalancedAcc: 74.552    ImageThresh: 0.090
+
+2026-06-18 23:18:28,255 - ==> Confusion:
+[[239473  18433]
+ [   142      0]]
+
+2026-06-18 23:18:28,255 - --- camera test image metrics (epoch=139) -------------
+2026-06-18 23:18:28,304 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.080
+
+2026-06-18 23:18:28,313 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:18:28,313 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:18:28,372 - 
+
+2026-06-18 23:18:28,372 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:18:30,534 - Epoch: [140][   25/  107]    Overall Loss 0.155180    Objective Loss 0.155180    MMS Map Loss 0.099907    MMS Focal Loss 0.038598    MMS Image Loss 0.083374                                        LR 0.000063    Time 0.086458    
+2026-06-18 23:18:32,706 - Epoch: [140][   50/  107]    Overall Loss 0.160543    Objective Loss 0.160543    MMS Map Loss 0.102559    MMS Focal Loss 0.038270    MMS Image Loss 0.098571                                        LR 0.000063    Time 0.086664    
+2026-06-18 23:18:34,914 - Epoch: [140][   75/  107]    Overall Loss 0.159768    Objective Loss 0.159768    MMS Map Loss 0.101311    MMS Focal Loss 0.038739    MMS Image Loss 0.098593                                        LR 0.000063    Time 0.087208    
+2026-06-18 23:18:37,174 - Epoch: [140][  100/  107]    Overall Loss 0.158034    Objective Loss 0.158034    MMS Map Loss 0.101150    MMS Focal Loss 0.037868    MMS Image Loss 0.095079                                        LR 0.000063    Time 0.087993    
+2026-06-18 23:18:37,800 - Epoch: [140][  107/  107]    Overall Loss 0.157348    Objective Loss 0.157348    MMS Map Loss 0.100492    MMS Focal Loss 0.037690    MMS Image Loss 0.095829    Top1 96.455078    LR 0.000063    Time 0.088084    
+2026-06-18 23:18:37,800 - --- validate (epoch=140)-----------
+2026-06-18 23:18:37,800 - 210 samples (24 per mini-batch)
+2026-06-18 23:18:38,344 - Epoch: [140][    9/    9]    Loss 0.208542    Top1 96.525298    ImageAcc 87.619048    ImageF1 90.845066    ImageBalancedAcc 85.357141    ImagePrecision 89.583331    ImageRecall 92.142856    ImageThresh 0.060000    ImageAccOneCell 66.666669    MMS Map Loss 0.135746    MMS Focal Loss 0.072796    
+2026-06-18 23:18:38,344 - ==> Top1: 96.525    Loss: 0.209
+
+2026-06-18 23:18:38,348 - ==> ImageAcc: 87.619    ImageF1: 90.845    ImageBalancedAcc: 85.357    ImageThresh: 0.060
+
+2026-06-18 23:18:38,348 - ==> Confusion:
+[[198003   7124]
+ [   348   9565]]
+
+2026-06-18 23:18:38,379 - --- test (epoch=140) -------------
+2026-06-18 23:18:38,379 - 252 samples (24 per mini-batch)
+2026-06-18 23:18:39,066 - Epoch: [140][   11/   11]    Loss 1.663673    Top1 91.309756    ImageAcc 80.555558    ImageF1 82.051283    ImageBalancedAcc 80.800259    ImagePrecision 85.496181    ImageRecall 78.873241    ImageThresh 0.090000    ImageAccOneCell 56.349206    MMS Map Loss 0.906287    MMS Focal Loss 0.757386    
+2026-06-18 23:18:39,066 - ==> Top1: 91.310    Loss: 1.664
+
+2026-06-18 23:18:39,070 - ==> ImageAcc: 80.556    ImageF1: 82.051    ImageBalancedAcc: 80.800    ImageThresh: 0.090
+
+2026-06-18 23:18:39,070 - ==> Confusion:
+[[235623  22283]
+ [   142      0]]
+
+2026-06-18 23:18:39,283 - --- camera test image metrics (epoch=140) -------------
+2026-06-18 23:18:39,332 - ==> Camera ImageAcc: 100.000    ImageRecall: 100.000    ImagePrecision: 100.000    ImageThresh: 0.070
+
+2026-06-18 23:18:39,429 - ==> Best [Top1: 97.346   Params: 181176 on epoch: 121]
+2026-06-18 23:18:39,430 - Saving checkpoint to: logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/qat_checkpoint.pth.tar
+2026-06-18 23:18:39,489 - 
+
+2026-06-18 23:18:39,489 - Training epoch: 2560 samples (24 per mini-batch, world size: 1)
+2026-06-18 23:18:41,650 - Epoch: [141][   25/  107]    Overall Loss 0.169580    Objective Loss 0.169580    MMS Map Loss 0.105960    MMS Focal Loss 0.044293    MMS Image Loss 0.096633                                        LR 0.000063    Time 0.086438    
+2026-06-18 23:18:43,801 - Epoch: [141][   50/  107]    Overall Loss 0.167526    Objective Loss 0.167526    MMS Map Loss 0.103972    MMS Focal Loss 0.043238    MMS Image Loss 0.101577                                        LR 0.000063    Time 0.086218    
+2026-06-18 23:18:43,976 - 
+2026-06-18 23:18:43,976 - -- KeyboardInterrupt --
+2026-06-18 23:18:43,978 - 
+2026-06-18 23:18:43,978 - Log file for this run: /Users/tomhaidinger/Documents/max78000/ai8x-training/logs/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5/2026.06.18-231324___ai85mmsanomalynet25aux___MMS_128_V5.log

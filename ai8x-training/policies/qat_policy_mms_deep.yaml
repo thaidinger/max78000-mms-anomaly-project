@@ -1,0 +1,9 @@
+---
+start_epoch: 100
+weight_bits: 8
+outlier_removal_z_score: 2
+overrides:
+  conv1:
+    weight_bits: 8
+  head:
+    weight_bits: 8

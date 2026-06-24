@@ -1,0 +1,19 @@
+# Local/generated noise
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Training/checkpoint artifacts
+logs_archive/
+*.onnx
+
+# Keep selected reproducibility artifacts in this repo
+!ai8x-training/logs/**
+!ai8x-training/data/MMSGeneratedV5/**
+!ai8x-synthesis/trained/**
+
+# Embedded build/runtime outputs
+build/
+flash.log
+uart_frames/

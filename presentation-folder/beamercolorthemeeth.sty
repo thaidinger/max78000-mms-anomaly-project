@@ -1,0 +1,50 @@
+% Available on https://gitlab.ethz.ch/bsaverio/ethbeamer
+% Created by Saverio Bolognani based on ETH official design
+
+% This file should only customize colors
+
+\mode<presentation>
+
+% ETH colors starting 2021-08
+\definecolor{ETHblue}{RGB}{33,92,175}% blue
+\definecolor{ETHpetrol}{RGB}{0,120,148}	% petrol
+\definecolor{ETHgreen}{RGB}{98,115,19}% green
+\definecolor{ETHbronze}{RGB}{142,103,19}% bronze
+\definecolor{ETHred}{RGB}{183,53,45}% red
+\definecolor{ETHpurple}{RGB}{163,7,116}	% purple
+\definecolor{ETHgray}{RGB}{111,111,111}% gray
+
+% ETH old colors
+\definecolor{oldETH1}{RGB}{31,64,122}	% dark blue
+\definecolor{oldETH2}{RGB}{72,90,44}		% dark green
+\definecolor{oldETH3}{RGB}{18,105,176}	% light blue
+\definecolor{oldETH4}{RGB}{114,121,28}	% light green
+\definecolor{oldETH5}{RGB}{145,5,106}	% pink
+\definecolor{oldETH6}{RGB}{111,111,100}	% gray
+\definecolor{oldETH7}{RGB}{168,50,45}	% red
+\definecolor{oldETH8}{RGB}{0,122,150}	% green/blue
+\definecolor{oldETH9}{RGB}{149,96,19}	% brown
+
+% select colors in case they are not defined
+\colorlet{titlefgcolor}{ETHblue}
+\colorlet{titlebgcolor}{ETHblue!50!black}
+\colorlet{accentcolor}{ETHred}
+
+% Settings
+\setbeamercolor*{title}{fg=white}
+\setbeamercolor*{author}{fg=white}
+\setbeamercolor*{date}{fg=white}
+\setbeamercolor*{item}{fg=black}
+\setbeamercolor*{frametitle}{fg=black}
+
+\setbeamercolor*{block title}{fg=white,bg=accentcolor}
+\setbeamercolor*{block body}{fg=black,bg=accentcolor!25!white}
+
+\setbeamercolor{alerted text}{fg=accentcolor} 
+\setbeamerfont{alerted text}{series=\bfseries}
+
+\setbeamercolor*{block title example}{fg=black}
+\setbeamercolor*{section in toc}{fg=black}
+\setbeamercolor*{section page}{fg=black}
+
+\mode<all>

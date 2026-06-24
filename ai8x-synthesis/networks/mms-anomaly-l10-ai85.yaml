@@ -1,0 +1,113 @@
+---
+# CHW configuration for MMS anomaly-grid ai85mmsanomalynet10
+#
+# Input:  3 x 128 x 128
+# Output: 2 x 32 x 32 anomaly logits
+
+arch: ai85mmsanomalynet10
+dataset: MMS_128
+
+layers:
+  # Layer 0: conv1, MaxPool2d(2) + conv, 3x128x128 -> 8x64x64
+  - out_offset: 0x0000
+    processors: 0x0000000100010001
+    output_processors: 0x000000000000ff00
+    data_format: CHW
+    operation: conv2d
+    kernel_size: 3x3
+    pad: 1
+    max_pool: 2
+    pool_stride: 2
+    activate: ReLU
+
+  # Layer 1: conv2, MaxPool2d(2) + conv, 8x64x64 -> 16x32x32
+  - out_offset: 0x0000
+    processors: 0x000000000000ff00
+    output_processors: 0x00000000ffff0000
+    operation: conv2d
+    kernel_size: 3x3
+    pad: 1
+    max_pool: 2
+    pool_stride: 2
+    activate: ReLU
+
+  # Layer 2: conv3, 16x32x32 -> 24x32x32
+  - out_offset: 0x0000
+    processors: 0x00000000ffff0000
+    output_processors: 0x00ffffff00000000
+    operation: conv2d
+    kernel_size: 3x3
+    pad: 1
+    activate: ReLU
+
+  # Layer 3: conv4, 24x32x32 -> 24x32x32
+  - out_offset: 0x0000
+    processors: 0x00ffffff00000000
+    output_processors: 0x0000000000ffffff
+    operation: conv2d
+    kernel_size: 3x3
+    pad: 1
+    activate: ReLU
+
+  # Layer 4: conv5, 24x32x32 -> 32x32x32
+  - out_offset: 0x0000
+    processors: 0x0000000000ffffff
+    output_processors: 0xffffffff00000000
+    operation: conv2d
+    kernel_size: 3x3
+    pad: 1
+    activate: ReLU
+
+  # Layer 5: conv6, 32x32x32 -> 32x32x32
+  - out_offset: 0x0000
+    processors: 0xffffffff00000000
+    output_processors: 0x00000000ffffffff
+    operation: conv2d
+    kernel_size: 3x3
+    pad: 1
+    activate: ReLU
+
+  # Layer 6: conv7, 32x32x32 -> 32x32x32
+  - out_offset: 0x0000
+    processors: 0x00000000ffffffff
+    output_processors: 0xffffffff00000000
+    operation: conv2d
+    kernel_size: 3x3
+    pad: 1
+    activate: ReLU
+
+  # Layer 7: conv8, 32x32x32 -> 24x32x32
+  - out_offset: 0x0000
+    processors: 0xffffffff00000000
+    output_processors: 0x0000000000ffffff
+    operation: conv2d
+    kernel_size: 3x3
+    pad: 1
+    activate: ReLU
+
+  # Layer 8: conv9, 24x32x32 -> 24x32x32
+  - out_offset: 0x0000
+    processors: 0x0000000000ffffff
+    output_processors: 0x00ffffff00000000
+    operation: conv2d
+    kernel_size: 3x3
+    pad: 1
+    activate: ReLU
+
+  # Layer 9: conv10, 24x32x32 -> 16x32x32
+  - out_offset: 0x0000
+    processors: 0x00ffffff00000000
+    output_processors: 0x00000000ffff0000
+    operation: conv2d
+    kernel_size: 3x3
+    pad: 1
+    activate: ReLU
+
+  # Layer 10: head, 16x32x32 -> 2x32x32
+  - out_offset: 0x0000
+    processors: 0x00000000ffff0000
+    output_processors: 0x0000000000000003
+    operation: conv2d
+    kernel_size: 1x1
+    pad: 0
+    activate: None

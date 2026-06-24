@@ -1,0 +1,1426 @@
+2026-06-16 11:42:30,361 - Log file for this run: /Users/tomhaidinger/Documents/max78000/ai8x-training/logs/2026.06.16-114230/2026.06.16-114230.log
+2026-06-16 11:42:30,361 - Configuring device: MAX78000, simulate=False.
+2026-06-16 11:42:30,435 - Optimizer Type: <class 'torch.optim.sgd.SGD'>
+2026-06-16 11:42:30,438 - Optimizer Args: {'lr': 0.1, 'momentum': 0.9, 'dampening': 0, 'weight_decay': 0.0001, 'nesterov': False, 'maximize': False, 'foreach': None, 'differentiable': False, 'fused': None}
+2026-06-16 11:42:30,438 - Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+2026-06-16 11:42:30,765 - Failed to download (trying next):
+2026-06-16 11:42:30,765 - HTTP Error 404: Not Found
+2026-06-16 11:42:30,765 - 
+2026-06-16 11:42:30,765 - Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz
+2026-06-16 11:42:31,110 - Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz to data/MNIST/raw/train-images-idx3-ubyte.gz
+2026-06-16 11:42:32,397 - Extracting data/MNIST/raw/train-images-idx3-ubyte.gz to data/MNIST/raw
+2026-06-16 11:42:32,504 - 
+2026-06-16 11:42:32,504 - Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+2026-06-16 11:42:32,703 - Failed to download (trying next):
+2026-06-16 11:42:32,703 - HTTP Error 404: Not Found
+2026-06-16 11:42:32,703 - 
+2026-06-16 11:42:32,703 - Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz
+2026-06-16 11:42:33,042 - Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz to data/MNIST/raw/train-labels-idx1-ubyte.gz
+2026-06-16 11:42:33,481 - Extracting data/MNIST/raw/train-labels-idx1-ubyte.gz to data/MNIST/raw
+2026-06-16 11:42:33,482 - 
+2026-06-16 11:42:33,482 - Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+2026-06-16 11:42:33,678 - Failed to download (trying next):
+2026-06-16 11:42:33,679 - HTTP Error 404: Not Found
+2026-06-16 11:42:33,679 - 
+2026-06-16 11:42:33,679 - Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz
+2026-06-16 11:42:34,027 - Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz to data/MNIST/raw/t10k-images-idx3-ubyte.gz
+2026-06-16 11:42:34,958 - Extracting data/MNIST/raw/t10k-images-idx3-ubyte.gz to data/MNIST/raw
+2026-06-16 11:42:34,978 - 
+2026-06-16 11:42:34,978 - Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+2026-06-16 11:42:35,176 - Failed to download (trying next):
+2026-06-16 11:42:35,176 - HTTP Error 404: Not Found
+2026-06-16 11:42:35,177 - 
+2026-06-16 11:42:35,177 - Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz
+2026-06-16 11:42:35,527 - Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz to data/MNIST/raw/t10k-labels-idx1-ubyte.gz
+2026-06-16 11:42:35,871 - Extracting data/MNIST/raw/t10k-labels-idx1-ubyte.gz to data/MNIST/raw
+2026-06-16 11:42:35,871 - 
+2026-06-16 11:42:35,896 - Reading compression schedule from: policies/schedule.yaml
+2026-06-16 11:42:35,898 - torch.compile() not available, using "eager" mode
+2026-06-16 11:42:35,898 - Dataset sizes:
+	training=54000
+	validation=6000
+	test=10000
+2026-06-16 11:42:35,898 - 
+
+2026-06-16 11:42:35,898 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:42:41,028 - Epoch: [0][   10/  211]    Overall Loss 2.298684    Objective Loss 2.298684                                        LR 0.100000    Time 0.512950    
+2026-06-16 11:42:41,169 - Epoch: [0][   20/  211]    Overall Loss 2.287194    Objective Loss 2.287194                                        LR 0.100000    Time 0.263457    
+2026-06-16 11:42:41,309 - Epoch: [0][   30/  211]    Overall Loss 2.265218    Objective Loss 2.265218                                        LR 0.100000    Time 0.180317    
+2026-06-16 11:42:41,453 - Epoch: [0][   40/  211]    Overall Loss 2.168766    Objective Loss 2.168766                                        LR 0.100000    Time 0.138826    
+2026-06-16 11:42:41,593 - Epoch: [0][   50/  211]    Overall Loss 2.241525    Objective Loss 2.241525                                        LR 0.100000    Time 0.113862    
+2026-06-16 11:42:41,734 - Epoch: [0][   60/  211]    Overall Loss 2.219862    Objective Loss 2.219862                                        LR 0.100000    Time 0.097221    
+2026-06-16 11:42:41,875 - Epoch: [0][   70/  211]    Overall Loss 2.161098    Objective Loss 2.161098                                        LR 0.100000    Time 0.085345    
+2026-06-16 11:42:42,017 - Epoch: [0][   80/  211]    Overall Loss 2.186110    Objective Loss 2.186110                                        LR 0.100000    Time 0.076451    
+2026-06-16 11:42:42,161 - Epoch: [0][   90/  211]    Overall Loss 2.200339    Objective Loss 2.200339                                        LR 0.100000    Time 0.069555    
+2026-06-16 11:42:42,307 - Epoch: [0][  100/  211]    Overall Loss 2.214015    Objective Loss 2.214015                                        LR 0.100000    Time 0.064059    
+2026-06-16 11:42:42,449 - Epoch: [0][  110/  211]    Overall Loss 2.221339    Objective Loss 2.221339                                        LR 0.100000    Time 0.059523    
+2026-06-16 11:42:42,591 - Epoch: [0][  120/  211]    Overall Loss 2.222588    Objective Loss 2.222588                                        LR 0.100000    Time 0.055750    
+2026-06-16 11:42:42,733 - Epoch: [0][  130/  211]    Overall Loss 2.220784    Objective Loss 2.220784                                        LR 0.100000    Time 0.052549    
+2026-06-16 11:42:42,876 - Epoch: [0][  140/  211]    Overall Loss 2.215796    Objective Loss 2.215796                                        LR 0.100000    Time 0.049815    
+2026-06-16 11:42:43,020 - Epoch: [0][  150/  211]    Overall Loss 2.208625    Objective Loss 2.208625                                        LR 0.100000    Time 0.047453    
+2026-06-16 11:42:43,165 - Epoch: [0][  160/  211]    Overall Loss 2.202628    Objective Loss 2.202628                                        LR 0.100000    Time 0.045394    
+2026-06-16 11:42:43,313 - Epoch: [0][  170/  211]    Overall Loss 2.196640    Objective Loss 2.196640                                        LR 0.100000    Time 0.043594    
+2026-06-16 11:42:43,458 - Epoch: [0][  180/  211]    Overall Loss 2.189526    Objective Loss 2.189526                                        LR 0.100000    Time 0.041973    
+2026-06-16 11:42:43,601 - Epoch: [0][  190/  211]    Overall Loss 2.177850    Objective Loss 2.177850                                        LR 0.100000    Time 0.040515    
+2026-06-16 11:42:43,745 - Epoch: [0][  200/  211]    Overall Loss 2.161860    Objective Loss 2.161860                                        LR 0.100000    Time 0.039209    
+2026-06-16 11:42:43,893 - Epoch: [0][  210/  211]    Overall Loss 2.145458    Objective Loss 2.145458    Top1 46.875000    Top5 87.109375    LR 0.100000    Time 0.038048    
+2026-06-16 11:42:44,157 - Epoch: [0][  211/  211]    Overall Loss 2.142858    Objective Loss 2.142858    Top1 45.766129    Top5 87.903226    LR 0.100000    Time 0.039116    
+2026-06-16 11:42:44,603 - --- validate (epoch=0)-----------
+2026-06-16 11:42:44,604 - 6000 samples (256 per mini-batch)
+2026-06-16 11:42:46,880 - Epoch: [0][   10/   24]    Loss 1.709473    Top1 40.781250    Top5 86.406250    
+2026-06-16 11:42:46,954 - Epoch: [0][   20/   24]    Loss 1.707817    Top1 41.367188    Top5 86.757812    
+2026-06-16 11:42:47,082 - Epoch: [0][   24/   24]    Loss 1.699611    Top1 41.750000    Top5 86.883333    
+2026-06-16 11:42:47,520 - ==> Top1: 41.750    Top5: 86.883    Loss: 1.700
+
+2026-06-16 11:42:47,520 - ==> Confusion:
+[[307   3  55  65   1  39  73  58   1   3]
+ [  9 373  17 132  13   3 102  15   2  22]
+ [ 44   4 343  24   2   5  66  93   1   4]
+ [ 94   3  34 213  20  43  10 139   5  22]
+ [  1  13   8  44 177   6 132 105   0  79]
+ [103   4  36  94   7  71  23 164   3  13]
+ [ 40  30  10  29  16   2 446  38   1  19]
+ [ 13   9  60  46   8  22   2 450   0  15]
+ [132  33  89 119  15  11  95  63  11  16]
+ [ 12  11  10 101  87   6  40 232   2 114]]
+
+2026-06-16 11:42:47,977 - ==> Best [Top1: 41.750   Top5: 86.883   Params: 71148 on epoch: 0]
+2026-06-16 11:42:47,977 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:42:47,987 - 
+
+2026-06-16 11:42:47,987 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:42:50,340 - Epoch: [1][   10/  211]    Overall Loss 1.683246    Objective Loss 1.683246                                        LR 0.100000    Time 0.235265    
+2026-06-16 11:42:50,480 - Epoch: [1][   20/  211]    Overall Loss 1.659867    Objective Loss 1.659867                                        LR 0.100000    Time 0.124638    
+2026-06-16 11:42:50,622 - Epoch: [1][   30/  211]    Overall Loss 1.644405    Objective Loss 1.644405                                        LR 0.100000    Time 0.087823    
+2026-06-16 11:42:50,764 - Epoch: [1][   40/  211]    Overall Loss 1.622896    Objective Loss 1.622896                                        LR 0.100000    Time 0.069412    
+2026-06-16 11:42:50,906 - Epoch: [1][   50/  211]    Overall Loss 1.627435    Objective Loss 1.627435                                        LR 0.100000    Time 0.058366    
+2026-06-16 11:42:51,049 - Epoch: [1][   60/  211]    Overall Loss 1.710286    Objective Loss 1.710286                                        LR 0.100000    Time 0.051020    
+2026-06-16 11:42:51,195 - Epoch: [1][   70/  211]    Overall Loss 1.735780    Objective Loss 1.735780                                        LR 0.100000    Time 0.045810    
+2026-06-16 11:42:51,338 - Epoch: [1][   80/  211]    Overall Loss 1.735965    Objective Loss 1.735965                                        LR 0.100000    Time 0.041863    
+2026-06-16 11:42:51,482 - Epoch: [1][   90/  211]    Overall Loss 1.718618    Objective Loss 1.718618                                        LR 0.100000    Time 0.038812    
+2026-06-16 11:42:51,625 - Epoch: [1][  100/  211]    Overall Loss 1.692911    Objective Loss 1.692911                                        LR 0.100000    Time 0.036357    
+2026-06-16 11:42:51,768 - Epoch: [1][  110/  211]    Overall Loss 1.672563    Objective Loss 1.672563                                        LR 0.100000    Time 0.034356    
+2026-06-16 11:42:51,913 - Epoch: [1][  120/  211]    Overall Loss 1.642581    Objective Loss 1.642581                                        LR 0.100000    Time 0.032700    
+2026-06-16 11:42:52,058 - Epoch: [1][  130/  211]    Overall Loss 1.609649    Objective Loss 1.609649                                        LR 0.100000    Time 0.031299    
+2026-06-16 11:42:52,200 - Epoch: [1][  140/  211]    Overall Loss 1.570744    Objective Loss 1.570744                                        LR 0.100000    Time 0.030078    
+2026-06-16 11:42:52,345 - Epoch: [1][  150/  211]    Overall Loss 1.537729    Objective Loss 1.537729                                        LR 0.100000    Time 0.029032    
+2026-06-16 11:42:52,486 - Epoch: [1][  160/  211]    Overall Loss 1.502549    Objective Loss 1.502549                                        LR 0.100000    Time 0.028102    
+2026-06-16 11:42:52,631 - Epoch: [1][  170/  211]    Overall Loss 1.477816    Objective Loss 1.477816                                        LR 0.100000    Time 0.027299    
+2026-06-16 11:42:52,776 - Epoch: [1][  180/  211]    Overall Loss 1.454579    Objective Loss 1.454579                                        LR 0.100000    Time 0.026588    
+2026-06-16 11:42:52,917 - Epoch: [1][  190/  211]    Overall Loss 1.429175    Objective Loss 1.429175                                        LR 0.100000    Time 0.025931    
+2026-06-16 11:42:53,058 - Epoch: [1][  200/  211]    Overall Loss 1.400312    Objective Loss 1.400312                                        LR 0.100000    Time 0.025338    
+2026-06-16 11:42:53,198 - Epoch: [1][  210/  211]    Overall Loss 1.368918    Objective Loss 1.368918    Top1 69.921875    Top5 98.828125    LR 0.100000    Time 0.024795    
+2026-06-16 11:42:53,212 - Epoch: [1][  211/  211]    Overall Loss 1.365992    Objective Loss 1.365992    Top1 74.395161    Top5 97.983871    LR 0.100000    Time 0.024747    
+2026-06-16 11:42:53,664 - --- validate (epoch=1)-----------
+2026-06-16 11:42:53,664 - 6000 samples (256 per mini-batch)
+2026-06-16 11:42:55,987 - Epoch: [1][   10/   24]    Loss 0.827998    Top1 72.148438    Top5 97.460938    
+2026-06-16 11:42:56,070 - Epoch: [1][   20/   24]    Loss 0.836098    Top1 72.304688    Top5 97.500000    
+2026-06-16 11:42:56,099 - Epoch: [1][   24/   24]    Loss 0.833907    Top1 72.266667    Top5 97.633333    
+2026-06-16 11:42:56,542 - ==> Top1: 72.267    Top5: 97.633    Loss: 0.834
+
+2026-06-16 11:42:56,543 - ==> Confusion:
+[[482   3  33  25   1  29   6  17   4   5]
+ [  0 660  10   2   4   0   0  10   0   2]
+ [ 18   4 414  60   5  26   0  49   1   9]
+ [  3   2  35 460   1  40   0  34   2   6]
+ [  2   9  13   4 333  40   5  70   0  89]
+ [  4   2   3  31   4 435   1  11   3  24]
+ [ 23  15  14   6  32 124 372   0   7  38]
+ [  0   9  10  37   4   7   0 551   0   7]
+ [ 12  14  27 117   8 160  10  21 157  58]
+ [  0   8   5  11  18  54   1  45   1 472]]
+
+2026-06-16 11:42:56,545 - ==> Best [Top1: 72.267   Top5: 97.633   Params: 71148 on epoch: 1]
+2026-06-16 11:42:56,545 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:42:56,556 - 
+
+2026-06-16 11:42:56,556 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:42:58,936 - Epoch: [2][   10/  211]    Overall Loss 0.766777    Objective Loss 0.766777                                        LR 0.100000    Time 0.237989    
+2026-06-16 11:42:59,080 - Epoch: [2][   20/  211]    Overall Loss 0.771206    Objective Loss 0.771206                                        LR 0.100000    Time 0.126170    
+2026-06-16 11:42:59,223 - Epoch: [2][   30/  211]    Overall Loss 0.779130    Objective Loss 0.779130                                        LR 0.100000    Time 0.088882    
+2026-06-16 11:42:59,366 - Epoch: [2][   40/  211]    Overall Loss 0.742357    Objective Loss 0.742357                                        LR 0.100000    Time 0.070224    
+2026-06-16 11:42:59,506 - Epoch: [2][   50/  211]    Overall Loss 0.717088    Objective Loss 0.717088                                        LR 0.100000    Time 0.058975    
+2026-06-16 11:42:59,646 - Epoch: [2][   60/  211]    Overall Loss 0.692308    Objective Loss 0.692308                                        LR 0.100000    Time 0.051472    
+2026-06-16 11:42:59,788 - Epoch: [2][   70/  211]    Overall Loss 0.657860    Objective Loss 0.657860                                        LR 0.100000    Time 0.046145    
+2026-06-16 11:42:59,932 - Epoch: [2][   80/  211]    Overall Loss 0.641007    Objective Loss 0.641007                                        LR 0.100000    Time 0.042176    
+2026-06-16 11:43:00,076 - Epoch: [2][   90/  211]    Overall Loss 0.626011    Objective Loss 0.626011                                        LR 0.100000    Time 0.039093    
+2026-06-16 11:43:00,219 - Epoch: [2][  100/  211]    Overall Loss 0.612415    Objective Loss 0.612415                                        LR 0.100000    Time 0.036613    
+2026-06-16 11:43:00,363 - Epoch: [2][  110/  211]    Overall Loss 0.593205    Objective Loss 0.593205                                        LR 0.100000    Time 0.034586    
+2026-06-16 11:43:00,512 - Epoch: [2][  120/  211]    Overall Loss 0.575119    Objective Loss 0.575119                                        LR 0.100000    Time 0.032948    
+2026-06-16 11:43:00,656 - Epoch: [2][  130/  211]    Overall Loss 0.559804    Objective Loss 0.559804                                        LR 0.100000    Time 0.031520    
+2026-06-16 11:43:00,800 - Epoch: [2][  140/  211]    Overall Loss 0.544591    Objective Loss 0.544591                                        LR 0.100000    Time 0.030290    
+2026-06-16 11:43:00,944 - Epoch: [2][  150/  211]    Overall Loss 0.533305    Objective Loss 0.533305                                        LR 0.100000    Time 0.029231    
+2026-06-16 11:43:01,089 - Epoch: [2][  160/  211]    Overall Loss 0.522620    Objective Loss 0.522620                                        LR 0.100000    Time 0.028310    
+2026-06-16 11:43:01,233 - Epoch: [2][  170/  211]    Overall Loss 0.512530    Objective Loss 0.512530                                        LR 0.100000    Time 0.027491    
+2026-06-16 11:43:01,378 - Epoch: [2][  180/  211]    Overall Loss 0.503088    Objective Loss 0.503088                                        LR 0.100000    Time 0.026767    
+2026-06-16 11:43:01,523 - Epoch: [2][  190/  211]    Overall Loss 0.492703    Objective Loss 0.492703                                        LR 0.100000    Time 0.026119    
+2026-06-16 11:43:01,665 - Epoch: [2][  200/  211]    Overall Loss 0.482475    Objective Loss 0.482475                                        LR 0.100000    Time 0.025523    
+2026-06-16 11:43:01,808 - Epoch: [2][  210/  211]    Overall Loss 0.472870    Objective Loss 0.472870    Top1 90.625000    Top5 100.000000    LR 0.100000    Time 0.024984    
+2026-06-16 11:43:01,822 - Epoch: [2][  211/  211]    Overall Loss 0.471895    Objective Loss 0.471895    Top1 91.330645    Top5 99.596774    LR 0.100000    Time 0.024935    
+2026-06-16 11:43:02,270 - --- validate (epoch=2)-----------
+2026-06-16 11:43:02,270 - 6000 samples (256 per mini-batch)
+2026-06-16 11:43:04,599 - Epoch: [2][   10/   24]    Loss 0.338345    Top1 89.492188    Top5 99.492188    
+2026-06-16 11:43:04,688 - Epoch: [2][   20/   24]    Loss 0.330152    Top1 89.824219    Top5 99.453125    
+2026-06-16 11:43:04,719 - Epoch: [2][   24/   24]    Loss 0.329584    Top1 89.650000    Top5 99.500000    
+2026-06-16 11:43:05,160 - ==> Top1: 89.650    Top5: 99.500    Loss: 0.330
+
+2026-06-16 11:43:05,160 - ==> Confusion:
+[[579   3   2   1   2   4   7   2   5   0]
+ [  2 678   2   0   3   0   1   2   0   0]
+ [  9  14 516  17   8   2   0   8   8   4]
+ [  3   2  20 534   1   4   0   8   8   3]
+ [  2  15   1   0 536   2   2   0   0   7]
+ [  7   3   2   8  12 463   8   0  11   4]
+ [ 12   3   1   0  14   8 584   0   8   1]
+ [  0  27  19  13  20   3   0 530   3  10]
+ [ 19  10   6   5  15  12  14   1 496   6]
+ [  2   4   2   4 103   9   2  11  15 463]]
+
+2026-06-16 11:43:05,163 - ==> Best [Top1: 89.650   Top5: 99.500   Params: 71148 on epoch: 2]
+2026-06-16 11:43:05,163 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:43:05,173 - 
+
+2026-06-16 11:43:05,173 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:43:07,521 - Epoch: [3][   10/  211]    Overall Loss 0.343326    Objective Loss 0.343326                                        LR 0.100000    Time 0.234802    
+2026-06-16 11:43:07,665 - Epoch: [3][   20/  211]    Overall Loss 0.324361    Objective Loss 0.324361                                        LR 0.100000    Time 0.124596    
+2026-06-16 11:43:07,807 - Epoch: [3][   30/  211]    Overall Loss 0.332263    Objective Loss 0.332263                                        LR 0.100000    Time 0.087771    
+2026-06-16 11:43:07,949 - Epoch: [3][   40/  211]    Overall Loss 0.328964    Objective Loss 0.328964                                        LR 0.100000    Time 0.069379    
+2026-06-16 11:43:08,094 - Epoch: [3][   50/  211]    Overall Loss 0.328203    Objective Loss 0.328203                                        LR 0.100000    Time 0.058400    
+2026-06-16 11:43:08,237 - Epoch: [3][   60/  211]    Overall Loss 0.325807    Objective Loss 0.325807                                        LR 0.100000    Time 0.051047    
+2026-06-16 11:43:08,378 - Epoch: [3][   70/  211]    Overall Loss 0.320464    Objective Loss 0.320464                                        LR 0.100000    Time 0.045771    
+2026-06-16 11:43:08,521 - Epoch: [3][   80/  211]    Overall Loss 0.316569    Objective Loss 0.316569                                        LR 0.100000    Time 0.041832    
+2026-06-16 11:43:08,662 - Epoch: [3][   90/  211]    Overall Loss 0.316625    Objective Loss 0.316625                                        LR 0.100000    Time 0.038751    
+2026-06-16 11:43:08,803 - Epoch: [3][  100/  211]    Overall Loss 0.317966    Objective Loss 0.317966                                        LR 0.100000    Time 0.036285    
+2026-06-16 11:43:08,948 - Epoch: [3][  110/  211]    Overall Loss 0.326080    Objective Loss 0.326080                                        LR 0.100000    Time 0.034302    
+2026-06-16 11:43:09,096 - Epoch: [3][  120/  211]    Overall Loss 0.331032    Objective Loss 0.331032                                        LR 0.100000    Time 0.032677    
+2026-06-16 11:43:09,244 - Epoch: [3][  130/  211]    Overall Loss 0.332794    Objective Loss 0.332794                                        LR 0.100000    Time 0.031296    
+2026-06-16 11:43:09,393 - Epoch: [3][  140/  211]    Overall Loss 0.329258    Objective Loss 0.329258                                        LR 0.100000    Time 0.030124    
+2026-06-16 11:43:09,542 - Epoch: [3][  150/  211]    Overall Loss 0.326175    Objective Loss 0.326175                                        LR 0.100000    Time 0.029107    
+2026-06-16 11:43:09,690 - Epoch: [3][  160/  211]    Overall Loss 0.321654    Objective Loss 0.321654                                        LR 0.100000    Time 0.028207    
+2026-06-16 11:43:09,836 - Epoch: [3][  170/  211]    Overall Loss 0.319521    Objective Loss 0.319521                                        LR 0.100000    Time 0.027406    
+2026-06-16 11:43:09,980 - Epoch: [3][  180/  211]    Overall Loss 0.315256    Objective Loss 0.315256                                        LR 0.100000    Time 0.026686    
+2026-06-16 11:43:10,124 - Epoch: [3][  190/  211]    Overall Loss 0.310113    Objective Loss 0.310113                                        LR 0.100000    Time 0.026035    
+2026-06-16 11:43:10,272 - Epoch: [3][  200/  211]    Overall Loss 0.307443    Objective Loss 0.307443                                        LR 0.100000    Time 0.025471    
+2026-06-16 11:43:10,417 - Epoch: [3][  210/  211]    Overall Loss 0.304884    Objective Loss 0.304884    Top1 90.625000    Top5 99.609375    LR 0.100000    Time 0.024947    
+2026-06-16 11:43:10,431 - Epoch: [3][  211/  211]    Overall Loss 0.305368    Objective Loss 0.305368    Top1 89.919355    Top5 99.395161    LR 0.100000    Time 0.024898    
+2026-06-16 11:43:10,880 - --- validate (epoch=3)-----------
+2026-06-16 11:43:10,881 - 6000 samples (256 per mini-batch)
+2026-06-16 11:43:13,172 - Epoch: [3][   10/   24]    Loss 0.273250    Top1 91.132812    Top5 99.648438    
+2026-06-16 11:43:13,257 - Epoch: [3][   20/   24]    Loss 0.255081    Top1 91.757812    Top5 99.589844    
+2026-06-16 11:43:13,290 - Epoch: [3][   24/   24]    Loss 0.260010    Top1 91.866667    Top5 99.550000    
+2026-06-16 11:43:13,731 - ==> Top1: 91.867    Top5: 99.550    Loss: 0.260
+
+2026-06-16 11:43:13,732 - ==> Confusion:
+[[583   0   3   2   0   0   1   0  16   0]
+ [  0 665   5   1   5   1   1   2   8   0]
+ [  3   2 536  31   0   0   0   5   8   1]
+ [  3   0   7 553   0   6   0   7   5   2]
+ [  2   1  10   3 529   2   1   3   6   8]
+ [  2   0   5  25   2 463   1   2  17   1]
+ [ 12   0   1   0   6  18 567   0  26   1]
+ [  0   2  11  25   2   0   0 583   2   0]
+ [  2   2   6  15   7   3   5   1 540   3]
+ [  2   1   8  15  34   6   0  17  39 493]]
+
+2026-06-16 11:43:13,734 - ==> Best [Top1: 91.867   Top5: 99.550   Params: 71148 on epoch: 3]
+2026-06-16 11:43:13,735 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:43:13,744 - 
+
+2026-06-16 11:43:13,744 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:43:16,061 - Epoch: [4][   10/  211]    Overall Loss 0.264886    Objective Loss 0.264886                                        LR 0.100000    Time 0.231685    
+2026-06-16 11:43:16,203 - Epoch: [4][   20/  211]    Overall Loss 0.269244    Objective Loss 0.269244                                        LR 0.100000    Time 0.122947    
+2026-06-16 11:43:16,347 - Epoch: [4][   30/  211]    Overall Loss 0.262730    Objective Loss 0.262730                                        LR 0.100000    Time 0.086751    
+2026-06-16 11:43:16,490 - Epoch: [4][   40/  211]    Overall Loss 0.257063    Objective Loss 0.257063                                        LR 0.100000    Time 0.068620    
+2026-06-16 11:43:16,635 - Epoch: [4][   50/  211]    Overall Loss 0.248286    Objective Loss 0.248286                                        LR 0.100000    Time 0.057795    
+2026-06-16 11:43:16,781 - Epoch: [4][   60/  211]    Overall Loss 0.240855    Objective Loss 0.240855                                        LR 0.100000    Time 0.050590    
+2026-06-16 11:43:16,927 - Epoch: [4][   70/  211]    Overall Loss 0.237831    Objective Loss 0.237831                                        LR 0.100000    Time 0.045451    
+2026-06-16 11:43:17,073 - Epoch: [4][   80/  211]    Overall Loss 0.236883    Objective Loss 0.236883                                        LR 0.100000    Time 0.041580    
+2026-06-16 11:43:17,216 - Epoch: [4][   90/  211]    Overall Loss 0.237727    Objective Loss 0.237727                                        LR 0.100000    Time 0.038556    
+2026-06-16 11:43:17,363 - Epoch: [4][  100/  211]    Overall Loss 0.238914    Objective Loss 0.238914                                        LR 0.100000    Time 0.036162    
+2026-06-16 11:43:17,514 - Epoch: [4][  110/  211]    Overall Loss 0.237789    Objective Loss 0.237789                                        LR 0.100000    Time 0.034244    
+2026-06-16 11:43:17,665 - Epoch: [4][  120/  211]    Overall Loss 0.235187    Objective Loss 0.235187                                        LR 0.100000    Time 0.032650    
+2026-06-16 11:43:17,813 - Epoch: [4][  130/  211]    Overall Loss 0.234153    Objective Loss 0.234153                                        LR 0.100000    Time 0.031274    
+2026-06-16 11:43:17,967 - Epoch: [4][  140/  211]    Overall Loss 0.236125    Objective Loss 0.236125                                        LR 0.100000    Time 0.030139    
+2026-06-16 11:43:18,120 - Epoch: [4][  150/  211]    Overall Loss 0.234443    Objective Loss 0.234443                                        LR 0.100000    Time 0.029144    
+2026-06-16 11:43:18,273 - Epoch: [4][  160/  211]    Overall Loss 0.232694    Objective Loss 0.232694                                        LR 0.100000    Time 0.028278    
+2026-06-16 11:43:18,425 - Epoch: [4][  170/  211]    Overall Loss 0.231082    Objective Loss 0.231082                                        LR 0.100000    Time 0.027505    
+2026-06-16 11:43:18,572 - Epoch: [4][  180/  211]    Overall Loss 0.227573    Objective Loss 0.227573                                        LR 0.100000    Time 0.026796    
+2026-06-16 11:43:18,716 - Epoch: [4][  190/  211]    Overall Loss 0.225053    Objective Loss 0.225053                                        LR 0.100000    Time 0.026142    
+2026-06-16 11:43:18,866 - Epoch: [4][  200/  211]    Overall Loss 0.225342    Objective Loss 0.225342                                        LR 0.100000    Time 0.025582    
+2026-06-16 11:43:19,018 - Epoch: [4][  210/  211]    Overall Loss 0.223391    Objective Loss 0.223391    Top1 94.921875    Top5 100.000000    LR 0.100000    Time 0.025086    
+2026-06-16 11:43:19,035 - Epoch: [4][  211/  211]    Overall Loss 0.223294    Objective Loss 0.223294    Top1 93.750000    Top5 100.000000    LR 0.100000    Time 0.025046    
+2026-06-16 11:43:19,499 - --- validate (epoch=4)-----------
+2026-06-16 11:43:19,499 - 6000 samples (256 per mini-batch)
+2026-06-16 11:43:21,804 - Epoch: [4][   10/   24]    Loss 0.272747    Top1 91.679688    Top5 99.648438    
+2026-06-16 11:43:21,878 - Epoch: [4][   20/   24]    Loss 0.257929    Top1 91.914062    Top5 99.667969    
+2026-06-16 11:43:21,908 - Epoch: [4][   24/   24]    Loss 0.259883    Top1 91.816667    Top5 99.650000    
+2026-06-16 11:43:22,357 - ==> Top1: 91.817    Top5: 99.650    Loss: 0.260
+
+2026-06-16 11:43:22,357 - ==> Confusion:
+[[588   2   0   0   0   0  13   0   2   0]
+ [  2 681   3   0   0   0   0   1   1   0]
+ [ 11   9 495  12   5   1   3  28  20   2]
+ [  2   2  11 536   1   6   0   7  13   5]
+ [  1   7   2   0 527   0  10   3   4  11]
+ [  4   4   0   2   1 463  18   0  23   3]
+ [  7   4   0   1   1   2 610   0   6   0]
+ [  1  41   2   3   6   2   0 558   5   7]
+ [  4   6   1   2   4   1  29   1 533   3]
+ [  1   5   0   1  23   4   6   9  48 518]]
+
+2026-06-16 11:43:22,360 - ==> Best [Top1: 91.867   Top5: 99.550   Params: 71148 on epoch: 3]
+2026-06-16 11:43:22,360 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:43:22,369 - 
+
+2026-06-16 11:43:22,369 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:43:24,707 - Epoch: [5][   10/  211]    Overall Loss 0.229866    Objective Loss 0.229866                                        LR 0.100000    Time 0.233749    
+2026-06-16 11:43:24,847 - Epoch: [5][   20/  211]    Overall Loss 0.228152    Objective Loss 0.228152                                        LR 0.100000    Time 0.123869    
+2026-06-16 11:43:24,988 - Epoch: [5][   30/  211]    Overall Loss 0.217209    Objective Loss 0.217209                                        LR 0.100000    Time 0.087261    
+2026-06-16 11:43:25,129 - Epoch: [5][   40/  211]    Overall Loss 0.216193    Objective Loss 0.216193                                        LR 0.100000    Time 0.068963    
+2026-06-16 11:43:25,269 - Epoch: [5][   50/  211]    Overall Loss 0.207759    Objective Loss 0.207759                                        LR 0.100000    Time 0.057973    
+2026-06-16 11:43:25,411 - Epoch: [5][   60/  211]    Overall Loss 0.219125    Objective Loss 0.219125                                        LR 0.100000    Time 0.050667    
+2026-06-16 11:43:25,552 - Epoch: [5][   70/  211]    Overall Loss 0.217349    Objective Loss 0.217349                                        LR 0.100000    Time 0.045446    
+2026-06-16 11:43:25,694 - Epoch: [5][   80/  211]    Overall Loss 0.215442    Objective Loss 0.215442                                        LR 0.100000    Time 0.041536    
+2026-06-16 11:43:25,837 - Epoch: [5][   90/  211]    Overall Loss 0.212665    Objective Loss 0.212665                                        LR 0.100000    Time 0.038508    
+2026-06-16 11:43:25,979 - Epoch: [5][  100/  211]    Overall Loss 0.212664    Objective Loss 0.212664                                        LR 0.100000    Time 0.036076    
+2026-06-16 11:43:26,121 - Epoch: [5][  110/  211]    Overall Loss 0.210848    Objective Loss 0.210848                                        LR 0.100000    Time 0.034090    
+2026-06-16 11:43:26,264 - Epoch: [5][  120/  211]    Overall Loss 0.211591    Objective Loss 0.211591                                        LR 0.100000    Time 0.032433    
+2026-06-16 11:43:26,407 - Epoch: [5][  130/  211]    Overall Loss 0.212968    Objective Loss 0.212968                                        LR 0.100000    Time 0.031037    
+2026-06-16 11:43:26,550 - Epoch: [5][  140/  211]    Overall Loss 0.211312    Objective Loss 0.211312                                        LR 0.100000    Time 0.029845    
+2026-06-16 11:43:26,696 - Epoch: [5][  150/  211]    Overall Loss 0.213176    Objective Loss 0.213176                                        LR 0.100000    Time 0.028827    
+2026-06-16 11:43:26,839 - Epoch: [5][  160/  211]    Overall Loss 0.213030    Objective Loss 0.213030                                        LR 0.100000    Time 0.027916    
+2026-06-16 11:43:26,984 - Epoch: [5][  170/  211]    Overall Loss 0.213474    Objective Loss 0.213474                                        LR 0.100000    Time 0.027126    
+2026-06-16 11:43:27,128 - Epoch: [5][  180/  211]    Overall Loss 0.213308    Objective Loss 0.213308                                        LR 0.100000    Time 0.026419    
+2026-06-16 11:43:27,271 - Epoch: [5][  190/  211]    Overall Loss 0.210668    Objective Loss 0.210668                                        LR 0.100000    Time 0.025778    
+2026-06-16 11:43:27,413 - Epoch: [5][  200/  211]    Overall Loss 0.207880    Objective Loss 0.207880                                        LR 0.100000    Time 0.025201    
+2026-06-16 11:43:27,556 - Epoch: [5][  210/  211]    Overall Loss 0.206779    Objective Loss 0.206779    Top1 95.312500    Top5 100.000000    LR 0.100000    Time 0.024681    
+2026-06-16 11:43:27,572 - Epoch: [5][  211/  211]    Overall Loss 0.206769    Objective Loss 0.206769    Top1 93.346774    Top5 100.000000    LR 0.100000    Time 0.024635    
+2026-06-16 11:43:28,017 - --- validate (epoch=5)-----------
+2026-06-16 11:43:28,018 - 6000 samples (256 per mini-batch)
+2026-06-16 11:43:30,320 - Epoch: [5][   10/   24]    Loss 0.160899    Top1 94.765625    Top5 99.843750    
+2026-06-16 11:43:30,395 - Epoch: [5][   20/   24]    Loss 0.155820    Top1 95.195312    Top5 99.882812    
+2026-06-16 11:43:30,425 - Epoch: [5][   24/   24]    Loss 0.151952    Top1 95.216667    Top5 99.900000    
+2026-06-16 11:43:30,873 - ==> Top1: 95.217    Top5: 99.900    Loss: 0.152
+
+2026-06-16 11:43:30,873 - ==> Confusion:
+[[592   0   2   1   0   1   5   0   3   1]
+ [  1 676   3   0   0   0   2   4   1   1]
+ [  0   3 561   7   3   0   0   5   4   3]
+ [  1   1   6 556   0  11   1   3   3   1]
+ [  1   0   4   0 545   2   3   1   0   9]
+ [  1   1   4   1   0 504   2   0   3   2]
+ [  7   3   2   0   2   5 606   0   6   0]
+ [  0   1  20   2  13   1   0 587   0   1]
+ [  5   0  10   6   5  12   8   0 527  11]
+ [  1   1   5   2  27   9   0   7   4 559]]
+
+2026-06-16 11:43:30,876 - ==> Best [Top1: 95.217   Top5: 99.900   Params: 71148 on epoch: 5]
+2026-06-16 11:43:30,876 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:43:30,885 - 
+
+2026-06-16 11:43:30,885 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:43:33,228 - Epoch: [6][   10/  211]    Overall Loss 0.183680    Objective Loss 0.183680                                        LR 0.100000    Time 0.234284    
+2026-06-16 11:43:33,370 - Epoch: [6][   20/  211]    Overall Loss 0.180508    Objective Loss 0.180508                                        LR 0.100000    Time 0.124224    
+2026-06-16 11:43:33,511 - Epoch: [6][   30/  211]    Overall Loss 0.185435    Objective Loss 0.185435                                        LR 0.100000    Time 0.087503    
+2026-06-16 11:43:33,652 - Epoch: [6][   40/  211]    Overall Loss 0.187711    Objective Loss 0.187711                                        LR 0.100000    Time 0.069145    
+2026-06-16 11:43:33,793 - Epoch: [6][   50/  211]    Overall Loss 0.185836    Objective Loss 0.185836                                        LR 0.100000    Time 0.058139    
+2026-06-16 11:43:33,934 - Epoch: [6][   60/  211]    Overall Loss 0.185160    Objective Loss 0.185160                                        LR 0.100000    Time 0.050798    
+2026-06-16 11:43:34,076 - Epoch: [6][   70/  211]    Overall Loss 0.182048    Objective Loss 0.182048                                        LR 0.100000    Time 0.045561    
+2026-06-16 11:43:34,218 - Epoch: [6][   80/  211]    Overall Loss 0.182163    Objective Loss 0.182163                                        LR 0.100000    Time 0.041638    
+2026-06-16 11:43:34,361 - Epoch: [6][   90/  211]    Overall Loss 0.184023    Objective Loss 0.184023                                        LR 0.100000    Time 0.038596    
+2026-06-16 11:43:34,503 - Epoch: [6][  100/  211]    Overall Loss 0.187890    Objective Loss 0.187890                                        LR 0.100000    Time 0.036156    
+2026-06-16 11:43:34,646 - Epoch: [6][  110/  211]    Overall Loss 0.189053    Objective Loss 0.189053                                        LR 0.100000    Time 0.034166    
+2026-06-16 11:43:34,790 - Epoch: [6][  120/  211]    Overall Loss 0.188389    Objective Loss 0.188389                                        LR 0.100000    Time 0.032519    
+2026-06-16 11:43:34,932 - Epoch: [6][  130/  211]    Overall Loss 0.188641    Objective Loss 0.188641                                        LR 0.100000    Time 0.031110    
+2026-06-16 11:43:35,076 - Epoch: [6][  140/  211]    Overall Loss 0.189021    Objective Loss 0.189021                                        LR 0.100000    Time 0.029913    
+2026-06-16 11:43:35,221 - Epoch: [6][  150/  211]    Overall Loss 0.188313    Objective Loss 0.188313                                        LR 0.100000    Time 0.028886    
+2026-06-16 11:43:35,364 - Epoch: [6][  160/  211]    Overall Loss 0.186701    Objective Loss 0.186701                                        LR 0.100000    Time 0.027975    
+2026-06-16 11:43:35,507 - Epoch: [6][  170/  211]    Overall Loss 0.187326    Objective Loss 0.187326                                        LR 0.100000    Time 0.027168    
+2026-06-16 11:43:35,651 - Epoch: [6][  180/  211]    Overall Loss 0.187093    Objective Loss 0.187093                                        LR 0.100000    Time 0.026460    
+2026-06-16 11:43:35,795 - Epoch: [6][  190/  211]    Overall Loss 0.187050    Objective Loss 0.187050                                        LR 0.100000    Time 0.025821    
+2026-06-16 11:43:35,937 - Epoch: [6][  200/  211]    Overall Loss 0.185053    Objective Loss 0.185053                                        LR 0.100000    Time 0.025242    
+2026-06-16 11:43:36,078 - Epoch: [6][  210/  211]    Overall Loss 0.185017    Objective Loss 0.185017    Top1 93.359375    Top5 100.000000    LR 0.100000    Time 0.024708    
+2026-06-16 11:43:36,093 - Epoch: [6][  211/  211]    Overall Loss 0.185166    Objective Loss 0.185166    Top1 94.354839    Top5 99.395161    LR 0.100000    Time 0.024663    
+2026-06-16 11:43:36,551 - --- validate (epoch=6)-----------
+2026-06-16 11:43:36,551 - 6000 samples (256 per mini-batch)
+2026-06-16 11:43:38,865 - Epoch: [6][   10/   24]    Loss 0.233202    Top1 93.476562    Top5 99.726562    
+2026-06-16 11:43:38,943 - Epoch: [6][   20/   24]    Loss 0.208224    Top1 93.632812    Top5 99.843750    
+2026-06-16 11:43:38,972 - Epoch: [6][   24/   24]    Loss 0.207680    Top1 93.666667    Top5 99.850000    
+2026-06-16 11:43:39,424 - ==> Top1: 93.667    Top5: 99.850    Loss: 0.208
+
+2026-06-16 11:43:39,424 - ==> Confusion:
+[[593   0   5   0   0   0   2   1   0   4]
+ [  0 667   5   0   1   2   1   6   0   6]
+ [  2   0 556   7   0   0   0   6   3  12]
+ [  0   0  15 549   0   3   0   3   1  12]
+ [  0   1   7   0 480   3   2   3   1  68]
+ [  1   0   0   5   2 488   6   0   1  15]
+ [  4   0   0   0   3   4 617   0   0   3]
+ [  1   2  19   5   0   0   0 560   1  37]
+ [  3   1   8   3   2  14   7   0 512  34]
+ [  1   0   2   0   5   2   0   4   3 598]]
+
+2026-06-16 11:43:39,427 - ==> Best [Top1: 95.217   Top5: 99.900   Params: 71148 on epoch: 5]
+2026-06-16 11:43:39,427 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:43:39,436 - 
+
+2026-06-16 11:43:39,436 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:43:41,763 - Epoch: [7][   10/  211]    Overall Loss 0.179416    Objective Loss 0.179416                                        LR 0.100000    Time 0.232674    
+2026-06-16 11:43:41,905 - Epoch: [7][   20/  211]    Overall Loss 0.175799    Objective Loss 0.175799                                        LR 0.100000    Time 0.123398    
+2026-06-16 11:43:42,047 - Epoch: [7][   30/  211]    Overall Loss 0.178699    Objective Loss 0.178699                                        LR 0.100000    Time 0.086991    
+2026-06-16 11:43:42,188 - Epoch: [7][   40/  211]    Overall Loss 0.183465    Objective Loss 0.183465                                        LR 0.100000    Time 0.068762    
+2026-06-16 11:43:42,329 - Epoch: [7][   50/  211]    Overall Loss 0.180452    Objective Loss 0.180452                                        LR 0.100000    Time 0.057826    
+2026-06-16 11:43:42,469 - Epoch: [7][   60/  211]    Overall Loss 0.184810    Objective Loss 0.184810                                        LR 0.100000    Time 0.050533    
+2026-06-16 11:43:42,610 - Epoch: [7][   70/  211]    Overall Loss 0.179955    Objective Loss 0.179955                                        LR 0.100000    Time 0.045324    
+2026-06-16 11:43:42,752 - Epoch: [7][   80/  211]    Overall Loss 0.181204    Objective Loss 0.181204                                        LR 0.100000    Time 0.041427    
+2026-06-16 11:43:42,895 - Epoch: [7][   90/  211]    Overall Loss 0.178665    Objective Loss 0.178665                                        LR 0.100000    Time 0.038410    
+2026-06-16 11:43:43,036 - Epoch: [7][  100/  211]    Overall Loss 0.180975    Objective Loss 0.180975                                        LR 0.100000    Time 0.035982    
+2026-06-16 11:43:43,179 - Epoch: [7][  110/  211]    Overall Loss 0.182509    Objective Loss 0.182509                                        LR 0.100000    Time 0.034004    
+2026-06-16 11:43:43,321 - Epoch: [7][  120/  211]    Overall Loss 0.184721    Objective Loss 0.184721                                        LR 0.100000    Time 0.032353    
+2026-06-16 11:43:43,463 - Epoch: [7][  130/  211]    Overall Loss 0.184020    Objective Loss 0.184020                                        LR 0.100000    Time 0.030956    
+2026-06-16 11:43:43,605 - Epoch: [7][  140/  211]    Overall Loss 0.182887    Objective Loss 0.182887                                        LR 0.100000    Time 0.029762    
+2026-06-16 11:43:43,748 - Epoch: [7][  150/  211]    Overall Loss 0.181236    Objective Loss 0.181236                                        LR 0.100000    Time 0.028728    
+2026-06-16 11:43:43,894 - Epoch: [7][  160/  211]    Overall Loss 0.180712    Objective Loss 0.180712                                        LR 0.100000    Time 0.027844    
+2026-06-16 11:43:44,039 - Epoch: [7][  170/  211]    Overall Loss 0.179822    Objective Loss 0.179822                                        LR 0.100000    Time 0.027057    
+2026-06-16 11:43:44,181 - Epoch: [7][  180/  211]    Overall Loss 0.179284    Objective Loss 0.179284                                        LR 0.100000    Time 0.026342    
+2026-06-16 11:43:44,324 - Epoch: [7][  190/  211]    Overall Loss 0.178565    Objective Loss 0.178565                                        LR 0.100000    Time 0.025706    
+2026-06-16 11:43:44,467 - Epoch: [7][  200/  211]    Overall Loss 0.176528    Objective Loss 0.176528                                        LR 0.100000    Time 0.025136    
+2026-06-16 11:43:44,611 - Epoch: [7][  210/  211]    Overall Loss 0.175040    Objective Loss 0.175040    Top1 95.312500    Top5 100.000000    LR 0.100000    Time 0.024622    
+2026-06-16 11:43:44,627 - Epoch: [7][  211/  211]    Overall Loss 0.174988    Objective Loss 0.174988    Top1 94.959677    Top5 100.000000    LR 0.100000    Time 0.024580    
+2026-06-16 11:43:45,087 - --- validate (epoch=7)-----------
+2026-06-16 11:43:45,087 - 6000 samples (256 per mini-batch)
+2026-06-16 11:43:47,338 - Epoch: [7][   10/   24]    Loss 0.146226    Top1 95.664062    Top5 99.960938    
+2026-06-16 11:43:47,412 - Epoch: [7][   20/   24]    Loss 0.156964    Top1 95.039062    Top5 99.882812    
+2026-06-16 11:43:47,442 - Epoch: [7][   24/   24]    Loss 0.151514    Top1 95.200000    Top5 99.900000    
+2026-06-16 11:43:47,887 - ==> Top1: 95.200    Top5: 99.900    Loss: 0.152
+
+2026-06-16 11:43:47,887 - ==> Confusion:
+[[592   0   6   2   0   0   3   0   0   2]
+ [  1 683   2   0   2   0   0   0   0   0]
+ [  3   3 555   6   1   1   1  15   0   1]
+ [  1   1   4 566   1   0   1   8   1   0]
+ [  1   3   2   0 540   0   0   5   0  14]
+ [  1   0   1  12   1 492   5   0   2   4]
+ [  5   4   2   1   4  12 599   0   1   3]
+ [  0   6   3   2   5   0   0 608   0   1]
+ [  3   3   4  19   5  10   6   3 515  16]
+ [  0   2   3   4  14   7   0  21   2 562]]
+
+2026-06-16 11:43:47,890 - ==> Best [Top1: 95.217   Top5: 99.900   Params: 71148 on epoch: 5]
+2026-06-16 11:43:47,890 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:43:47,899 - 
+
+2026-06-16 11:43:47,900 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:43:50,255 - Epoch: [8][   10/  211]    Overall Loss 0.188816    Objective Loss 0.188816                                        LR 0.100000    Time 0.235531    
+2026-06-16 11:43:50,396 - Epoch: [8][   20/  211]    Overall Loss 0.176581    Objective Loss 0.176581                                        LR 0.100000    Time 0.124797    
+2026-06-16 11:43:50,537 - Epoch: [8][   30/  211]    Overall Loss 0.173200    Objective Loss 0.173200                                        LR 0.100000    Time 0.087893    
+2026-06-16 11:43:50,679 - Epoch: [8][   40/  211]    Overall Loss 0.165613    Objective Loss 0.165613                                        LR 0.100000    Time 0.069460    
+2026-06-16 11:43:50,820 - Epoch: [8][   50/  211]    Overall Loss 0.159066    Objective Loss 0.159066                                        LR 0.100000    Time 0.058397    
+2026-06-16 11:43:50,963 - Epoch: [8][   60/  211]    Overall Loss 0.160305    Objective Loss 0.160305                                        LR 0.100000    Time 0.051043    
+2026-06-16 11:43:51,105 - Epoch: [8][   70/  211]    Overall Loss 0.158579    Objective Loss 0.158579                                        LR 0.100000    Time 0.045768    
+2026-06-16 11:43:51,246 - Epoch: [8][   80/  211]    Overall Loss 0.156300    Objective Loss 0.156300                                        LR 0.100000    Time 0.041810    
+2026-06-16 11:43:51,387 - Epoch: [8][   90/  211]    Overall Loss 0.154928    Objective Loss 0.154928                                        LR 0.100000    Time 0.038730    
+2026-06-16 11:43:51,532 - Epoch: [8][  100/  211]    Overall Loss 0.155448    Objective Loss 0.155448                                        LR 0.100000    Time 0.036303    
+2026-06-16 11:43:51,675 - Epoch: [8][  110/  211]    Overall Loss 0.152570    Objective Loss 0.152570                                        LR 0.100000    Time 0.034298    
+2026-06-16 11:43:51,817 - Epoch: [8][  120/  211]    Overall Loss 0.151229    Objective Loss 0.151229                                        LR 0.100000    Time 0.032626    
+2026-06-16 11:43:51,960 - Epoch: [8][  130/  211]    Overall Loss 0.151308    Objective Loss 0.151308                                        LR 0.100000    Time 0.031216    
+2026-06-16 11:43:52,103 - Epoch: [8][  140/  211]    Overall Loss 0.151890    Objective Loss 0.151890                                        LR 0.100000    Time 0.030008    
+2026-06-16 11:43:52,246 - Epoch: [8][  150/  211]    Overall Loss 0.152016    Objective Loss 0.152016                                        LR 0.100000    Time 0.028956    
+2026-06-16 11:43:52,388 - Epoch: [8][  160/  211]    Overall Loss 0.151232    Objective Loss 0.151232                                        LR 0.100000    Time 0.028035    
+2026-06-16 11:43:52,530 - Epoch: [8][  170/  211]    Overall Loss 0.152493    Objective Loss 0.152493                                        LR 0.100000    Time 0.027221    
+2026-06-16 11:43:52,673 - Epoch: [8][  180/  211]    Overall Loss 0.151150    Objective Loss 0.151150                                        LR 0.100000    Time 0.026503    
+2026-06-16 11:43:52,816 - Epoch: [8][  190/  211]    Overall Loss 0.150851    Objective Loss 0.150851                                        LR 0.100000    Time 0.025856    
+2026-06-16 11:43:52,961 - Epoch: [8][  200/  211]    Overall Loss 0.149656    Objective Loss 0.149656                                        LR 0.100000    Time 0.025286    
+2026-06-16 11:43:53,102 - Epoch: [8][  210/  211]    Overall Loss 0.149938    Objective Loss 0.149938    Top1 94.531250    Top5 99.609375    LR 0.100000    Time 0.024756    
+2026-06-16 11:43:53,118 - Epoch: [8][  211/  211]    Overall Loss 0.149698    Objective Loss 0.149698    Top1 95.967742    Top5 99.798387    LR 0.100000    Time 0.024712    
+2026-06-16 11:43:53,580 - --- validate (epoch=8)-----------
+2026-06-16 11:43:53,580 - 6000 samples (256 per mini-batch)
+2026-06-16 11:43:55,893 - Epoch: [8][   10/   24]    Loss 0.131865    Top1 95.820312    Top5 99.960938    
+2026-06-16 11:43:55,967 - Epoch: [8][   20/   24]    Loss 0.142006    Top1 95.625000    Top5 99.941406    
+2026-06-16 11:43:55,996 - Epoch: [8][   24/   24]    Loss 0.135417    Top1 95.883333    Top5 99.933333    
+2026-06-16 11:43:56,444 - ==> Top1: 95.883    Top5: 99.933    Loss: 0.135
+
+2026-06-16 11:43:56,444 - ==> Confusion:
+[[587   0   3   0   0   0  10   0   4   1]
+ [  0 680   1   1   4   0   0   1   1   0]
+ [  1   5 554   8   3   3   0   3   7   2]
+ [  0   0   9 551   0  10   0   2  11   0]
+ [  0   2   2   0 554   1   0   1   1   4]
+ [  1   0   1   3   1 502   3   0   5   2]
+ [  0   5   0   0   2   5 616   0   3   0]
+ [  0   7  10   8   2   0   0 596   0   2]
+ [  3   0   1   1   5   7   5   0 562   0]
+ [  0   3   2   0  27   9   0   9  14 551]]
+
+2026-06-16 11:43:56,447 - ==> Best [Top1: 95.883   Top5: 99.933   Params: 71148 on epoch: 8]
+2026-06-16 11:43:56,447 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:43:56,455 - 
+
+2026-06-16 11:43:56,456 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:43:58,854 - Epoch: [9][   10/  211]    Overall Loss 0.114121    Objective Loss 0.114121                                        LR 0.100000    Time 0.239799    
+2026-06-16 11:43:58,996 - Epoch: [9][   20/  211]    Overall Loss 0.121361    Objective Loss 0.121361                                        LR 0.100000    Time 0.126999    
+2026-06-16 11:43:59,136 - Epoch: [9][   30/  211]    Overall Loss 0.122969    Objective Loss 0.122969                                        LR 0.100000    Time 0.089334    
+2026-06-16 11:43:59,278 - Epoch: [9][   40/  211]    Overall Loss 0.130289    Objective Loss 0.130289                                        LR 0.100000    Time 0.070534    
+2026-06-16 11:43:59,419 - Epoch: [9][   50/  211]    Overall Loss 0.133575    Objective Loss 0.133575                                        LR 0.100000    Time 0.059246    
+2026-06-16 11:43:59,560 - Epoch: [9][   60/  211]    Overall Loss 0.134458    Objective Loss 0.134458                                        LR 0.100000    Time 0.051715    
+2026-06-16 11:43:59,702 - Epoch: [9][   70/  211]    Overall Loss 0.137582    Objective Loss 0.137582                                        LR 0.100000    Time 0.046350    
+2026-06-16 11:43:59,843 - Epoch: [9][   80/  211]    Overall Loss 0.139035    Objective Loss 0.139035                                        LR 0.100000    Time 0.042320    
+2026-06-16 11:43:59,985 - Epoch: [9][   90/  211]    Overall Loss 0.140607    Objective Loss 0.140607                                        LR 0.100000    Time 0.039193    
+2026-06-16 11:44:00,127 - Epoch: [9][  100/  211]    Overall Loss 0.139042    Objective Loss 0.139042                                        LR 0.100000    Time 0.036694    
+2026-06-16 11:44:00,268 - Epoch: [9][  110/  211]    Overall Loss 0.140139    Objective Loss 0.140139                                        LR 0.100000    Time 0.034640    
+2026-06-16 11:44:00,412 - Epoch: [9][  120/  211]    Overall Loss 0.140918    Objective Loss 0.140918                                        LR 0.100000    Time 0.032950    
+2026-06-16 11:44:00,555 - Epoch: [9][  130/  211]    Overall Loss 0.141255    Objective Loss 0.141255                                        LR 0.100000    Time 0.031516    
+2026-06-16 11:44:00,697 - Epoch: [9][  140/  211]    Overall Loss 0.139753    Objective Loss 0.139753                                        LR 0.100000    Time 0.030276    
+2026-06-16 11:44:00,840 - Epoch: [9][  150/  211]    Overall Loss 0.140956    Objective Loss 0.140956                                        LR 0.100000    Time 0.029206    
+2026-06-16 11:44:00,983 - Epoch: [9][  160/  211]    Overall Loss 0.140649    Objective Loss 0.140649                                        LR 0.100000    Time 0.028279    
+2026-06-16 11:44:01,126 - Epoch: [9][  170/  211]    Overall Loss 0.139644    Objective Loss 0.139644                                        LR 0.100000    Time 0.027451    
+2026-06-16 11:44:01,268 - Epoch: [9][  180/  211]    Overall Loss 0.138880    Objective Loss 0.138880                                        LR 0.100000    Time 0.026715    
+2026-06-16 11:44:01,411 - Epoch: [9][  190/  211]    Overall Loss 0.137901    Objective Loss 0.137901                                        LR 0.100000    Time 0.026062    
+2026-06-16 11:44:01,555 - Epoch: [9][  200/  211]    Overall Loss 0.137447    Objective Loss 0.137447                                        LR 0.100000    Time 0.025477    
+2026-06-16 11:44:01,696 - Epoch: [9][  210/  211]    Overall Loss 0.136847    Objective Loss 0.136847    Top1 94.921875    Top5 100.000000    LR 0.100000    Time 0.024936    
+2026-06-16 11:44:01,712 - Epoch: [9][  211/  211]    Overall Loss 0.136850    Objective Loss 0.136850    Top1 95.967742    Top5 100.000000    LR 0.100000    Time 0.024890    
+2026-06-16 11:44:02,161 - --- validate (epoch=9)-----------
+2026-06-16 11:44:02,161 - 6000 samples (256 per mini-batch)
+2026-06-16 11:44:04,438 - Epoch: [9][   10/   24]    Loss 0.148095    Top1 95.976562    Top5 99.882812    
+2026-06-16 11:44:04,515 - Epoch: [9][   20/   24]    Loss 0.150116    Top1 95.722656    Top5 99.902344    
+2026-06-16 11:44:04,544 - Epoch: [9][   24/   24]    Loss 0.142729    Top1 95.866667    Top5 99.900000    
+2026-06-16 11:44:04,995 - ==> Top1: 95.867    Top5: 99.900    Loss: 0.143
+
+2026-06-16 11:44:04,996 - ==> Confusion:
+[[592   0   2   0   0   0   7   0   3   1]
+ [  0 677   2   0   0   2   1   5   0   1]
+ [  1   2 566   0   2   2   2   6   1   4]
+ [  1   1  16 545   0  13   0   5   0   2]
+ [  0   2   3   0 528   3   2   8   0  19]
+ [  2   0   0   0   1 509   2   2   0   2]
+ [  7   2   1   0   4   7 610   0   0   0]
+ [  0   2   5   1   1   1   0 613   0   2]
+ [  9   3   2   3   6  24   7   0 516  14]
+ [  0   0   2   0   4   4   0   7   2 596]]
+
+2026-06-16 11:44:04,998 - ==> Best [Top1: 95.883   Top5: 99.933   Params: 71148 on epoch: 8]
+2026-06-16 11:44:04,998 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:44:05,007 - 
+
+2026-06-16 11:44:05,007 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:44:07,380 - Epoch: [10][   10/  211]    Overall Loss 0.151496    Objective Loss 0.151496                                        LR 0.100000    Time 0.237290    
+2026-06-16 11:44:07,521 - Epoch: [10][   20/  211]    Overall Loss 0.139238    Objective Loss 0.139238                                        LR 0.100000    Time 0.125668    
+2026-06-16 11:44:07,662 - Epoch: [10][   30/  211]    Overall Loss 0.138486    Objective Loss 0.138486                                        LR 0.100000    Time 0.088480    
+2026-06-16 11:44:07,803 - Epoch: [10][   40/  211]    Overall Loss 0.139667    Objective Loss 0.139667                                        LR 0.100000    Time 0.069878    
+2026-06-16 11:44:07,945 - Epoch: [10][   50/  211]    Overall Loss 0.140828    Objective Loss 0.140828                                        LR 0.100000    Time 0.058745    
+2026-06-16 11:44:08,088 - Epoch: [10][   60/  211]    Overall Loss 0.143247    Objective Loss 0.143247                                        LR 0.100000    Time 0.051323    
+2026-06-16 11:44:08,231 - Epoch: [10][   70/  211]    Overall Loss 0.140144    Objective Loss 0.140144                                        LR 0.100000    Time 0.046038    
+2026-06-16 11:44:08,378 - Epoch: [10][   80/  211]    Overall Loss 0.140001    Objective Loss 0.140001                                        LR 0.100000    Time 0.042118    
+2026-06-16 11:44:08,522 - Epoch: [10][   90/  211]    Overall Loss 0.138241    Objective Loss 0.138241                                        LR 0.100000    Time 0.039033    
+2026-06-16 11:44:08,664 - Epoch: [10][  100/  211]    Overall Loss 0.139761    Objective Loss 0.139761                                        LR 0.100000    Time 0.036549    
+2026-06-16 11:44:08,806 - Epoch: [10][  110/  211]    Overall Loss 0.137334    Objective Loss 0.137334                                        LR 0.100000    Time 0.034519    
+2026-06-16 11:44:08,949 - Epoch: [10][  120/  211]    Overall Loss 0.137179    Objective Loss 0.137179                                        LR 0.100000    Time 0.032829    
+2026-06-16 11:44:09,095 - Epoch: [10][  130/  211]    Overall Loss 0.136980    Objective Loss 0.136980                                        LR 0.100000    Time 0.031423    
+2026-06-16 11:44:09,237 - Epoch: [10][  140/  211]    Overall Loss 0.136165    Objective Loss 0.136165                                        LR 0.100000    Time 0.030195    
+2026-06-16 11:44:09,379 - Epoch: [10][  150/  211]    Overall Loss 0.135500    Objective Loss 0.135500                                        LR 0.100000    Time 0.029128    
+2026-06-16 11:44:09,521 - Epoch: [10][  160/  211]    Overall Loss 0.134049    Objective Loss 0.134049                                        LR 0.100000    Time 0.028195    
+2026-06-16 11:44:09,664 - Epoch: [10][  170/  211]    Overall Loss 0.135816    Objective Loss 0.135816                                        LR 0.100000    Time 0.027374    
+2026-06-16 11:44:09,807 - Epoch: [10][  180/  211]    Overall Loss 0.135996    Objective Loss 0.135996                                        LR 0.100000    Time 0.026645    
+2026-06-16 11:44:09,948 - Epoch: [10][  190/  211]    Overall Loss 0.135184    Objective Loss 0.135184                                        LR 0.100000    Time 0.025988    
+2026-06-16 11:44:10,091 - Epoch: [10][  200/  211]    Overall Loss 0.134366    Objective Loss 0.134366                                        LR 0.100000    Time 0.025401    
+2026-06-16 11:44:10,232 - Epoch: [10][  210/  211]    Overall Loss 0.133733    Objective Loss 0.133733    Top1 96.484375    Top5 99.609375    LR 0.100000    Time 0.024865    
+2026-06-16 11:44:10,248 - Epoch: [10][  211/  211]    Overall Loss 0.133683    Objective Loss 0.133683    Top1 96.572581    Top5 99.798387    LR 0.100000    Time 0.024819    
+2026-06-16 11:44:10,704 - --- validate (epoch=10)-----------
+2026-06-16 11:44:10,705 - 6000 samples (256 per mini-batch)
+2026-06-16 11:44:12,938 - Epoch: [10][   10/   24]    Loss 0.131569    Top1 95.742188    Top5 99.960938    
+2026-06-16 11:44:13,012 - Epoch: [10][   20/   24]    Loss 0.127770    Top1 96.054688    Top5 99.902344    
+2026-06-16 11:44:13,042 - Epoch: [10][   24/   24]    Loss 0.120383    Top1 96.233333    Top5 99.916667    
+2026-06-16 11:44:13,489 - ==> Top1: 96.233    Top5: 99.917    Loss: 0.120
+
+2026-06-16 11:44:13,490 - ==> Confusion:
+[[599   0   0   0   0   0   3   0   1   2]
+ [  7 671   2   0   1   1   0   6   0   0]
+ [  3   3 542   7   3   1   0  20   2   5]
+ [  2   1   2 570   1   0   0   4   2   1]
+ [  0   2   1   0 548   0   0   1   0  13]
+ [  4   2   0  10   0 475   7   1  12   7]
+ [  6   3   0   0   5   0 603   0  14   0]
+ [  0   1   3   4   3   0   0 613   0   1]
+ [  0   1   1   1   6   2   2   1 566   4]
+ [  0   1   0   2   9   2   0   9   5 587]]
+
+2026-06-16 11:44:13,492 - ==> Best [Top1: 96.233   Top5: 99.917   Params: 71148 on epoch: 10]
+2026-06-16 11:44:13,492 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:44:13,501 - 
+
+2026-06-16 11:44:13,502 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:44:15,858 - Epoch: [11][   10/  211]    Overall Loss 0.123005    Objective Loss 0.123005                                        LR 0.100000    Time 0.235652    
+2026-06-16 11:44:16,009 - Epoch: [11][   20/  211]    Overall Loss 0.125549    Objective Loss 0.125549                                        LR 0.100000    Time 0.125314    
+2026-06-16 11:44:16,154 - Epoch: [11][   30/  211]    Overall Loss 0.123099    Objective Loss 0.123099                                        LR 0.100000    Time 0.088388    
+2026-06-16 11:44:16,300 - Epoch: [11][   40/  211]    Overall Loss 0.120689    Objective Loss 0.120689                                        LR 0.100000    Time 0.069928    
+2026-06-16 11:44:16,446 - Epoch: [11][   50/  211]    Overall Loss 0.120826    Objective Loss 0.120826                                        LR 0.100000    Time 0.058865    
+2026-06-16 11:44:16,591 - Epoch: [11][   60/  211]    Overall Loss 0.122397    Objective Loss 0.122397                                        LR 0.100000    Time 0.051452    
+2026-06-16 11:44:16,742 - Epoch: [11][   70/  211]    Overall Loss 0.129160    Objective Loss 0.129160                                        LR 0.100000    Time 0.046257    
+2026-06-16 11:44:16,894 - Epoch: [11][   80/  211]    Overall Loss 0.133456    Objective Loss 0.133456                                        LR 0.100000    Time 0.042375    
+2026-06-16 11:44:17,037 - Epoch: [11][   90/  211]    Overall Loss 0.134107    Objective Loss 0.134107                                        LR 0.100000    Time 0.039252    
+2026-06-16 11:44:17,187 - Epoch: [11][  100/  211]    Overall Loss 0.132857    Objective Loss 0.132857                                        LR 0.100000    Time 0.036825    
+2026-06-16 11:44:17,337 - Epoch: [11][  110/  211]    Overall Loss 0.131336    Objective Loss 0.131336                                        LR 0.100000    Time 0.034837    
+2026-06-16 11:44:17,483 - Epoch: [11][  120/  211]    Overall Loss 0.128088    Objective Loss 0.128088                                        LR 0.100000    Time 0.033147    
+2026-06-16 11:44:17,628 - Epoch: [11][  130/  211]    Overall Loss 0.126564    Objective Loss 0.126564                                        LR 0.100000    Time 0.031715    
+2026-06-16 11:44:17,775 - Epoch: [11][  140/  211]    Overall Loss 0.125544    Objective Loss 0.125544                                        LR 0.100000    Time 0.030497    
+2026-06-16 11:44:17,920 - Epoch: [11][  150/  211]    Overall Loss 0.127561    Objective Loss 0.127561                                        LR 0.100000    Time 0.029427    
+2026-06-16 11:44:18,064 - Epoch: [11][  160/  211]    Overall Loss 0.128507    Objective Loss 0.128507                                        LR 0.100000    Time 0.028486    
+2026-06-16 11:44:18,213 - Epoch: [11][  170/  211]    Overall Loss 0.128474    Objective Loss 0.128474                                        LR 0.100000    Time 0.027688    
+2026-06-16 11:44:18,360 - Epoch: [11][  180/  211]    Overall Loss 0.127166    Objective Loss 0.127166                                        LR 0.100000    Time 0.026964    
+2026-06-16 11:44:18,503 - Epoch: [11][  190/  211]    Overall Loss 0.126934    Objective Loss 0.126934                                        LR 0.100000    Time 0.026296    
+2026-06-16 11:44:18,651 - Epoch: [11][  200/  211]    Overall Loss 0.127508    Objective Loss 0.127508                                        LR 0.100000    Time 0.025721    
+2026-06-16 11:44:18,801 - Epoch: [11][  210/  211]    Overall Loss 0.126686    Objective Loss 0.126686    Top1 95.703125    Top5 100.000000    LR 0.100000    Time 0.025208    
+2026-06-16 11:44:18,817 - Epoch: [11][  211/  211]    Overall Loss 0.126983    Objective Loss 0.126983    Top1 96.370968    Top5 99.798387    LR 0.100000    Time 0.025162    
+2026-06-16 11:44:19,270 - --- validate (epoch=11)-----------
+2026-06-16 11:44:19,270 - 6000 samples (256 per mini-batch)
+2026-06-16 11:44:21,571 - Epoch: [11][   10/   24]    Loss 0.110383    Top1 96.601562    Top5 99.960938    
+2026-06-16 11:44:21,655 - Epoch: [11][   20/   24]    Loss 0.111460    Top1 96.679688    Top5 99.921875    
+2026-06-16 11:44:21,686 - Epoch: [11][   24/   24]    Loss 0.111074    Top1 96.733333    Top5 99.933333    
+2026-06-16 11:44:22,133 - ==> Top1: 96.733    Top5: 99.933    Loss: 0.111
+
+2026-06-16 11:44:22,133 - ==> Confusion:
+[[584   0   2   0   0   3   5   0   9   2]
+ [  0 675   3   0   3   1   2   4   0   0]
+ [  1   0 555   7   3   2   2   6   6   4]
+ [  1   0   1 568   0   7   0   4   2   0]
+ [  0   0   1   0 538   5   1   1   0  19]
+ [  0   0   0   4   0 505   3   2   0   4]
+ [  1   1   0   0   1  14 611   0   3   0]
+ [  0   0   5   1   1   1   0 615   0   2]
+ [  0   1   1   8   3   7   4   1 554   5]
+ [  0   1   0   1   2   6   0   4   2 599]]
+
+2026-06-16 11:44:22,136 - ==> Best [Top1: 96.733   Top5: 99.933   Params: 71148 on epoch: 11]
+2026-06-16 11:44:22,136 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:44:22,152 - 
+
+2026-06-16 11:44:22,152 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:44:24,580 - Epoch: [12][   10/  211]    Overall Loss 0.103773    Objective Loss 0.103773                                        LR 0.100000    Time 0.242773    
+2026-06-16 11:44:24,729 - Epoch: [12][   20/  211]    Overall Loss 0.118163    Objective Loss 0.118163                                        LR 0.100000    Time 0.128803    
+2026-06-16 11:44:24,873 - Epoch: [12][   30/  211]    Overall Loss 0.123653    Objective Loss 0.123653                                        LR 0.100000    Time 0.090662    
+2026-06-16 11:44:25,021 - Epoch: [12][   40/  211]    Overall Loss 0.125030    Objective Loss 0.125030                                        LR 0.100000    Time 0.071705    
+2026-06-16 11:44:25,171 - Epoch: [12][   50/  211]    Overall Loss 0.122503    Objective Loss 0.122503                                        LR 0.100000    Time 0.060346    
+2026-06-16 11:44:25,322 - Epoch: [12][   60/  211]    Overall Loss 0.118937    Objective Loss 0.118937                                        LR 0.100000    Time 0.052803    
+2026-06-16 11:44:25,473 - Epoch: [12][   70/  211]    Overall Loss 0.119762    Objective Loss 0.119762                                        LR 0.100000    Time 0.047405    
+2026-06-16 11:44:25,618 - Epoch: [12][   80/  211]    Overall Loss 0.120349    Objective Loss 0.120349                                        LR 0.100000    Time 0.043292    
+2026-06-16 11:44:25,762 - Epoch: [12][   90/  211]    Overall Loss 0.122010    Objective Loss 0.122010                                        LR 0.100000    Time 0.040079    
+2026-06-16 11:44:25,908 - Epoch: [12][  100/  211]    Overall Loss 0.120765    Objective Loss 0.120765                                        LR 0.100000    Time 0.037534    
+2026-06-16 11:44:26,053 - Epoch: [12][  110/  211]    Overall Loss 0.119763    Objective Loss 0.119763                                        LR 0.100000    Time 0.035432    
+2026-06-16 11:44:26,196 - Epoch: [12][  120/  211]    Overall Loss 0.122311    Objective Loss 0.122311                                        LR 0.100000    Time 0.033669    
+2026-06-16 11:44:26,339 - Epoch: [12][  130/  211]    Overall Loss 0.122869    Objective Loss 0.122869                                        LR 0.100000    Time 0.032182    
+2026-06-16 11:44:26,490 - Epoch: [12][  140/  211]    Overall Loss 0.122266    Objective Loss 0.122266                                        LR 0.100000    Time 0.030959    
+2026-06-16 11:44:26,633 - Epoch: [12][  150/  211]    Overall Loss 0.122629    Objective Loss 0.122629                                        LR 0.100000    Time 0.029845    
+2026-06-16 11:44:26,778 - Epoch: [12][  160/  211]    Overall Loss 0.121762    Objective Loss 0.121762                                        LR 0.100000    Time 0.028887    
+2026-06-16 11:44:26,924 - Epoch: [12][  170/  211]    Overall Loss 0.121688    Objective Loss 0.121688                                        LR 0.100000    Time 0.028042    
+2026-06-16 11:44:27,067 - Epoch: [12][  180/  211]    Overall Loss 0.121515    Objective Loss 0.121515                                        LR 0.100000    Time 0.027279    
+2026-06-16 11:44:27,212 - Epoch: [12][  190/  211]    Overall Loss 0.120665    Objective Loss 0.120665                                        LR 0.100000    Time 0.026604    
+2026-06-16 11:44:27,354 - Epoch: [12][  200/  211]    Overall Loss 0.119845    Objective Loss 0.119845                                        LR 0.100000    Time 0.025986    
+2026-06-16 11:44:27,496 - Epoch: [12][  210/  211]    Overall Loss 0.118639    Objective Loss 0.118639    Top1 96.875000    Top5 100.000000    LR 0.100000    Time 0.025424    
+2026-06-16 11:44:27,512 - Epoch: [12][  211/  211]    Overall Loss 0.118567    Objective Loss 0.118567    Top1 96.572581    Top5 100.000000    LR 0.100000    Time 0.025376    
+2026-06-16 11:44:27,969 - --- validate (epoch=12)-----------
+2026-06-16 11:44:27,969 - 6000 samples (256 per mini-batch)
+2026-06-16 11:44:30,281 - Epoch: [12][   10/   24]    Loss 0.093076    Top1 97.031250    Top5 99.921875    
+2026-06-16 11:44:30,358 - Epoch: [12][   20/   24]    Loss 0.095737    Top1 96.972656    Top5 99.960938    
+2026-06-16 11:44:30,387 - Epoch: [12][   24/   24]    Loss 0.093750    Top1 97.083333    Top5 99.966667    
+2026-06-16 11:44:30,845 - ==> Top1: 97.083    Top5: 99.967    Loss: 0.094
+
+2026-06-16 11:44:30,845 - ==> Confusion:
+[[592   0   1   1   0   2   6   0   0   3]
+ [  0 679   2   0   4   1   1   1   0   0]
+ [  1   3 561   5   4   0   0  10   1   1]
+ [  0   1   7 563   0   6   0   5   1   0]
+ [  0   1   1   0 546   0   1   2   2  12]
+ [  1   1   0   6   3 502   2   0   0   3]
+ [  0   1   0   0   4   3 621   0   2   0]
+ [  0   2   2   1   3   0   0 614   0   3]
+ [  1   0   0   3   8   3   6   1 558   4]
+ [  0   2   1   0   9   3   0   8   3 589]]
+
+2026-06-16 11:44:30,848 - ==> Best [Top1: 97.083   Top5: 99.967   Params: 71148 on epoch: 12]
+2026-06-16 11:44:30,848 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:44:30,857 - 
+
+2026-06-16 11:44:30,857 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:44:33,218 - Epoch: [13][   10/  211]    Overall Loss 0.101140    Objective Loss 0.101140                                        LR 0.100000    Time 0.236039    
+2026-06-16 11:44:33,359 - Epoch: [13][   20/  211]    Overall Loss 0.107713    Objective Loss 0.107713                                        LR 0.100000    Time 0.125049    
+2026-06-16 11:44:33,511 - Epoch: [13][   30/  211]    Overall Loss 0.120289    Objective Loss 0.120289                                        LR 0.100000    Time 0.088425    
+2026-06-16 11:44:33,662 - Epoch: [13][   40/  211]    Overall Loss 0.125345    Objective Loss 0.125345                                        LR 0.100000    Time 0.070095    
+2026-06-16 11:44:33,808 - Epoch: [13][   50/  211]    Overall Loss 0.122171    Objective Loss 0.122171                                        LR 0.100000    Time 0.058995    
+2026-06-16 11:44:33,955 - Epoch: [13][   60/  211]    Overall Loss 0.121393    Objective Loss 0.121393                                        LR 0.100000    Time 0.051610    
+2026-06-16 11:44:34,105 - Epoch: [13][   70/  211]    Overall Loss 0.118802    Objective Loss 0.118802                                        LR 0.100000    Time 0.046373    
+2026-06-16 11:44:34,250 - Epoch: [13][   80/  211]    Overall Loss 0.116858    Objective Loss 0.116858                                        LR 0.100000    Time 0.042384    
+2026-06-16 11:44:34,399 - Epoch: [13][   90/  211]    Overall Loss 0.115252    Objective Loss 0.115252                                        LR 0.100000    Time 0.039327    
+2026-06-16 11:44:34,548 - Epoch: [13][  100/  211]    Overall Loss 0.112429    Objective Loss 0.112429                                        LR 0.100000    Time 0.036888    
+2026-06-16 11:44:34,697 - Epoch: [13][  110/  211]    Overall Loss 0.112844    Objective Loss 0.112844                                        LR 0.100000    Time 0.034880    
+2026-06-16 11:44:34,846 - Epoch: [13][  120/  211]    Overall Loss 0.112722    Objective Loss 0.112722                                        LR 0.100000    Time 0.033213    
+2026-06-16 11:44:34,993 - Epoch: [13][  130/  211]    Overall Loss 0.112764    Objective Loss 0.112764                                        LR 0.100000    Time 0.031787    
+2026-06-16 11:44:35,142 - Epoch: [13][  140/  211]    Overall Loss 0.112415    Objective Loss 0.112415                                        LR 0.100000    Time 0.030576    
+2026-06-16 11:44:35,288 - Epoch: [13][  150/  211]    Overall Loss 0.112085    Objective Loss 0.112085                                        LR 0.100000    Time 0.029509    
+2026-06-16 11:44:35,430 - Epoch: [13][  160/  211]    Overall Loss 0.111534    Objective Loss 0.111534                                        LR 0.100000    Time 0.028554    
+2026-06-16 11:44:35,574 - Epoch: [13][  170/  211]    Overall Loss 0.110348    Objective Loss 0.110348                                        LR 0.100000    Time 0.027721    
+2026-06-16 11:44:35,717 - Epoch: [13][  180/  211]    Overall Loss 0.110483    Objective Loss 0.110483                                        LR 0.100000    Time 0.026972    
+2026-06-16 11:44:35,860 - Epoch: [13][  190/  211]    Overall Loss 0.109383    Objective Loss 0.109383                                        LR 0.100000    Time 0.026306    
+2026-06-16 11:44:36,009 - Epoch: [13][  200/  211]    Overall Loss 0.108806    Objective Loss 0.108806                                        LR 0.100000    Time 0.025735    
+2026-06-16 11:44:36,155 - Epoch: [13][  210/  211]    Overall Loss 0.108819    Objective Loss 0.108819    Top1 97.265625    Top5 100.000000    LR 0.100000    Time 0.025200    
+2026-06-16 11:44:36,170 - Epoch: [13][  211/  211]    Overall Loss 0.108734    Objective Loss 0.108734    Top1 97.379032    Top5 100.000000    LR 0.100000    Time 0.025153    
+2026-06-16 11:44:36,623 - --- validate (epoch=13)-----------
+2026-06-16 11:44:36,623 - 6000 samples (256 per mini-batch)
+2026-06-16 11:44:38,951 - Epoch: [13][   10/   24]    Loss 0.114873    Top1 96.601562    Top5 99.804688    
+2026-06-16 11:44:39,029 - Epoch: [13][   20/   24]    Loss 0.105401    Top1 96.738281    Top5 99.843750    
+2026-06-16 11:44:39,062 - Epoch: [13][   24/   24]    Loss 0.104040    Top1 96.783333    Top5 99.866667    
+2026-06-16 11:44:39,520 - ==> Top1: 96.783    Top5: 99.867    Loss: 0.104
+
+2026-06-16 11:44:39,520 - ==> Confusion:
+[[600   0   1   1   0   0   2   0   0   1]
+ [  0 680   1   0   0   3   0   4   0   0]
+ [  1   2 564   5   1   0   2   8   2   1]
+ [  2   2   1 570   0   3   0   4   1   0]
+ [  2   2   5   0 531   0   2   3   0  20]
+ [  0   1   1   4   0 506   2   1   2   1]
+ [  6   1   0   0   1   9 612   0   2   0]
+ [  0   1   3   3   1   0   0 615   1   1]
+ [  3   0   3   5   1  16   9   1 538   8]
+ [  0   0   0   0   5   4   0  12   3 591]]
+
+2026-06-16 11:44:39,523 - ==> Best [Top1: 97.083   Top5: 99.967   Params: 71148 on epoch: 12]
+2026-06-16 11:44:39,523 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:44:39,532 - 
+
+2026-06-16 11:44:39,532 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:44:41,897 - Epoch: [14][   10/  211]    Overall Loss 0.117849    Objective Loss 0.117849                                        LR 0.100000    Time 0.236459    
+2026-06-16 11:44:42,047 - Epoch: [14][   20/  211]    Overall Loss 0.112444    Objective Loss 0.112444                                        LR 0.100000    Time 0.125713    
+2026-06-16 11:44:42,196 - Epoch: [14][   30/  211]    Overall Loss 0.108431    Objective Loss 0.108431                                        LR 0.100000    Time 0.088774    
+2026-06-16 11:44:42,345 - Epoch: [14][   40/  211]    Overall Loss 0.102381    Objective Loss 0.102381                                        LR 0.100000    Time 0.070297    
+2026-06-16 11:44:42,496 - Epoch: [14][   50/  211]    Overall Loss 0.103813    Objective Loss 0.103813                                        LR 0.100000    Time 0.059248    
+2026-06-16 11:44:42,640 - Epoch: [14][   60/  211]    Overall Loss 0.101740    Objective Loss 0.101740                                        LR 0.100000    Time 0.051768    
+2026-06-16 11:44:42,788 - Epoch: [14][   70/  211]    Overall Loss 0.099865    Objective Loss 0.099865                                        LR 0.100000    Time 0.046485    
+2026-06-16 11:44:42,934 - Epoch: [14][   80/  211]    Overall Loss 0.099407    Objective Loss 0.099407                                        LR 0.100000    Time 0.042500    
+2026-06-16 11:44:43,081 - Epoch: [14][   90/  211]    Overall Loss 0.099643    Objective Loss 0.099643                                        LR 0.100000    Time 0.039405    
+2026-06-16 11:44:43,231 - Epoch: [14][  100/  211]    Overall Loss 0.099493    Objective Loss 0.099493                                        LR 0.100000    Time 0.036957    
+2026-06-16 11:44:43,376 - Epoch: [14][  110/  211]    Overall Loss 0.098924    Objective Loss 0.098924                                        LR 0.100000    Time 0.034915    
+2026-06-16 11:44:43,521 - Epoch: [14][  120/  211]    Overall Loss 0.098937    Objective Loss 0.098937                                        LR 0.100000    Time 0.033215    
+2026-06-16 11:44:43,671 - Epoch: [14][  130/  211]    Overall Loss 0.098928    Objective Loss 0.098928                                        LR 0.100000    Time 0.031810    
+2026-06-16 11:44:43,814 - Epoch: [14][  140/  211]    Overall Loss 0.101145    Objective Loss 0.101145                                        LR 0.100000    Time 0.030560    
+2026-06-16 11:44:43,960 - Epoch: [14][  150/  211]    Overall Loss 0.102638    Objective Loss 0.102638                                        LR 0.100000    Time 0.029494    
+2026-06-16 11:44:44,107 - Epoch: [14][  160/  211]    Overall Loss 0.102766    Objective Loss 0.102766                                        LR 0.100000    Time 0.028566    
+2026-06-16 11:44:44,251 - Epoch: [14][  170/  211]    Overall Loss 0.103165    Objective Loss 0.103165                                        LR 0.100000    Time 0.027733    
+2026-06-16 11:44:44,398 - Epoch: [14][  180/  211]    Overall Loss 0.103379    Objective Loss 0.103379                                        LR 0.100000    Time 0.027002    
+2026-06-16 11:44:44,545 - Epoch: [14][  190/  211]    Overall Loss 0.103453    Objective Loss 0.103453                                        LR 0.100000    Time 0.026353    
+2026-06-16 11:44:44,687 - Epoch: [14][  200/  211]    Overall Loss 0.103644    Objective Loss 0.103644                                        LR 0.100000    Time 0.025747    
+2026-06-16 11:44:44,830 - Epoch: [14][  210/  211]    Overall Loss 0.103904    Objective Loss 0.103904    Top1 96.093750    Top5 100.000000    LR 0.100000    Time 0.025199    
+2026-06-16 11:44:44,845 - Epoch: [14][  211/  211]    Overall Loss 0.103716    Objective Loss 0.103716    Top1 97.177419    Top5 100.000000    LR 0.100000    Time 0.025151    
+2026-06-16 11:44:45,292 - --- validate (epoch=14)-----------
+2026-06-16 11:44:45,292 - 6000 samples (256 per mini-batch)
+2026-06-16 11:44:47,570 - Epoch: [14][   10/   24]    Loss 0.094075    Top1 97.421875    Top5 99.960938    
+2026-06-16 11:44:47,648 - Epoch: [14][   20/   24]    Loss 0.098606    Top1 97.246094    Top5 99.941406    
+2026-06-16 11:44:47,677 - Epoch: [14][   24/   24]    Loss 0.100560    Top1 97.166667    Top5 99.950000    
+2026-06-16 11:44:48,132 - ==> Top1: 97.167    Top5: 99.950    Loss: 0.101
+
+2026-06-16 11:44:48,132 - ==> Confusion:
+[[594   1   3   0   0   1   3   0   2   1]
+ [  0 684   1   0   1   0   0   2   0   0]
+ [  0   5 553   4   2   0   0   9   7   6]
+ [  0   0   5 562   0   4   0   5   4   3]
+ [  0   2   1   0 542   0   0   2   1  17]
+ [  1   0   0   2   2 496   4   0   5   8]
+ [  2   4   0   0   4   0 617   0   4   0]
+ [  0   2   2   0   1   0   0 616   0   4]
+ [  1   1   0   1   6   0   5   0 564   6]
+ [  0   2   0   0   3   1   0   4   3 602]]
+
+2026-06-16 11:44:48,135 - ==> Best [Top1: 97.167   Top5: 99.950   Params: 71148 on epoch: 14]
+2026-06-16 11:44:48,135 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:44:48,144 - 
+
+2026-06-16 11:44:48,145 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:44:50,505 - Epoch: [15][   10/  211]    Overall Loss 0.093704    Objective Loss 0.093704                                        LR 0.100000    Time 0.235971    
+2026-06-16 11:44:50,646 - Epoch: [15][   20/  211]    Overall Loss 0.099130    Objective Loss 0.099130                                        LR 0.100000    Time 0.125041    
+2026-06-16 11:44:50,794 - Epoch: [15][   30/  211]    Overall Loss 0.107488    Objective Loss 0.107488                                        LR 0.100000    Time 0.088285    
+2026-06-16 11:44:50,935 - Epoch: [15][   40/  211]    Overall Loss 0.108884    Objective Loss 0.108884                                        LR 0.100000    Time 0.069734    
+2026-06-16 11:44:51,076 - Epoch: [15][   50/  211]    Overall Loss 0.107195    Objective Loss 0.107195                                        LR 0.100000    Time 0.058612    
+2026-06-16 11:44:51,218 - Epoch: [15][   60/  211]    Overall Loss 0.105371    Objective Loss 0.105371                                        LR 0.100000    Time 0.051207    
+2026-06-16 11:44:51,365 - Epoch: [15][   70/  211]    Overall Loss 0.100854    Objective Loss 0.100854                                        LR 0.100000    Time 0.045991    
+2026-06-16 11:44:51,511 - Epoch: [15][   80/  211]    Overall Loss 0.100536    Objective Loss 0.100536                                        LR 0.100000    Time 0.042052    
+2026-06-16 11:44:51,654 - Epoch: [15][   90/  211]    Overall Loss 0.102596    Objective Loss 0.102596                                        LR 0.100000    Time 0.038977    
+2026-06-16 11:44:51,799 - Epoch: [15][  100/  211]    Overall Loss 0.102109    Objective Loss 0.102109                                        LR 0.100000    Time 0.036521    
+2026-06-16 11:44:51,946 - Epoch: [15][  110/  211]    Overall Loss 0.102485    Objective Loss 0.102485                                        LR 0.100000    Time 0.034538    
+2026-06-16 11:44:52,090 - Epoch: [15][  120/  211]    Overall Loss 0.102508    Objective Loss 0.102508                                        LR 0.100000    Time 0.032859    
+2026-06-16 11:44:52,234 - Epoch: [15][  130/  211]    Overall Loss 0.103854    Objective Loss 0.103854                                        LR 0.100000    Time 0.031434    
+2026-06-16 11:44:52,377 - Epoch: [15][  140/  211]    Overall Loss 0.105700    Objective Loss 0.105700                                        LR 0.100000    Time 0.030213    
+2026-06-16 11:44:52,520 - Epoch: [15][  150/  211]    Overall Loss 0.106934    Objective Loss 0.106934                                        LR 0.100000    Time 0.029147    
+2026-06-16 11:44:52,664 - Epoch: [15][  160/  211]    Overall Loss 0.105939    Objective Loss 0.105939                                        LR 0.100000    Time 0.028223    
+2026-06-16 11:44:52,807 - Epoch: [15][  170/  211]    Overall Loss 0.107077    Objective Loss 0.107077                                        LR 0.100000    Time 0.027388    
+2026-06-16 11:44:52,950 - Epoch: [15][  180/  211]    Overall Loss 0.106824    Objective Loss 0.106824                                        LR 0.100000    Time 0.026658    
+2026-06-16 11:44:53,093 - Epoch: [15][  190/  211]    Overall Loss 0.105844    Objective Loss 0.105844                                        LR 0.100000    Time 0.026008    
+2026-06-16 11:44:53,235 - Epoch: [15][  200/  211]    Overall Loss 0.104977    Objective Loss 0.104977                                        LR 0.100000    Time 0.025419    
+2026-06-16 11:44:53,378 - Epoch: [15][  210/  211]    Overall Loss 0.104700    Objective Loss 0.104700    Top1 96.093750    Top5 100.000000    LR 0.100000    Time 0.024888    
+2026-06-16 11:44:53,394 - Epoch: [15][  211/  211]    Overall Loss 0.104695    Objective Loss 0.104695    Top1 96.774194    Top5 100.000000    LR 0.100000    Time 0.024842    
+2026-06-16 11:44:53,852 - --- validate (epoch=15)-----------
+2026-06-16 11:44:53,852 - 6000 samples (256 per mini-batch)
+2026-06-16 11:44:56,172 - Epoch: [15][   10/   24]    Loss 0.088762    Top1 97.382812    Top5 99.960938    
+2026-06-16 11:44:56,248 - Epoch: [15][   20/   24]    Loss 0.087285    Top1 97.226562    Top5 99.960938    
+2026-06-16 11:44:56,277 - Epoch: [15][   24/   24]    Loss 0.089379    Top1 97.216667    Top5 99.966667    
+2026-06-16 11:44:56,727 - ==> Top1: 97.217    Top5: 99.967    Loss: 0.089
+
+2026-06-16 11:44:56,727 - ==> Confusion:
+[[600   0   1   0   0   0   3   0   1   0]
+ [  1 676   2   0   2   1   1   5   0   0]
+ [  0   0 573   1   3   0   0   6   2   1]
+ [  0   0   3 559   0   6   0   5   9   1]
+ [  0   1   1   0 551   0   0   2   0  10]
+ [  0   1   0   2   1 499   2   0   7   6]
+ [  4   1   0   0   7   7 602   0  10   0]
+ [  0   1   2   2   3   0   0 611   0   6]
+ [  0   0   3   0   6   2   3   1 564   5]
+ [  1   2   1   1   6   2   0   2   2 598]]
+
+2026-06-16 11:44:56,730 - ==> Best [Top1: 97.217   Top5: 99.967   Params: 71148 on epoch: 15]
+2026-06-16 11:44:56,730 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:44:56,740 - 
+
+2026-06-16 11:44:56,740 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:44:59,104 - Epoch: [16][   10/  211]    Overall Loss 0.080338    Objective Loss 0.080338                                        LR 0.100000    Time 0.236331    
+2026-06-16 11:44:59,246 - Epoch: [16][   20/  211]    Overall Loss 0.094625    Objective Loss 0.094625                                        LR 0.100000    Time 0.125263    
+2026-06-16 11:44:59,387 - Epoch: [16][   30/  211]    Overall Loss 0.094428    Objective Loss 0.094428                                        LR 0.100000    Time 0.088204    
+2026-06-16 11:44:59,530 - Epoch: [16][   40/  211]    Overall Loss 0.092998    Objective Loss 0.092998                                        LR 0.100000    Time 0.069725    
+2026-06-16 11:44:59,673 - Epoch: [16][   50/  211]    Overall Loss 0.096416    Objective Loss 0.096416                                        LR 0.100000    Time 0.058647    
+2026-06-16 11:44:59,816 - Epoch: [16][   60/  211]    Overall Loss 0.097748    Objective Loss 0.097748                                        LR 0.100000    Time 0.051249    
+2026-06-16 11:44:59,960 - Epoch: [16][   70/  211]    Overall Loss 0.098523    Objective Loss 0.098523                                        LR 0.100000    Time 0.045968    
+2026-06-16 11:45:00,104 - Epoch: [16][   80/  211]    Overall Loss 0.097278    Objective Loss 0.097278                                        LR 0.100000    Time 0.042028    
+2026-06-16 11:45:00,247 - Epoch: [16][   90/  211]    Overall Loss 0.098273    Objective Loss 0.098273                                        LR 0.100000    Time 0.038940    
+2026-06-16 11:45:00,391 - Epoch: [16][  100/  211]    Overall Loss 0.098131    Objective Loss 0.098131                                        LR 0.100000    Time 0.036486    
+2026-06-16 11:45:00,538 - Epoch: [16][  110/  211]    Overall Loss 0.097104    Objective Loss 0.097104                                        LR 0.100000    Time 0.034498    
+2026-06-16 11:45:00,681 - Epoch: [16][  120/  211]    Overall Loss 0.097798    Objective Loss 0.097798                                        LR 0.100000    Time 0.032820    
+2026-06-16 11:45:00,828 - Epoch: [16][  130/  211]    Overall Loss 0.096683    Objective Loss 0.096683                                        LR 0.100000    Time 0.031419    
+2026-06-16 11:45:00,971 - Epoch: [16][  140/  211]    Overall Loss 0.096914    Objective Loss 0.096914                                        LR 0.100000    Time 0.030199    
+2026-06-16 11:45:01,116 - Epoch: [16][  150/  211]    Overall Loss 0.097036    Objective Loss 0.097036                                        LR 0.100000    Time 0.029147    
+2026-06-16 11:45:01,261 - Epoch: [16][  160/  211]    Overall Loss 0.098005    Objective Loss 0.098005                                        LR 0.100000    Time 0.028235    
+2026-06-16 11:45:01,406 - Epoch: [16][  170/  211]    Overall Loss 0.097658    Objective Loss 0.097658                                        LR 0.100000    Time 0.027424    
+2026-06-16 11:45:01,552 - Epoch: [16][  180/  211]    Overall Loss 0.097177    Objective Loss 0.097177                                        LR 0.100000    Time 0.026712    
+2026-06-16 11:45:01,695 - Epoch: [16][  190/  211]    Overall Loss 0.095976    Objective Loss 0.095976                                        LR 0.100000    Time 0.026056    
+2026-06-16 11:45:01,840 - Epoch: [16][  200/  211]    Overall Loss 0.096314    Objective Loss 0.096314                                        LR 0.100000    Time 0.025476    
+2026-06-16 11:45:01,983 - Epoch: [16][  210/  211]    Overall Loss 0.095534    Objective Loss 0.095534    Top1 95.703125    Top5 99.609375    LR 0.100000    Time 0.024946    
+2026-06-16 11:45:01,999 - Epoch: [16][  211/  211]    Overall Loss 0.095716    Objective Loss 0.095716    Top1 96.169355    Top5 99.798387    LR 0.100000    Time 0.024901    
+2026-06-16 11:45:02,452 - --- validate (epoch=16)-----------
+2026-06-16 11:45:02,452 - 6000 samples (256 per mini-batch)
+2026-06-16 11:45:04,803 - Epoch: [16][   10/   24]    Loss 0.103355    Top1 96.757812    Top5 99.960938    
+2026-06-16 11:45:04,889 - Epoch: [16][   20/   24]    Loss 0.102021    Top1 97.050781    Top5 99.960938    
+2026-06-16 11:45:04,918 - Epoch: [16][   24/   24]    Loss 0.097829    Top1 97.016667    Top5 99.966667    
+2026-06-16 11:45:05,374 - ==> Top1: 97.017    Top5: 99.967    Loss: 0.098
+
+2026-06-16 11:45:05,375 - ==> Confusion:
+[[591   0   2   1   0   0   1   1   8   1]
+ [  0 667   3   2   0   1   4   7   4   0]
+ [  0   0 567   4   0   1   0   8   5   1]
+ [  0   0   6 567   0   1   0   3   5   1]
+ [  0   0   5   0 535   1   4   1   4  15]
+ [  0   0   1   4   0 497   2   2  10   2]
+ [  0   0   0   0   1   5 619   0   6   0]
+ [  0   1   5   2   0   0   0 613   0   4]
+ [  1   0   0   1   0   1   4   0 576   1]
+ [  0   0   4   0   5   2   0   5  10 589]]
+
+2026-06-16 11:45:05,378 - ==> Best [Top1: 97.217   Top5: 99.967   Params: 71148 on epoch: 15]
+2026-06-16 11:45:05,378 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:45:05,387 - 
+
+2026-06-16 11:45:05,387 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:45:07,781 - Epoch: [17][   10/  211]    Overall Loss 0.084122    Objective Loss 0.084122                                        LR 0.100000    Time 0.239402    
+2026-06-16 11:45:07,925 - Epoch: [17][   20/  211]    Overall Loss 0.098044    Objective Loss 0.098044                                        LR 0.100000    Time 0.126850    
+2026-06-16 11:45:08,066 - Epoch: [17][   30/  211]    Overall Loss 0.096001    Objective Loss 0.096001                                        LR 0.100000    Time 0.089282    
+2026-06-16 11:45:08,212 - Epoch: [17][   40/  211]    Overall Loss 0.097172    Objective Loss 0.097172                                        LR 0.100000    Time 0.070595    
+2026-06-16 11:45:08,354 - Epoch: [17][   50/  211]    Overall Loss 0.095651    Objective Loss 0.095651                                        LR 0.100000    Time 0.059315    
+2026-06-16 11:45:08,496 - Epoch: [17][   60/  211]    Overall Loss 0.096392    Objective Loss 0.096392                                        LR 0.100000    Time 0.051795    
+2026-06-16 11:45:08,644 - Epoch: [17][   70/  211]    Overall Loss 0.093786    Objective Loss 0.093786                                        LR 0.100000    Time 0.046505    
+2026-06-16 11:45:08,794 - Epoch: [17][   80/  211]    Overall Loss 0.094065    Objective Loss 0.094065                                        LR 0.100000    Time 0.042559    
+2026-06-16 11:45:08,939 - Epoch: [17][   90/  211]    Overall Loss 0.092413    Objective Loss 0.092413                                        LR 0.100000    Time 0.039439    
+2026-06-16 11:45:09,087 - Epoch: [17][  100/  211]    Overall Loss 0.094818    Objective Loss 0.094818                                        LR 0.100000    Time 0.036970    
+2026-06-16 11:45:09,235 - Epoch: [17][  110/  211]    Overall Loss 0.094833    Objective Loss 0.094833                                        LR 0.100000    Time 0.034953    
+2026-06-16 11:45:09,383 - Epoch: [17][  120/  211]    Overall Loss 0.095285    Objective Loss 0.095285                                        LR 0.100000    Time 0.033271    
+2026-06-16 11:45:09,531 - Epoch: [17][  130/  211]    Overall Loss 0.095891    Objective Loss 0.095891                                        LR 0.100000    Time 0.031846    
+2026-06-16 11:45:09,680 - Epoch: [17][  140/  211]    Overall Loss 0.095496    Objective Loss 0.095496                                        LR 0.100000    Time 0.030639    
+2026-06-16 11:45:09,828 - Epoch: [17][  150/  211]    Overall Loss 0.094638    Objective Loss 0.094638                                        LR 0.100000    Time 0.029577    
+2026-06-16 11:45:09,978 - Epoch: [17][  160/  211]    Overall Loss 0.093961    Objective Loss 0.093961                                        LR 0.100000    Time 0.028666    
+2026-06-16 11:45:10,126 - Epoch: [17][  170/  211]    Overall Loss 0.096439    Objective Loss 0.096439                                        LR 0.100000    Time 0.027845    
+2026-06-16 11:45:10,270 - Epoch: [17][  180/  211]    Overall Loss 0.096638    Objective Loss 0.096638                                        LR 0.100000    Time 0.027101    
+2026-06-16 11:45:10,415 - Epoch: [17][  190/  211]    Overall Loss 0.096255    Objective Loss 0.096255                                        LR 0.100000    Time 0.026434    
+2026-06-16 11:45:10,558 - Epoch: [17][  200/  211]    Overall Loss 0.096731    Objective Loss 0.096731                                        LR 0.100000    Time 0.025826    
+2026-06-16 11:45:10,702 - Epoch: [17][  210/  211]    Overall Loss 0.098050    Objective Loss 0.098050    Top1 95.312500    Top5 100.000000    LR 0.100000    Time 0.025280    
+2026-06-16 11:45:10,717 - Epoch: [17][  211/  211]    Overall Loss 0.098461    Objective Loss 0.098461    Top1 94.354839    Top5 100.000000    LR 0.100000    Time 0.025231    
+2026-06-16 11:45:11,177 - --- validate (epoch=17)-----------
+2026-06-16 11:45:11,177 - 6000 samples (256 per mini-batch)
+2026-06-16 11:45:13,523 - Epoch: [17][   10/   24]    Loss 0.115852    Top1 96.718750    Top5 99.960938    
+2026-06-16 11:45:13,596 - Epoch: [17][   20/   24]    Loss 0.112662    Top1 96.777344    Top5 99.960938    
+2026-06-16 11:45:13,625 - Epoch: [17][   24/   24]    Loss 0.109037    Top1 96.816667    Top5 99.966667    
+2026-06-16 11:45:14,084 - ==> Top1: 96.817    Top5: 99.967    Loss: 0.109
+
+2026-06-16 11:45:14,085 - ==> Confusion:
+[[599   0   2   0   1   1   1   0   0   1]
+ [  0 683   2   0   1   0   0   2   0   0]
+ [  0   1 572   0   0   1   0   9   1   2]
+ [  1   2  12 553   0   5   0   8   0   2]
+ [  0   2   1   0 536   0   0   7   0  19]
+ [  0   1   3   0   1 501   6   1   0   5]
+ [  5   3   0   0   2   8 613   0   0   0]
+ [  1   2   4   1   1   0   0 614   0   2]
+ [  6   2   2   1   3   6   7   2 542  13]
+ [  0   0   0   0   6   3   0   8   2 596]]
+
+2026-06-16 11:45:14,088 - ==> Best [Top1: 97.217   Top5: 99.967   Params: 71148 on epoch: 15]
+2026-06-16 11:45:14,088 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:45:14,105 - 
+
+2026-06-16 11:45:14,105 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:45:16,478 - Epoch: [18][   10/  211]    Overall Loss 0.117706    Objective Loss 0.117706                                        LR 0.100000    Time 0.237248    
+2026-06-16 11:45:16,622 - Epoch: [18][   20/  211]    Overall Loss 0.109399    Objective Loss 0.109399                                        LR 0.100000    Time 0.125800    
+2026-06-16 11:45:16,764 - Epoch: [18][   30/  211]    Overall Loss 0.103471    Objective Loss 0.103471                                        LR 0.100000    Time 0.088611    
+2026-06-16 11:45:16,906 - Epoch: [18][   40/  211]    Overall Loss 0.102790    Objective Loss 0.102790                                        LR 0.100000    Time 0.070010    
+2026-06-16 11:45:17,050 - Epoch: [18][   50/  211]    Overall Loss 0.102975    Objective Loss 0.102975                                        LR 0.100000    Time 0.058869    
+2026-06-16 11:45:17,192 - Epoch: [18][   60/  211]    Overall Loss 0.101431    Objective Loss 0.101431                                        LR 0.100000    Time 0.051425    
+2026-06-16 11:45:17,334 - Epoch: [18][   70/  211]    Overall Loss 0.101440    Objective Loss 0.101440                                        LR 0.100000    Time 0.046109    
+2026-06-16 11:45:17,479 - Epoch: [18][   80/  211]    Overall Loss 0.100129    Objective Loss 0.100129                                        LR 0.100000    Time 0.042149    
+2026-06-16 11:45:17,622 - Epoch: [18][   90/  211]    Overall Loss 0.098647    Objective Loss 0.098647                                        LR 0.100000    Time 0.039052    
+2026-06-16 11:45:17,768 - Epoch: [18][  100/  211]    Overall Loss 0.099083    Objective Loss 0.099083                                        LR 0.100000    Time 0.036604    
+2026-06-16 11:45:17,913 - Epoch: [18][  110/  211]    Overall Loss 0.098302    Objective Loss 0.098302                                        LR 0.100000    Time 0.034592    
+2026-06-16 11:45:18,057 - Epoch: [18][  120/  211]    Overall Loss 0.097371    Objective Loss 0.097371                                        LR 0.100000    Time 0.032910    
+2026-06-16 11:45:18,199 - Epoch: [18][  130/  211]    Overall Loss 0.099006    Objective Loss 0.099006                                        LR 0.100000    Time 0.031472    
+2026-06-16 11:45:18,344 - Epoch: [18][  140/  211]    Overall Loss 0.097660    Objective Loss 0.097660                                        LR 0.100000    Time 0.030254    
+2026-06-16 11:45:18,489 - Epoch: [18][  150/  211]    Overall Loss 0.099907    Objective Loss 0.099907                                        LR 0.100000    Time 0.029203    
+2026-06-16 11:45:18,631 - Epoch: [18][  160/  211]    Overall Loss 0.099726    Objective Loss 0.099726                                        LR 0.100000    Time 0.028267    
+2026-06-16 11:45:18,774 - Epoch: [18][  170/  211]    Overall Loss 0.099575    Objective Loss 0.099575                                        LR 0.100000    Time 0.027441    
+2026-06-16 11:45:18,915 - Epoch: [18][  180/  211]    Overall Loss 0.100031    Objective Loss 0.100031                                        LR 0.100000    Time 0.026702    
+2026-06-16 11:45:19,058 - Epoch: [18][  190/  211]    Overall Loss 0.099860    Objective Loss 0.099860                                        LR 0.100000    Time 0.026046    
+2026-06-16 11:45:19,200 - Epoch: [18][  200/  211]    Overall Loss 0.100735    Objective Loss 0.100735                                        LR 0.100000    Time 0.025451    
+2026-06-16 11:45:19,344 - Epoch: [18][  210/  211]    Overall Loss 0.099698    Objective Loss 0.099698    Top1 98.046875    Top5 100.000000    LR 0.100000    Time 0.024924    
+2026-06-16 11:45:19,359 - Epoch: [18][  211/  211]    Overall Loss 0.099516    Objective Loss 0.099516    Top1 97.983871    Top5 100.000000    LR 0.100000    Time 0.024878    
+2026-06-16 11:45:19,813 - --- validate (epoch=18)-----------
+2026-06-16 11:45:19,813 - 6000 samples (256 per mini-batch)
+2026-06-16 11:45:22,149 - Epoch: [18][   10/   24]    Loss 0.107614    Top1 96.835938    Top5 100.000000    
+2026-06-16 11:45:22,226 - Epoch: [18][   20/   24]    Loss 0.097446    Top1 97.402344    Top5 100.000000    
+2026-06-16 11:45:22,256 - Epoch: [18][   24/   24]    Loss 0.097283    Top1 97.450000    Top5 100.000000    
+2026-06-16 11:45:22,710 - ==> Top1: 97.450    Top5: 100.000    Loss: 0.097
+
+2026-06-16 11:45:22,710 - ==> Confusion:
+[[592   0   2   1   0   1   3   0   5   1]
+ [  1 678   2   0   1   0   1   4   1   0]
+ [  2   0 571   1   0   0   0   4   7   1]
+ [  0   0   4 572   0   0   0   3   3   1]
+ [  1   1   1   0 553   1   0   0   3   5]
+ [  0   0   1   2   0 502   6   0   3   4]
+ [  1   0   0   0   1   6 620   0   3   0]
+ [  0   3  10   4   3   0   0 602   1   2]
+ [  2   0   1   2   0   2   5   1 570   1]
+ [  0   2   1   1  10   4   0   5   5 587]]
+
+2026-06-16 11:45:22,713 - ==> Best [Top1: 97.450   Top5: 100.000   Params: 71148 on epoch: 18]
+2026-06-16 11:45:22,713 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:45:22,722 - 
+
+2026-06-16 11:45:22,722 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:45:25,165 - Epoch: [19][   10/  211]    Overall Loss 0.079449    Objective Loss 0.079449                                        LR 0.100000    Time 0.244290    
+2026-06-16 11:45:25,311 - Epoch: [19][   20/  211]    Overall Loss 0.082774    Objective Loss 0.082774                                        LR 0.100000    Time 0.129383    
+2026-06-16 11:45:25,452 - Epoch: [19][   30/  211]    Overall Loss 0.078346    Objective Loss 0.078346                                        LR 0.100000    Time 0.090974    
+2026-06-16 11:45:25,594 - Epoch: [19][   40/  211]    Overall Loss 0.086762    Objective Loss 0.086762                                        LR 0.100000    Time 0.071774    
+2026-06-16 11:45:25,738 - Epoch: [19][   50/  211]    Overall Loss 0.086736    Objective Loss 0.086736                                        LR 0.100000    Time 0.060297    
+2026-06-16 11:45:25,880 - Epoch: [19][   60/  211]    Overall Loss 0.089472    Objective Loss 0.089472                                        LR 0.100000    Time 0.052612    
+2026-06-16 11:45:26,023 - Epoch: [19][   70/  211]    Overall Loss 0.088587    Objective Loss 0.088587                                        LR 0.100000    Time 0.047127    
+2026-06-16 11:45:26,168 - Epoch: [19][   80/  211]    Overall Loss 0.091362    Objective Loss 0.091362                                        LR 0.100000    Time 0.043045    
+2026-06-16 11:45:26,313 - Epoch: [19][   90/  211]    Overall Loss 0.092209    Objective Loss 0.092209                                        LR 0.100000    Time 0.039874    
+2026-06-16 11:45:26,458 - Epoch: [19][  100/  211]    Overall Loss 0.092038    Objective Loss 0.092038                                        LR 0.100000    Time 0.037338    
+2026-06-16 11:45:26,604 - Epoch: [19][  110/  211]    Overall Loss 0.092376    Objective Loss 0.092376                                        LR 0.100000    Time 0.035260    
+2026-06-16 11:45:26,748 - Epoch: [19][  120/  211]    Overall Loss 0.092406    Objective Loss 0.092406                                        LR 0.100000    Time 0.033521    
+2026-06-16 11:45:26,890 - Epoch: [19][  130/  211]    Overall Loss 0.091484    Objective Loss 0.091484                                        LR 0.100000    Time 0.032036    
+2026-06-16 11:45:27,032 - Epoch: [19][  140/  211]    Overall Loss 0.091028    Objective Loss 0.091028                                        LR 0.100000    Time 0.030762    
+2026-06-16 11:45:27,177 - Epoch: [19][  150/  211]    Overall Loss 0.092433    Objective Loss 0.092433                                        LR 0.100000    Time 0.029672    
+2026-06-16 11:45:27,320 - Epoch: [19][  160/  211]    Overall Loss 0.092105    Objective Loss 0.092105                                        LR 0.100000    Time 0.028711    
+2026-06-16 11:45:27,462 - Epoch: [19][  170/  211]    Overall Loss 0.091799    Objective Loss 0.091799                                        LR 0.100000    Time 0.027857    
+2026-06-16 11:45:27,604 - Epoch: [19][  180/  211]    Overall Loss 0.092083    Objective Loss 0.092083                                        LR 0.100000    Time 0.027099    
+2026-06-16 11:45:27,753 - Epoch: [19][  190/  211]    Overall Loss 0.091679    Objective Loss 0.091679                                        LR 0.100000    Time 0.026455    
+2026-06-16 11:45:27,897 - Epoch: [19][  200/  211]    Overall Loss 0.090954    Objective Loss 0.090954                                        LR 0.100000    Time 0.025851    
+2026-06-16 11:45:28,041 - Epoch: [19][  210/  211]    Overall Loss 0.090036    Objective Loss 0.090036    Top1 96.875000    Top5 100.000000    LR 0.100000    Time 0.025305    
+2026-06-16 11:45:28,056 - Epoch: [19][  211/  211]    Overall Loss 0.090128    Objective Loss 0.090128    Top1 96.774194    Top5 100.000000    LR 0.100000    Time 0.025254    
+2026-06-16 11:45:28,507 - --- validate (epoch=19)-----------
+2026-06-16 11:45:28,507 - 6000 samples (256 per mini-batch)
+2026-06-16 11:45:30,830 - Epoch: [19][   10/   24]    Loss 0.097849    Top1 97.070312    Top5 99.921875    
+2026-06-16 11:45:30,907 - Epoch: [19][   20/   24]    Loss 0.096679    Top1 96.992188    Top5 99.902344    
+2026-06-16 11:45:30,936 - Epoch: [19][   24/   24]    Loss 0.094541    Top1 97.166667    Top5 99.916667    
+2026-06-16 11:45:31,388 - ==> Top1: 97.167    Top5: 99.917    Loss: 0.095
+
+2026-06-16 11:45:31,388 - ==> Confusion:
+[[601   0   2   0   0   0   2   0   0   0]
+ [  0 682   1   0   0   1   0   3   1   0]
+ [  1   3 570   1   0   0   0   5   5   1]
+ [  2   1   2 565   0   6   0   2   2   3]
+ [  0   2   3   0 523   1   2   3   3  28]
+ [  0   0   1   3   1 491   4   1  10   7]
+ [  4   1   0   0   2   4 617   0   3   0]
+ [  0   6   5   1   0   2   0 605   3   3]
+ [  3   0   0   0   3   0   3   1 573   1]
+ [  0   2   0   1   2   0   0   1   6 603]]
+
+2026-06-16 11:45:31,391 - ==> Best [Top1: 97.450   Top5: 100.000   Params: 71148 on epoch: 18]
+2026-06-16 11:45:31,391 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:45:31,399 - 
+
+2026-06-16 11:45:31,399 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:45:33,806 - Epoch: [20][   10/  211]    Overall Loss 0.091257    Objective Loss 0.091257                                        LR 0.100000    Time 0.240660    
+2026-06-16 11:45:33,952 - Epoch: [20][   20/  211]    Overall Loss 0.087769    Objective Loss 0.087769                                        LR 0.100000    Time 0.127605    
+2026-06-16 11:45:34,094 - Epoch: [20][   30/  211]    Overall Loss 0.087059    Objective Loss 0.087059                                        LR 0.100000    Time 0.089823    
+2026-06-16 11:45:34,262 - Epoch: [20][   40/  211]    Overall Loss 0.085751    Objective Loss 0.085751                                        LR 0.100000    Time 0.071540    
+2026-06-16 11:45:34,411 - Epoch: [20][   50/  211]    Overall Loss 0.085799    Objective Loss 0.085799                                        LR 0.100000    Time 0.060205    
+2026-06-16 11:45:34,563 - Epoch: [20][   60/  211]    Overall Loss 0.083779    Objective Loss 0.083779                                        LR 0.100000    Time 0.052696    
+2026-06-16 11:45:34,713 - Epoch: [20][   70/  211]    Overall Loss 0.083737    Objective Loss 0.083737                                        LR 0.100000    Time 0.047308    
+2026-06-16 11:45:34,859 - Epoch: [20][   80/  211]    Overall Loss 0.085798    Objective Loss 0.085798                                        LR 0.100000    Time 0.043213    
+2026-06-16 11:45:35,006 - Epoch: [20][   90/  211]    Overall Loss 0.086727    Objective Loss 0.086727                                        LR 0.100000    Time 0.040049    
+2026-06-16 11:45:35,155 - Epoch: [20][  100/  211]    Overall Loss 0.086897    Objective Loss 0.086897                                        LR 0.100000    Time 0.037525    
+2026-06-16 11:45:35,303 - Epoch: [20][  110/  211]    Overall Loss 0.086739    Objective Loss 0.086739                                        LR 0.100000    Time 0.035457    
+2026-06-16 11:45:35,447 - Epoch: [20][  120/  211]    Overall Loss 0.085887    Objective Loss 0.085887                                        LR 0.100000    Time 0.033697    
+2026-06-16 11:45:35,592 - Epoch: [20][  130/  211]    Overall Loss 0.086605    Objective Loss 0.086605                                        LR 0.100000    Time 0.032219    
+2026-06-16 11:45:35,738 - Epoch: [20][  140/  211]    Overall Loss 0.087066    Objective Loss 0.087066                                        LR 0.100000    Time 0.030963    
+2026-06-16 11:45:35,884 - Epoch: [20][  150/  211]    Overall Loss 0.087189    Objective Loss 0.087189                                        LR 0.100000    Time 0.029866    
+2026-06-16 11:45:36,030 - Epoch: [20][  160/  211]    Overall Loss 0.087468    Objective Loss 0.087468                                        LR 0.100000    Time 0.028911    
+2026-06-16 11:45:36,174 - Epoch: [20][  170/  211]    Overall Loss 0.088619    Objective Loss 0.088619                                        LR 0.100000    Time 0.028057    
+2026-06-16 11:45:36,318 - Epoch: [20][  180/  211]    Overall Loss 0.089023    Objective Loss 0.089023                                        LR 0.100000    Time 0.027296    
+2026-06-16 11:45:36,469 - Epoch: [20][  190/  211]    Overall Loss 0.089090    Objective Loss 0.089090                                        LR 0.100000    Time 0.026656    
+2026-06-16 11:45:36,615 - Epoch: [20][  200/  211]    Overall Loss 0.088091    Objective Loss 0.088091                                        LR 0.100000    Time 0.026051    
+2026-06-16 11:45:36,758 - Epoch: [20][  210/  211]    Overall Loss 0.088091    Objective Loss 0.088091    Top1 96.875000    Top5 100.000000    LR 0.100000    Time 0.025490    
+2026-06-16 11:45:36,773 - Epoch: [20][  211/  211]    Overall Loss 0.088059    Objective Loss 0.088059    Top1 97.177419    Top5 100.000000    LR 0.100000    Time 0.025440    
+2026-06-16 11:45:37,220 - --- validate (epoch=20)-----------
+2026-06-16 11:45:37,220 - 6000 samples (256 per mini-batch)
+2026-06-16 11:45:39,572 - Epoch: [20][   10/   24]    Loss 0.102284    Top1 96.562500    Top5 99.921875    
+2026-06-16 11:45:39,648 - Epoch: [20][   20/   24]    Loss 0.099144    Top1 96.894531    Top5 99.941406    
+2026-06-16 11:45:39,677 - Epoch: [20][   24/   24]    Loss 0.092355    Top1 97.050000    Top5 99.950000    
+2026-06-16 11:45:40,129 - ==> Top1: 97.050    Top5: 99.950    Loss: 0.092
+
+2026-06-16 11:45:40,129 - ==> Confusion:
+[[600   0   2   0   0   0   1   1   1   0]
+ [  0 683   3   1   0   0   0   1   0   0]
+ [  1   2 569   2   0   0   0   5   7   0]
+ [  1   2   6 563   0   1   0   6   3   1]
+ [  2   1   2   0 549   0   1   1   2   7]
+ [  1   3   1  14   0 482   4   1  10   2]
+ [  4   5   1   0   2   0 609   0  10   0]
+ [  0   4   6   0   0   0   0 614   1   0]
+ [  3   0   2   1   2   1   3   1 568   3]
+ [  0   3   2   0   6   1   0  13   4 586]]
+
+2026-06-16 11:45:40,132 - ==> Best [Top1: 97.450   Top5: 100.000   Params: 71148 on epoch: 18]
+2026-06-16 11:45:40,132 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:45:40,141 - 
+
+2026-06-16 11:45:40,141 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:45:42,605 - Epoch: [21][   10/  211]    Overall Loss 0.086105    Objective Loss 0.086105                                        LR 0.100000    Time 0.246298    
+2026-06-16 11:45:42,748 - Epoch: [21][   20/  211]    Overall Loss 0.090154    Objective Loss 0.090154                                        LR 0.100000    Time 0.130296    
+2026-06-16 11:45:42,890 - Epoch: [21][   30/  211]    Overall Loss 0.090724    Objective Loss 0.090724                                        LR 0.100000    Time 0.091605    
+2026-06-16 11:45:43,031 - Epoch: [21][   40/  211]    Overall Loss 0.088832    Objective Loss 0.088832                                        LR 0.100000    Time 0.072213    
+2026-06-16 11:45:43,172 - Epoch: [21][   50/  211]    Overall Loss 0.092605    Objective Loss 0.092605                                        LR 0.100000    Time 0.060592    
+2026-06-16 11:45:43,318 - Epoch: [21][   60/  211]    Overall Loss 0.094671    Objective Loss 0.094671                                        LR 0.100000    Time 0.052919    
+2026-06-16 11:45:43,463 - Epoch: [21][   70/  211]    Overall Loss 0.093955    Objective Loss 0.093955                                        LR 0.100000    Time 0.047421    
+2026-06-16 11:45:43,607 - Epoch: [21][   80/  211]    Overall Loss 0.093079    Objective Loss 0.093079                                        LR 0.100000    Time 0.043295    
+2026-06-16 11:45:43,751 - Epoch: [21][   90/  211]    Overall Loss 0.093950    Objective Loss 0.093950                                        LR 0.100000    Time 0.040081    
+2026-06-16 11:45:43,898 - Epoch: [21][  100/  211]    Overall Loss 0.093576    Objective Loss 0.093576                                        LR 0.100000    Time 0.037537    
+2026-06-16 11:45:44,042 - Epoch: [21][  110/  211]    Overall Loss 0.093384    Objective Loss 0.093384                                        LR 0.100000    Time 0.035437    
+2026-06-16 11:45:44,185 - Epoch: [21][  120/  211]    Overall Loss 0.092632    Objective Loss 0.092632                                        LR 0.100000    Time 0.033668    
+2026-06-16 11:45:44,329 - Epoch: [21][  130/  211]    Overall Loss 0.091653    Objective Loss 0.091653                                        LR 0.100000    Time 0.032187    
+2026-06-16 11:45:44,473 - Epoch: [21][  140/  211]    Overall Loss 0.091705    Objective Loss 0.091705                                        LR 0.100000    Time 0.030917    
+2026-06-16 11:45:44,620 - Epoch: [21][  150/  211]    Overall Loss 0.091469    Objective Loss 0.091469                                        LR 0.100000    Time 0.029833    
+2026-06-16 11:45:44,772 - Epoch: [21][  160/  211]    Overall Loss 0.091582    Objective Loss 0.091582                                        LR 0.100000    Time 0.028916    
+2026-06-16 11:45:44,917 - Epoch: [21][  170/  211]    Overall Loss 0.091730    Objective Loss 0.091730                                        LR 0.100000    Time 0.028067    
+2026-06-16 11:45:45,061 - Epoch: [21][  180/  211]    Overall Loss 0.092591    Objective Loss 0.092591                                        LR 0.100000    Time 0.027304    
+2026-06-16 11:45:45,204 - Epoch: [21][  190/  211]    Overall Loss 0.092422    Objective Loss 0.092422                                        LR 0.100000    Time 0.026623    
+2026-06-16 11:45:45,347 - Epoch: [21][  200/  211]    Overall Loss 0.091688    Objective Loss 0.091688                                        LR 0.100000    Time 0.026004    
+2026-06-16 11:45:45,490 - Epoch: [21][  210/  211]    Overall Loss 0.090226    Objective Loss 0.090226    Top1 97.656250    Top5 100.000000    LR 0.100000    Time 0.025446    
+2026-06-16 11:45:45,505 - Epoch: [21][  211/  211]    Overall Loss 0.090229    Objective Loss 0.090229    Top1 97.782258    Top5 100.000000    LR 0.100000    Time 0.025395    
+2026-06-16 11:45:45,958 - --- validate (epoch=21)-----------
+2026-06-16 11:45:45,958 - 6000 samples (256 per mini-batch)
+2026-06-16 11:45:48,280 - Epoch: [21][   10/   24]    Loss 0.083989    Top1 97.500000    Top5 99.960938    
+2026-06-16 11:45:48,353 - Epoch: [21][   20/   24]    Loss 0.088841    Top1 97.246094    Top5 99.960938    
+2026-06-16 11:45:48,381 - Epoch: [21][   24/   24]    Loss 0.085510    Top1 97.350000    Top5 99.966667    
+2026-06-16 11:45:48,820 - ==> Top1: 97.350    Top5: 99.967    Loss: 0.086
+
+2026-06-16 11:45:48,820 - ==> Confusion:
+[[590   0   2   0   0   2   4   2   3   2]
+ [  0 683   0   1   1   1   0   2   0   0]
+ [  1   4 561   7   0   1   0  10   2   0]
+ [  0   0   1 574   0   3   0   4   1   0]
+ [  1   1   3   0 542   0   2   5   1  10]
+ [  0   0   0   5   0 506   2   0   3   2]
+ [  1   3   0   0   1   4 619   0   3   0]
+ [  0   2   2   2   0   0   0 618   0   1]
+ [  0   1   0  12   2   3   5   0 559   2]
+ [  1   0   1   1   7   5   0   9   2 589]]
+
+2026-06-16 11:45:48,822 - ==> Best [Top1: 97.450   Top5: 100.000   Params: 71148 on epoch: 18]
+2026-06-16 11:45:48,823 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:45:48,831 - 
+
+2026-06-16 11:45:48,831 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:45:51,300 - Epoch: [22][   10/  211]    Overall Loss 0.073999    Objective Loss 0.073999                                        LR 0.100000    Time 0.246857    
+2026-06-16 11:45:51,442 - Epoch: [22][   20/  211]    Overall Loss 0.082127    Objective Loss 0.082127                                        LR 0.100000    Time 0.130533    
+2026-06-16 11:45:51,588 - Epoch: [22][   30/  211]    Overall Loss 0.083770    Objective Loss 0.083770                                        LR 0.100000    Time 0.091871    
+2026-06-16 11:45:51,732 - Epoch: [22][   40/  211]    Overall Loss 0.081356    Objective Loss 0.081356                                        LR 0.100000    Time 0.072502    
+2026-06-16 11:45:51,876 - Epoch: [22][   50/  211]    Overall Loss 0.084005    Objective Loss 0.084005                                        LR 0.100000    Time 0.060872    
+2026-06-16 11:45:52,021 - Epoch: [22][   60/  211]    Overall Loss 0.085124    Objective Loss 0.085124                                        LR 0.100000    Time 0.053141    
+2026-06-16 11:45:52,165 - Epoch: [22][   70/  211]    Overall Loss 0.085193    Objective Loss 0.085193                                        LR 0.100000    Time 0.047597    
+2026-06-16 11:45:52,307 - Epoch: [22][   80/  211]    Overall Loss 0.084768    Objective Loss 0.084768                                        LR 0.100000    Time 0.043421    
+2026-06-16 11:45:52,449 - Epoch: [22][   90/  211]    Overall Loss 0.084485    Objective Loss 0.084485                                        LR 0.100000    Time 0.040173    
+2026-06-16 11:45:52,591 - Epoch: [22][  100/  211]    Overall Loss 0.083331    Objective Loss 0.083331                                        LR 0.100000    Time 0.037572    
+2026-06-16 11:45:52,733 - Epoch: [22][  110/  211]    Overall Loss 0.081922    Objective Loss 0.081922                                        LR 0.100000    Time 0.035447    
+2026-06-16 11:45:52,876 - Epoch: [22][  120/  211]    Overall Loss 0.080390    Objective Loss 0.080390                                        LR 0.100000    Time 0.033680    
+2026-06-16 11:45:53,018 - Epoch: [22][  130/  211]    Overall Loss 0.081030    Objective Loss 0.081030                                        LR 0.100000    Time 0.032183    
+2026-06-16 11:45:53,161 - Epoch: [22][  140/  211]    Overall Loss 0.080356    Objective Loss 0.080356                                        LR 0.100000    Time 0.030903    
+2026-06-16 11:45:53,304 - Epoch: [22][  150/  211]    Overall Loss 0.080690    Objective Loss 0.080690                                        LR 0.100000    Time 0.029798    
+2026-06-16 11:45:53,450 - Epoch: [22][  160/  211]    Overall Loss 0.080956    Objective Loss 0.080956                                        LR 0.100000    Time 0.028846    
+2026-06-16 11:45:53,594 - Epoch: [22][  170/  211]    Overall Loss 0.082045    Objective Loss 0.082045                                        LR 0.100000    Time 0.027990    
+2026-06-16 11:45:53,737 - Epoch: [22][  180/  211]    Overall Loss 0.083450    Objective Loss 0.083450                                        LR 0.100000    Time 0.027229    
+2026-06-16 11:45:53,882 - Epoch: [22][  190/  211]    Overall Loss 0.083907    Objective Loss 0.083907                                        LR 0.100000    Time 0.026558    
+2026-06-16 11:45:54,030 - Epoch: [22][  200/  211]    Overall Loss 0.084691    Objective Loss 0.084691                                        LR 0.100000    Time 0.025972    
+2026-06-16 11:45:54,174 - Epoch: [22][  210/  211]    Overall Loss 0.084119    Objective Loss 0.084119    Top1 96.875000    Top5 100.000000    LR 0.100000    Time 0.025416    
+2026-06-16 11:45:54,188 - Epoch: [22][  211/  211]    Overall Loss 0.084275    Objective Loss 0.084275    Top1 96.370968    Top5 99.798387    LR 0.100000    Time 0.025364    
+2026-06-16 11:45:54,641 - --- validate (epoch=22)-----------
+2026-06-16 11:45:54,641 - 6000 samples (256 per mini-batch)
+2026-06-16 11:45:56,998 - Epoch: [22][   10/   24]    Loss 0.078374    Top1 97.109375    Top5 100.000000    
+2026-06-16 11:45:57,073 - Epoch: [22][   20/   24]    Loss 0.088052    Top1 97.109375    Top5 100.000000    
+2026-06-16 11:45:57,102 - Epoch: [22][   24/   24]    Loss 0.087643    Top1 97.166667    Top5 100.000000    
+2026-06-16 11:45:57,547 - ==> Top1: 97.167    Top5: 100.000    Loss: 0.088
+
+2026-06-16 11:45:57,547 - ==> Confusion:
+[[596   0   1   0   0   1   5   1   1   0]
+ [  0 674   4   1   1   1   2   5   0   0]
+ [  1   0 568   1   1   0   0   8   3   4]
+ [  1   1   6 563   0   5   0   5   2   0]
+ [  0   1   1   0 547   1   1   2   0  12]
+ [  1   0   0   3   0 498   5   0   7   4]
+ [  0   0   0   0   2   0 628   0   0   1]
+ [  0   3   2   3   0   1   0 614   0   2]
+ [  1   0   2   2   8   2  15   0 546   8]
+ [  0   3   1   0   4   3   0   6   2 596]]
+
+2026-06-16 11:45:57,550 - ==> Best [Top1: 97.450   Top5: 100.000   Params: 71148 on epoch: 18]
+2026-06-16 11:45:57,550 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:45:57,559 - 
+
+2026-06-16 11:45:57,559 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:46:00,005 - Epoch: [23][   10/  211]    Overall Loss 0.088611    Objective Loss 0.088611                                        LR 0.100000    Time 0.244497    
+2026-06-16 11:46:00,148 - Epoch: [23][   20/  211]    Overall Loss 0.086404    Objective Loss 0.086404                                        LR 0.100000    Time 0.129407    
+2026-06-16 11:46:00,293 - Epoch: [23][   30/  211]    Overall Loss 0.083046    Objective Loss 0.083046                                        LR 0.100000    Time 0.091090    
+2026-06-16 11:46:00,441 - Epoch: [23][   40/  211]    Overall Loss 0.081727    Objective Loss 0.081727                                        LR 0.100000    Time 0.072021    
+2026-06-16 11:46:00,587 - Epoch: [23][   50/  211]    Overall Loss 0.082018    Objective Loss 0.082018                                        LR 0.100000    Time 0.060487    
+2026-06-16 11:46:00,732 - Epoch: [23][   60/  211]    Overall Loss 0.081360    Objective Loss 0.081360                                        LR 0.100000    Time 0.052822    
+2026-06-16 11:46:00,877 - Epoch: [23][   70/  211]    Overall Loss 0.087175    Objective Loss 0.087175                                        LR 0.100000    Time 0.047345    
+2026-06-16 11:46:01,023 - Epoch: [23][   80/  211]    Overall Loss 0.087825    Objective Loss 0.087825                                        LR 0.100000    Time 0.043252    
+2026-06-16 11:46:01,166 - Epoch: [23][   90/  211]    Overall Loss 0.086743    Objective Loss 0.086743                                        LR 0.100000    Time 0.040032    
+2026-06-16 11:46:01,312 - Epoch: [23][  100/  211]    Overall Loss 0.085180    Objective Loss 0.085180                                        LR 0.100000    Time 0.037489    
+2026-06-16 11:46:01,457 - Epoch: [23][  110/  211]    Overall Loss 0.084523    Objective Loss 0.084523                                        LR 0.100000    Time 0.035395    
+2026-06-16 11:46:01,602 - Epoch: [23][  120/  211]    Overall Loss 0.085518    Objective Loss 0.085518                                        LR 0.100000    Time 0.033651    
+2026-06-16 11:46:01,745 - Epoch: [23][  130/  211]    Overall Loss 0.084056    Objective Loss 0.084056                                        LR 0.100000    Time 0.032161    
+2026-06-16 11:46:01,889 - Epoch: [23][  140/  211]    Overall Loss 0.084234    Objective Loss 0.084234                                        LR 0.100000    Time 0.030894    
+2026-06-16 11:46:02,035 - Epoch: [23][  150/  211]    Overall Loss 0.084384    Objective Loss 0.084384                                        LR 0.100000    Time 0.029806    
+2026-06-16 11:46:02,179 - Epoch: [23][  160/  211]    Overall Loss 0.086225    Objective Loss 0.086225                                        LR 0.100000    Time 0.028838    
+2026-06-16 11:46:02,321 - Epoch: [23][  170/  211]    Overall Loss 0.085233    Objective Loss 0.085233                                        LR 0.100000    Time 0.027980    
+2026-06-16 11:46:02,464 - Epoch: [23][  180/  211]    Overall Loss 0.085166    Objective Loss 0.085166                                        LR 0.100000    Time 0.027218    
+2026-06-16 11:46:02,607 - Epoch: [23][  190/  211]    Overall Loss 0.085175    Objective Loss 0.085175                                        LR 0.100000    Time 0.026538    
+2026-06-16 11:46:02,749 - Epoch: [23][  200/  211]    Overall Loss 0.085014    Objective Loss 0.085014                                        LR 0.100000    Time 0.025919    
+2026-06-16 11:46:02,891 - Epoch: [23][  210/  211]    Overall Loss 0.085067    Objective Loss 0.085067    Top1 98.828125    Top5 100.000000    LR 0.100000    Time 0.025357    
+2026-06-16 11:46:02,906 - Epoch: [23][  211/  211]    Overall Loss 0.084764    Objective Loss 0.084764    Top1 99.193548    Top5 100.000000    LR 0.100000    Time 0.025308    
+2026-06-16 11:46:03,355 - --- validate (epoch=23)-----------
+2026-06-16 11:46:03,355 - 6000 samples (256 per mini-batch)
+2026-06-16 11:46:05,774 - Epoch: [23][   10/   24]    Loss 0.076061    Top1 97.539062    Top5 99.921875    
+2026-06-16 11:46:05,862 - Epoch: [23][   20/   24]    Loss 0.079537    Top1 97.480469    Top5 99.960938    
+2026-06-16 11:46:05,892 - Epoch: [23][   24/   24]    Loss 0.080079    Top1 97.433333    Top5 99.966667    
+2026-06-16 11:46:06,339 - ==> Top1: 97.433    Top5: 99.967    Loss: 0.080
+
+2026-06-16 11:46:06,339 - ==> Confusion:
+[[602   0   0   1   0   1   0   0   1   0]
+ [  0 680   2   2   0   0   1   3   0   0]
+ [  2   0 573   3   0   1   1   5   1   0]
+ [  0   1   5 574   0   1   0   1   1   0]
+ [  1   1   6   0 542   0   3   3   2   7]
+ [  0   0   0   6   0 506   1   0   5   0]
+ [  5   2   1   0   3   6 607   0   7   0]
+ [  0   0   5   2   1   1   0 616   0   0]
+ [  3   1   0   3   4   0   4   0 569   0]
+ [  1   2   1   1   4   3   1  15  10 577]]
+
+2026-06-16 11:46:06,342 - ==> Best [Top1: 97.450   Top5: 100.000   Params: 71148 on epoch: 18]
+2026-06-16 11:46:06,342 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:46:06,356 - 
+
+2026-06-16 11:46:06,356 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:46:08,850 - Epoch: [24][   10/  211]    Overall Loss 0.077834    Objective Loss 0.077834                                        LR 0.100000    Time 0.249396    
+2026-06-16 11:46:08,996 - Epoch: [24][   20/  211]    Overall Loss 0.079612    Objective Loss 0.079612                                        LR 0.100000    Time 0.131983    
+2026-06-16 11:46:09,142 - Epoch: [24][   30/  211]    Overall Loss 0.078181    Objective Loss 0.078181                                        LR 0.100000    Time 0.092860    
+2026-06-16 11:46:09,286 - Epoch: [24][   40/  211]    Overall Loss 0.080398    Objective Loss 0.080398                                        LR 0.100000    Time 0.073239    
+2026-06-16 11:46:09,430 - Epoch: [24][   50/  211]    Overall Loss 0.078956    Objective Loss 0.078956                                        LR 0.100000    Time 0.061459    
+2026-06-16 11:46:09,573 - Epoch: [24][   60/  211]    Overall Loss 0.080241    Objective Loss 0.080241                                        LR 0.100000    Time 0.053605    
+2026-06-16 11:46:09,717 - Epoch: [24][   70/  211]    Overall Loss 0.080791    Objective Loss 0.080791                                        LR 0.100000    Time 0.047997    
+2026-06-16 11:46:09,862 - Epoch: [24][   80/  211]    Overall Loss 0.079720    Objective Loss 0.079720                                        LR 0.100000    Time 0.043808    
+2026-06-16 11:46:10,014 - Epoch: [24][   90/  211]    Overall Loss 0.080228    Objective Loss 0.080228                                        LR 0.100000    Time 0.040623    
+2026-06-16 11:46:10,163 - Epoch: [24][  100/  211]    Overall Loss 0.078844    Objective Loss 0.078844                                        LR 0.100000    Time 0.038048    
+2026-06-16 11:46:10,311 - Epoch: [24][  110/  211]    Overall Loss 0.079152    Objective Loss 0.079152                                        LR 0.100000    Time 0.035929    
+2026-06-16 11:46:10,461 - Epoch: [24][  120/  211]    Overall Loss 0.079659    Objective Loss 0.079659                                        LR 0.100000    Time 0.034182    
+2026-06-16 11:46:10,608 - Epoch: [24][  130/  211]    Overall Loss 0.080457    Objective Loss 0.080457                                        LR 0.100000    Time 0.032684    
+2026-06-16 11:46:10,759 - Epoch: [24][  140/  211]    Overall Loss 0.079491    Objective Loss 0.079491                                        LR 0.100000    Time 0.031420    
+2026-06-16 11:46:10,901 - Epoch: [24][  150/  211]    Overall Loss 0.077877    Objective Loss 0.077877                                        LR 0.100000    Time 0.030276    
+2026-06-16 11:46:11,044 - Epoch: [24][  160/  211]    Overall Loss 0.077699    Objective Loss 0.077699                                        LR 0.100000    Time 0.029276    
+2026-06-16 11:46:11,187 - Epoch: [24][  170/  211]    Overall Loss 0.077487    Objective Loss 0.077487                                        LR 0.100000    Time 0.028389    
+2026-06-16 11:46:11,330 - Epoch: [24][  180/  211]    Overall Loss 0.077705    Objective Loss 0.077705                                        LR 0.100000    Time 0.027605    
+2026-06-16 11:46:11,474 - Epoch: [24][  190/  211]    Overall Loss 0.077293    Objective Loss 0.077293                                        LR 0.100000    Time 0.026909    
+2026-06-16 11:46:11,617 - Epoch: [24][  200/  211]    Overall Loss 0.077265    Objective Loss 0.077265                                        LR 0.100000    Time 0.026280    
+2026-06-16 11:46:11,761 - Epoch: [24][  210/  211]    Overall Loss 0.077152    Objective Loss 0.077152    Top1 97.265625    Top5 100.000000    LR 0.100000    Time 0.025711    
+2026-06-16 11:46:11,776 - Epoch: [24][  211/  211]    Overall Loss 0.077369    Objective Loss 0.077369    Top1 97.379032    Top5 99.798387    LR 0.100000    Time 0.025663    
+2026-06-16 11:46:12,237 - --- validate (epoch=24)-----------
+2026-06-16 11:46:12,237 - 6000 samples (256 per mini-batch)
+2026-06-16 11:46:14,620 - Epoch: [24][   10/   24]    Loss 0.102488    Top1 96.953125    Top5 99.882812    
+2026-06-16 11:46:14,695 - Epoch: [24][   20/   24]    Loss 0.106280    Top1 96.640625    Top5 99.902344    
+2026-06-16 11:46:14,723 - Epoch: [24][   24/   24]    Loss 0.105811    Top1 96.666667    Top5 99.916667    
+2026-06-16 11:46:15,170 - ==> Top1: 96.667    Top5: 99.917    Loss: 0.106
+
+2026-06-16 11:46:15,171 - ==> Confusion:
+[[596   0   0   1   2   0   2   2   1   1]
+ [  0 685   0   0   0   0   0   3   0   0]
+ [  0   6 540   7   3   0   1  27   1   1]
+ [  0   2   0 574   0   3   0   2   1   1]
+ [  0   1   0   0 550   0   0   6   0   8]
+ [  0   0   0   6   0 504   7   0   0   1]
+ [  3   4   1   0  11   4 607   0   1   0]
+ [  0   1   0   1   0   1   0 622   0   0]
+ [  0   5   2  10  10  13   5   7 524   8]
+ [  0   0   1   1   5   2   0   7   1 598]]
+
+2026-06-16 11:46:15,173 - ==> Best [Top1: 97.450   Top5: 100.000   Params: 71148 on epoch: 18]
+2026-06-16 11:46:15,173 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:46:15,182 - 
+
+2026-06-16 11:46:15,182 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:46:17,628 - Epoch: [25][   10/  211]    Overall Loss 0.097112    Objective Loss 0.097112                                        LR 0.100000    Time 0.244559    
+2026-06-16 11:46:17,778 - Epoch: [25][   20/  211]    Overall Loss 0.089470    Objective Loss 0.089470                                        LR 0.100000    Time 0.129763    
+2026-06-16 11:46:17,926 - Epoch: [25][   30/  211]    Overall Loss 0.084826    Objective Loss 0.084826                                        LR 0.100000    Time 0.091443    
+2026-06-16 11:46:18,071 - Epoch: [25][   40/  211]    Overall Loss 0.081361    Objective Loss 0.081361                                        LR 0.100000    Time 0.072186    
+2026-06-16 11:46:18,219 - Epoch: [25][   50/  211]    Overall Loss 0.080335    Objective Loss 0.080335                                        LR 0.100000    Time 0.060712    
+2026-06-16 11:46:18,362 - Epoch: [25][   60/  211]    Overall Loss 0.079461    Objective Loss 0.079461                                        LR 0.100000    Time 0.052975    
+2026-06-16 11:46:18,510 - Epoch: [25][   70/  211]    Overall Loss 0.079015    Objective Loss 0.079015                                        LR 0.100000    Time 0.047510    
+2026-06-16 11:46:18,658 - Epoch: [25][   80/  211]    Overall Loss 0.080064    Objective Loss 0.080064                                        LR 0.100000    Time 0.043426    
+2026-06-16 11:46:18,808 - Epoch: [25][   90/  211]    Overall Loss 0.079466    Objective Loss 0.079466                                        LR 0.100000    Time 0.040259    
+2026-06-16 11:46:18,956 - Epoch: [25][  100/  211]    Overall Loss 0.080156    Objective Loss 0.080156                                        LR 0.100000    Time 0.037709    
+2026-06-16 11:46:19,105 - Epoch: [25][  110/  211]    Overall Loss 0.078996    Objective Loss 0.078996                                        LR 0.100000    Time 0.035634    
+2026-06-16 11:46:19,255 - Epoch: [25][  120/  211]    Overall Loss 0.080205    Objective Loss 0.080205                                        LR 0.100000    Time 0.033913    
+2026-06-16 11:46:19,405 - Epoch: [25][  130/  211]    Overall Loss 0.081163    Objective Loss 0.081163                                        LR 0.100000    Time 0.032455    
+2026-06-16 11:46:19,555 - Epoch: [25][  140/  211]    Overall Loss 0.080436    Objective Loss 0.080436                                        LR 0.100000    Time 0.031204    
+2026-06-16 11:46:19,700 - Epoch: [25][  150/  211]    Overall Loss 0.080825    Objective Loss 0.080825                                        LR 0.100000    Time 0.030086    
+2026-06-16 11:46:19,848 - Epoch: [25][  160/  211]    Overall Loss 0.080475    Objective Loss 0.080475                                        LR 0.100000    Time 0.029130    
+2026-06-16 11:46:19,995 - Epoch: [25][  170/  211]    Overall Loss 0.080487    Objective Loss 0.080487                                        LR 0.100000    Time 0.028280    
+2026-06-16 11:46:20,141 - Epoch: [25][  180/  211]    Overall Loss 0.080816    Objective Loss 0.080816                                        LR 0.100000    Time 0.027520    
+2026-06-16 11:46:20,288 - Epoch: [25][  190/  211]    Overall Loss 0.081134    Objective Loss 0.081134                                        LR 0.100000    Time 0.026839    
+2026-06-16 11:46:20,430 - Epoch: [25][  200/  211]    Overall Loss 0.081012    Objective Loss 0.081012                                        LR 0.100000    Time 0.026208    
+2026-06-16 11:46:20,573 - Epoch: [25][  210/  211]    Overall Loss 0.080357    Objective Loss 0.080357    Top1 97.656250    Top5 100.000000    LR 0.100000    Time 0.025643    
+2026-06-16 11:46:20,589 - Epoch: [25][  211/  211]    Overall Loss 0.080265    Objective Loss 0.080265    Top1 97.580645    Top5 100.000000    LR 0.100000    Time 0.025595    
+2026-06-16 11:46:21,044 - --- validate (epoch=25)-----------
+2026-06-16 11:46:21,044 - 6000 samples (256 per mini-batch)
+2026-06-16 11:46:23,370 - Epoch: [25][   10/   24]    Loss 0.084727    Top1 97.187500    Top5 99.960938    
+2026-06-16 11:46:23,445 - Epoch: [25][   20/   24]    Loss 0.088886    Top1 97.246094    Top5 99.960938    
+2026-06-16 11:46:23,474 - Epoch: [25][   24/   24]    Loss 0.090318    Top1 97.200000    Top5 99.950000    
+2026-06-16 11:46:23,937 - ==> Top1: 97.200    Top5: 99.950    Loss: 0.090
+
+2026-06-16 11:46:23,937 - ==> Confusion:
+[[600   0   2   0   0   0   2   1   0   0]
+ [  0 681   3   1   0   1   1   1   0   0]
+ [  0   1 581   0   0   0   2   2   0   0]
+ [  1   0   8 563   0   4   0   6   0   1]
+ [  0   1   5   0 547   1   4   1   2   4]
+ [  1   0   0   3   0 508   4   0   2   0]
+ [  4   2   1   0   1   1 622   0   0   0]
+ [  0   9   9   7   5   0   0 594   0   1]
+ [  5   0   4   7   3   2   5   0 557   1]
+ [  2   3   2   1  10   7   0   3   8 579]]
+
+2026-06-16 11:46:23,940 - ==> Best [Top1: 97.450   Top5: 100.000   Params: 71148 on epoch: 18]
+2026-06-16 11:46:23,940 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:46:23,949 - 
+
+2026-06-16 11:46:23,949 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:46:26,343 - Epoch: [26][   10/  211]    Overall Loss 0.055979    Objective Loss 0.055979                                        LR 0.100000    Time 0.239381    
+2026-06-16 11:46:26,486 - Epoch: [26][   20/  211]    Overall Loss 0.056250    Objective Loss 0.056250                                        LR 0.100000    Time 0.126802    
+2026-06-16 11:46:26,627 - Epoch: [26][   30/  211]    Overall Loss 0.068185    Objective Loss 0.068185                                        LR 0.100000    Time 0.089224    
+2026-06-16 11:46:26,768 - Epoch: [26][   40/  211]    Overall Loss 0.071253    Objective Loss 0.071253                                        LR 0.100000    Time 0.070437    
+2026-06-16 11:46:26,909 - Epoch: [26][   50/  211]    Overall Loss 0.069217    Objective Loss 0.069217                                        LR 0.100000    Time 0.059178    
+2026-06-16 11:46:27,050 - Epoch: [26][   60/  211]    Overall Loss 0.070948    Objective Loss 0.070948                                        LR 0.100000    Time 0.051666    
+2026-06-16 11:46:27,192 - Epoch: [26][   70/  211]    Overall Loss 0.071702    Objective Loss 0.071702                                        LR 0.100000    Time 0.046312    
+2026-06-16 11:46:27,334 - Epoch: [26][   80/  211]    Overall Loss 0.075236    Objective Loss 0.075236                                        LR 0.100000    Time 0.042291    
+2026-06-16 11:46:27,476 - Epoch: [26][   90/  211]    Overall Loss 0.075341    Objective Loss 0.075341                                        LR 0.100000    Time 0.039171    
+2026-06-16 11:46:27,620 - Epoch: [26][  100/  211]    Overall Loss 0.077382    Objective Loss 0.077382                                        LR 0.100000    Time 0.036692    
+2026-06-16 11:46:27,763 - Epoch: [26][  110/  211]    Overall Loss 0.078642    Objective Loss 0.078642                                        LR 0.100000    Time 0.034649    
+2026-06-16 11:46:27,905 - Epoch: [26][  120/  211]    Overall Loss 0.080292    Objective Loss 0.080292                                        LR 0.100000    Time 0.032947    
+2026-06-16 11:46:28,048 - Epoch: [26][  130/  211]    Overall Loss 0.081434    Objective Loss 0.081434                                        LR 0.100000    Time 0.031510    
+2026-06-16 11:46:28,191 - Epoch: [26][  140/  211]    Overall Loss 0.081573    Objective Loss 0.081573                                        LR 0.100000    Time 0.030279    
+2026-06-16 11:46:28,335 - Epoch: [26][  150/  211]    Overall Loss 0.081246    Objective Loss 0.081246                                        LR 0.100000    Time 0.029223    
+2026-06-16 11:46:28,478 - Epoch: [26][  160/  211]    Overall Loss 0.080441    Objective Loss 0.080441                                        LR 0.100000    Time 0.028288    
+2026-06-16 11:46:28,621 - Epoch: [26][  170/  211]    Overall Loss 0.080437    Objective Loss 0.080437                                        LR 0.100000    Time 0.027461    
+2026-06-16 11:46:28,763 - Epoch: [26][  180/  211]    Overall Loss 0.079597    Objective Loss 0.079597                                        LR 0.100000    Time 0.026723    
+2026-06-16 11:46:28,905 - Epoch: [26][  190/  211]    Overall Loss 0.080858    Objective Loss 0.080858                                        LR 0.100000    Time 0.026066    
+2026-06-16 11:46:29,048 - Epoch: [26][  200/  211]    Overall Loss 0.081350    Objective Loss 0.081350                                        LR 0.100000    Time 0.025477    
+2026-06-16 11:46:29,190 - Epoch: [26][  210/  211]    Overall Loss 0.081532    Objective Loss 0.081532    Top1 98.437500    Top5 99.609375    LR 0.100000    Time 0.024939    
+2026-06-16 11:46:29,206 - Epoch: [26][  211/  211]    Overall Loss 0.081385    Objective Loss 0.081385    Top1 98.387097    Top5 99.798387    LR 0.100000    Time 0.024893    
+2026-06-16 11:46:29,662 - --- validate (epoch=26)-----------
+2026-06-16 11:46:29,662 - 6000 samples (256 per mini-batch)
+2026-06-16 11:46:31,989 - Epoch: [26][   10/   24]    Loss 0.075930    Top1 97.187500    Top5 100.000000    
+2026-06-16 11:46:32,070 - Epoch: [26][   20/   24]    Loss 0.075913    Top1 97.480469    Top5 99.980469    
+2026-06-16 11:46:32,099 - Epoch: [26][   24/   24]    Loss 0.072611    Top1 97.583333    Top5 99.966667    
+2026-06-16 11:46:32,561 - ==> Top1: 97.583    Top5: 99.967    Loss: 0.073
+
+2026-06-16 11:46:32,561 - ==> Confusion:
+[[596   0   0   0   0   0   7   0   1   1]
+ [  0 685   2   0   0   0   0   1   0   0]
+ [  1   2 562   1   0   0   0  14   2   4]
+ [  2   0   4 560   2   5   0   5   2   3]
+ [  0   2   1   0 547   0   1   1   0  13]
+ [  1   0   0   1   0 502   4   0   4   6]
+ [  3   1   0   0   1   1 623   0   2   0]
+ [  0   2   4   0   1   0   0 614   0   4]
+ [  3   2   1   0   3   1   3   2 562   7]
+ [  0   1   0   0   2   1   0   5   2 604]]
+
+2026-06-16 11:46:32,564 - ==> Best [Top1: 97.583   Top5: 99.967   Params: 71148 on epoch: 26]
+2026-06-16 11:46:32,564 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:46:32,573 - 
+
+2026-06-16 11:46:32,573 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:46:34,933 - Epoch: [27][   10/  211]    Overall Loss 0.063059    Objective Loss 0.063059                                        LR 0.100000    Time 0.236009    
+2026-06-16 11:46:35,075 - Epoch: [27][   20/  211]    Overall Loss 0.066138    Objective Loss 0.066138                                        LR 0.100000    Time 0.125094    
+2026-06-16 11:46:35,216 - Epoch: [27][   30/  211]    Overall Loss 0.069020    Objective Loss 0.069020                                        LR 0.100000    Time 0.088085    
+2026-06-16 11:46:35,357 - Epoch: [27][   40/  211]    Overall Loss 0.072594    Objective Loss 0.072594                                        LR 0.100000    Time 0.069588    
+2026-06-16 11:46:35,498 - Epoch: [27][   50/  211]    Overall Loss 0.075577    Objective Loss 0.075577                                        LR 0.100000    Time 0.058488    
+2026-06-16 11:46:35,640 - Epoch: [27][   60/  211]    Overall Loss 0.074751    Objective Loss 0.074751                                        LR 0.100000    Time 0.051109    
+2026-06-16 11:46:35,781 - Epoch: [27][   70/  211]    Overall Loss 0.074727    Objective Loss 0.074727                                        LR 0.100000    Time 0.045817    
+2026-06-16 11:46:35,922 - Epoch: [27][   80/  211]    Overall Loss 0.075892    Objective Loss 0.075892                                        LR 0.100000    Time 0.041847    
+2026-06-16 11:46:36,064 - Epoch: [27][   90/  211]    Overall Loss 0.074465    Objective Loss 0.074465                                        LR 0.100000    Time 0.038771    
+2026-06-16 11:46:36,209 - Epoch: [27][  100/  211]    Overall Loss 0.074459    Objective Loss 0.074459                                        LR 0.100000    Time 0.036348    
+2026-06-16 11:46:36,353 - Epoch: [27][  110/  211]    Overall Loss 0.074951    Objective Loss 0.074951                                        LR 0.100000    Time 0.034351    
+2026-06-16 11:46:36,498 - Epoch: [27][  120/  211]    Overall Loss 0.076447    Objective Loss 0.076447                                        LR 0.100000    Time 0.032694    
+2026-06-16 11:46:36,641 - Epoch: [27][  130/  211]    Overall Loss 0.075523    Objective Loss 0.075523                                        LR 0.100000    Time 0.031273    
+2026-06-16 11:46:36,783 - Epoch: [27][  140/  211]    Overall Loss 0.075001    Objective Loss 0.075001                                        LR 0.100000    Time 0.030052    
+2026-06-16 11:46:36,925 - Epoch: [27][  150/  211]    Overall Loss 0.075111    Objective Loss 0.075111                                        LR 0.100000    Time 0.028999    
+2026-06-16 11:46:37,067 - Epoch: [27][  160/  211]    Overall Loss 0.075415    Objective Loss 0.075415                                        LR 0.100000    Time 0.028071    
+2026-06-16 11:46:37,209 - Epoch: [27][  170/  211]    Overall Loss 0.074715    Objective Loss 0.074715                                        LR 0.100000    Time 0.027256    
+2026-06-16 11:46:37,352 - Epoch: [27][  180/  211]    Overall Loss 0.074159    Objective Loss 0.074159                                        LR 0.100000    Time 0.026532    
+2026-06-16 11:46:37,494 - Epoch: [27][  190/  211]    Overall Loss 0.073540    Objective Loss 0.073540                                        LR 0.100000    Time 0.025886    
+2026-06-16 11:46:37,636 - Epoch: [27][  200/  211]    Overall Loss 0.073974    Objective Loss 0.073974                                        LR 0.100000    Time 0.025300    
+2026-06-16 11:46:37,779 - Epoch: [27][  210/  211]    Overall Loss 0.073886    Objective Loss 0.073886    Top1 98.437500    Top5 100.000000    LR 0.100000    Time 0.024773    
+2026-06-16 11:46:37,794 - Epoch: [27][  211/  211]    Overall Loss 0.073804    Objective Loss 0.073804    Top1 98.387097    Top5 100.000000    LR 0.100000    Time 0.024727    
+2026-06-16 11:46:38,255 - --- validate (epoch=27)-----------
+2026-06-16 11:46:38,255 - 6000 samples (256 per mini-batch)
+2026-06-16 11:46:40,553 - Epoch: [27][   10/   24]    Loss 0.072151    Top1 97.656250    Top5 100.000000    
+2026-06-16 11:46:40,628 - Epoch: [27][   20/   24]    Loss 0.073012    Top1 97.792969    Top5 99.980469    
+2026-06-16 11:46:40,656 - Epoch: [27][   24/   24]    Loss 0.072056    Top1 97.800000    Top5 99.983333    
+2026-06-16 11:46:41,116 - ==> Top1: 97.800    Top5: 99.983    Loss: 0.072
+
+2026-06-16 11:46:41,116 - ==> Confusion:
+[[603   0   1   0   0   0   1   0   0   0]
+ [  0 687   1   0   0   0   0   0   0   0]
+ [  2   6 567   0   0   0   0   6   5   0]
+ [  0   3   4 562   0   7   0   5   2   0]
+ [  0   2   0   0 558   0   0   1   0   4]
+ [  0   0   0   1   1 511   2   0   1   2]
+ [  3   5   0   0   3   5 614   0   1   0]
+ [  0   3   1   1   5   0   0 615   0   0]
+ [  1   3   0   1   4   2   2   5 565   1]
+ [  1   3   0   0  12   4   0   8   1 586]]
+
+2026-06-16 11:46:41,119 - ==> Best [Top1: 97.800   Top5: 99.983   Params: 71148 on epoch: 27]
+2026-06-16 11:46:41,119 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:46:41,129 - 
+
+2026-06-16 11:46:41,129 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:46:43,482 - Epoch: [28][   10/  211]    Overall Loss 0.056308    Objective Loss 0.056308                                        LR 0.100000    Time 0.235346    
+2026-06-16 11:46:43,623 - Epoch: [28][   20/  211]    Overall Loss 0.066588    Objective Loss 0.066588                                        LR 0.100000    Time 0.124712    
+2026-06-16 11:46:43,764 - Epoch: [28][   30/  211]    Overall Loss 0.073880    Objective Loss 0.073880                                        LR 0.100000    Time 0.087827    
+2026-06-16 11:46:43,904 - Epoch: [28][   40/  211]    Overall Loss 0.075874    Objective Loss 0.075874                                        LR 0.100000    Time 0.069375    
+2026-06-16 11:46:44,045 - Epoch: [28][   50/  211]    Overall Loss 0.076924    Objective Loss 0.076924                                        LR 0.100000    Time 0.058305    
+2026-06-16 11:46:44,185 - Epoch: [28][   60/  211]    Overall Loss 0.075880    Objective Loss 0.075880                                        LR 0.100000    Time 0.050928    
+2026-06-16 11:46:44,327 - Epoch: [28][   70/  211]    Overall Loss 0.075452    Objective Loss 0.075452                                        LR 0.100000    Time 0.045666    
+2026-06-16 11:46:44,470 - Epoch: [28][   80/  211]    Overall Loss 0.075435    Objective Loss 0.075435                                        LR 0.100000    Time 0.041752    
+2026-06-16 11:46:44,612 - Epoch: [28][   90/  211]    Overall Loss 0.078488    Objective Loss 0.078488                                        LR 0.100000    Time 0.038681    
+2026-06-16 11:46:44,754 - Epoch: [28][  100/  211]    Overall Loss 0.078118    Objective Loss 0.078118                                        LR 0.100000    Time 0.036230    
+2026-06-16 11:46:44,896 - Epoch: [28][  110/  211]    Overall Loss 0.077695    Objective Loss 0.077695                                        LR 0.100000    Time 0.034226    
+2026-06-16 11:46:45,037 - Epoch: [28][  120/  211]    Overall Loss 0.078444    Objective Loss 0.078444                                        LR 0.100000    Time 0.032554    
+2026-06-16 11:46:45,179 - Epoch: [28][  130/  211]    Overall Loss 0.077855    Objective Loss 0.077855                                        LR 0.100000    Time 0.031140    
+2026-06-16 11:46:45,321 - Epoch: [28][  140/  211]    Overall Loss 0.078262    Objective Loss 0.078262                                        LR 0.100000    Time 0.029928    
+2026-06-16 11:46:45,463 - Epoch: [28][  150/  211]    Overall Loss 0.078566    Objective Loss 0.078566                                        LR 0.100000    Time 0.028879    
+2026-06-16 11:46:45,605 - Epoch: [28][  160/  211]    Overall Loss 0.078179    Objective Loss 0.078179                                        LR 0.100000    Time 0.027962    
+2026-06-16 11:46:45,747 - Epoch: [28][  170/  211]    Overall Loss 0.077543    Objective Loss 0.077543                                        LR 0.100000    Time 0.027152    
+2026-06-16 11:46:45,889 - Epoch: [28][  180/  211]    Overall Loss 0.076844    Objective Loss 0.076844                                        LR 0.100000    Time 0.026431    
+2026-06-16 11:46:46,032 - Epoch: [28][  190/  211]    Overall Loss 0.076221    Objective Loss 0.076221                                        LR 0.100000    Time 0.025787    
+2026-06-16 11:46:46,174 - Epoch: [28][  200/  211]    Overall Loss 0.076938    Objective Loss 0.076938                                        LR 0.100000    Time 0.025208    
+2026-06-16 11:46:46,315 - Epoch: [28][  210/  211]    Overall Loss 0.076708    Objective Loss 0.076708    Top1 97.265625    Top5 100.000000    LR 0.100000    Time 0.024680    
+2026-06-16 11:46:46,330 - Epoch: [28][  211/  211]    Overall Loss 0.076928    Objective Loss 0.076928    Top1 96.370968    Top5 100.000000    LR 0.100000    Time 0.024634    
+2026-06-16 11:46:46,794 - --- validate (epoch=28)-----------
+2026-06-16 11:46:46,794 - 6000 samples (256 per mini-batch)
+2026-06-16 11:46:49,104 - Epoch: [28][   10/   24]    Loss 0.060707    Top1 98.242188    Top5 99.960938    
+2026-06-16 11:46:49,181 - Epoch: [28][   20/   24]    Loss 0.063855    Top1 98.046875    Top5 99.960938    
+2026-06-16 11:46:49,209 - Epoch: [28][   24/   24]    Loss 0.066636    Top1 97.983333    Top5 99.966667    
+2026-06-16 11:46:49,666 - ==> Top1: 97.983    Top5: 99.967    Loss: 0.067
+
+2026-06-16 11:46:49,666 - ==> Confusion:
+[[598   0   2   0   0   0   1   0   4   0]
+ [  0 684   1   0   0   1   0   0   2   0]
+ [  1   0 578   2   0   0   0   0   5   0]
+ [  1   1   4 567   0   3   0   3   3   1]
+ [  1   1   1   0 538   0   6   3   3  12]
+ [  0   0   0   0   0 507   2   1   7   1]
+ [  1   2   0   0   1   3 618   0   5   1]
+ [  1   3   2   2   1   1   0 612   0   3]
+ [  1   0   0   0   1   0   3   1 577   1]
+ [  0   1   2   0   2   2   0   3   5 600]]
+
+2026-06-16 11:46:49,669 - ==> Best [Top1: 97.983   Top5: 99.967   Params: 71148 on epoch: 28]
+2026-06-16 11:46:49,670 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:46:49,679 - 
+
+2026-06-16 11:46:49,679 - Training epoch: 54000 samples (256 per mini-batch, world size: 1)
+2026-06-16 11:46:52,038 - Epoch: [29][   10/  211]    Overall Loss 0.070878    Objective Loss 0.070878                                        LR 0.100000    Time 0.235872    
+2026-06-16 11:46:52,180 - Epoch: [29][   20/  211]    Overall Loss 0.070680    Objective Loss 0.070680                                        LR 0.100000    Time 0.124989    
+2026-06-16 11:46:52,325 - Epoch: [29][   30/  211]    Overall Loss 0.071828    Objective Loss 0.071828                                        LR 0.100000    Time 0.088161    
+2026-06-16 11:46:52,472 - Epoch: [29][   40/  211]    Overall Loss 0.070364    Objective Loss 0.070364                                        LR 0.100000    Time 0.069783    
+2026-06-16 11:46:52,617 - Epoch: [29][   50/  211]    Overall Loss 0.073336    Objective Loss 0.073336                                        LR 0.100000    Time 0.058725    
+2026-06-16 11:46:52,766 - Epoch: [29][   60/  211]    Overall Loss 0.074485    Objective Loss 0.074485                                        LR 0.100000    Time 0.051423    
+2026-06-16 11:46:52,910 - Epoch: [29][   70/  211]    Overall Loss 0.075127    Objective Loss 0.075127                                        LR 0.100000    Time 0.046124    
+2026-06-16 11:46:53,054 - Epoch: [29][   80/  211]    Overall Loss 0.077556    Objective Loss 0.077556                                        LR 0.100000    Time 0.042159    
+2026-06-16 11:46:53,199 - Epoch: [29][   90/  211]    Overall Loss 0.078415    Objective Loss 0.078415                                        LR 0.100000    Time 0.039079    
+2026-06-16 11:46:53,342 - Epoch: [29][  100/  211]    Overall Loss 0.080823    Objective Loss 0.080823                                        LR 0.100000    Time 0.036599    
+2026-06-16 11:46:53,486 - Epoch: [29][  110/  211]    Overall Loss 0.081475    Objective Loss 0.081475                                        LR 0.100000    Time 0.034579    
+2026-06-16 11:46:53,630 - Epoch: [29][  120/  211]    Overall Loss 0.080166    Objective Loss 0.080166                                        LR 0.100000    Time 0.032896    
+2026-06-16 11:46:53,774 - Epoch: [29][  130/  211]    Overall Loss 0.079108    Objective Loss 0.079108                                        LR 0.100000    Time 0.031476    
+2026-06-16 11:46:53,918 - Epoch: [29][  140/  211]    Overall Loss 0.077944    Objective Loss 0.077944                                        LR 0.100000    Time 0.030256    
+2026-06-16 11:46:54,062 - Epoch: [29][  150/  211]    Overall Loss 0.077299    Objective Loss 0.077299                                        LR 0.100000    Time 0.029193    
+2026-06-16 11:46:54,204 - Epoch: [29][  160/  211]    Overall Loss 0.076872    Objective Loss 0.076872                                        LR 0.100000    Time 0.028254    
+2026-06-16 11:46:54,346 - Epoch: [29][  170/  211]    Overall Loss 0.077885    Objective Loss 0.077885                                        LR 0.100000    Time 0.027428    
+2026-06-16 11:46:54,488 - Epoch: [29][  180/  211]    Overall Loss 0.078626    Objective Loss 0.078626                                        LR 0.100000    Time 0.026692    
+2026-06-16 11:46:54,637 - Epoch: [29][  190/  211]    Overall Loss 0.077748    Objective Loss 0.077748                                        LR 0.100000    Time 0.026070    
+2026-06-16 11:46:54,785 - Epoch: [29][  200/  211]    Overall Loss 0.077631    Objective Loss 0.077631                                        LR 0.100000    Time 0.025505    
+2026-06-16 11:46:54,930 - Epoch: [29][  210/  211]    Overall Loss 0.077539    Objective Loss 0.077539    Top1 96.093750    Top5 100.000000    LR 0.100000    Time 0.024980    
+2026-06-16 11:46:54,945 - Epoch: [29][  211/  211]    Overall Loss 0.077384    Objective Loss 0.077384    Top1 97.379032    Top5 100.000000    LR 0.100000    Time 0.024932    
+2026-06-16 11:46:55,395 - --- validate (epoch=29)-----------
+2026-06-16 11:46:55,395 - 6000 samples (256 per mini-batch)
+2026-06-16 11:46:57,730 - Epoch: [29][   10/   24]    Loss 0.064557    Top1 98.164062    Top5 99.960938    
+2026-06-16 11:46:57,814 - Epoch: [29][   20/   24]    Loss 0.067192    Top1 98.046875    Top5 99.921875    
+2026-06-16 11:46:57,843 - Epoch: [29][   24/   24]    Loss 0.067278    Top1 98.050000    Top5 99.916667    
+2026-06-16 11:46:58,289 - ==> Top1: 98.050    Top5: 99.917    Loss: 0.067
+
+2026-06-16 11:46:58,290 - ==> Confusion:
+[[602   0   2   0   0   0   0   0   0   1]
+ [  0 682   1   1   1   1   1   1   0   0]
+ [  0   0 568   5   1   2   0   3   4   3]
+ [  0   0   0 575   0   3   0   2   3   0]
+ [  0   1   2   0 544   2   1   2   2  11]
+ [  0   0   0   4   0 507   4   0   3   0]
+ [  1   3   0   0   0   6 619   0   2   0]
+ [  0   2   4   4   2   1   0 610   0   2]
+ [  0   2   0   1   0   1   2   0 577   1]
+ [  0   1   1   1   4   2   0   3   4 599]]
+
+2026-06-16 11:46:58,292 - ==> Best [Top1: 98.050   Top5: 99.917   Params: 71148 on epoch: 29]
+2026-06-16 11:46:58,292 - Saving checkpoint to: logs/2026.06.16-114230/checkpoint.pth.tar
+2026-06-16 11:46:58,302 - Initiating quantization aware training (QAT)...
+2026-06-16 11:46:58,302 - Collecting statistics for quantization aware training (QAT)...
+2026-06-16 11:47:01,719 - 
+2026-06-16 11:47:01,720 - Log file for this run: /Users/tomhaidinger/Documents/max78000/ai8x-training/logs/2026.06.16-114230/2026.06.16-114230.log
