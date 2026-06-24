@@ -17,3 +17,6 @@ logs_archive/
 build/
 flash.log
 uart_frames/
+
+#other
+SYNC_MANIFEST.md
